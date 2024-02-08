@@ -1,0 +1,57 @@
+@import 'colors';
+
+html,
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100dvh;
+  background-color: $dark-blue-color;
+  color: $white-color;
+  font-family: "Roboto", sans-serif;
+  scroll-behavior:smooth;
+}
+
+
+button {
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+  outline: none;
+  border: 2px solid $white-color;
+  color: $white-color;
+  padding: 0.8em 1.4em;
+  margin: 0.5em 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out;
+  font-weight: bold;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+button:hover {
+  color: $dark-blue-color;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: -1;
+  translate: -100%;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
+  transition-property: translate transform;
+}
+
+button:hover::before {
+  translate: 0;
+}

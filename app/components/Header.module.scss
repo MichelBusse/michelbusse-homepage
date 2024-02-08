@@ -1,0 +1,76 @@
+@import '../colors';
+
+.header {
+  margin: 0 auto;
+  max-width: 160em;
+  position: relative;
+  box-sizing: border-box;
+  padding: 2rem 0;
+  height: 100dvh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+/* Styles for header text */
+
+.textWrapper {
+  width: 40%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 2rem;
+}
+
+.text .preHeadline {
+  font-size: 1.1rem;
+  color: $light-grey-color;
+  margin: 1rem 0;
+}
+
+.text h1 {
+  font-family: "Roboto Mono", "Roboto", sans-serif;
+  font-size: 3.1rem;
+  font-weight: normal;
+  margin: 1rem 0;
+}
+
+.text .slogan {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: $light-grey-color;
+  margin: 1rem 0;
+}
+
+.text button {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+
+/* Styles for header image */
+
+.imageWrapper {
+  position: relative;
+  width: 40%;
+  max-height: 100dvh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem;
+  position: relative;
+}
+
+.imageWrapper img {
+  display: block;
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
