@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Portfolio = () => {
   return (
-    <section className={styles.portfolio}>
+    <section id={"portfolio"} className={styles.portfolio}>
       <div className={styles.project}>
         <div className={styles.imageWrapper}>
           <Image src={"/images/portfolio/clubz-social-network-app.png"} alt={"Social Network App - Clubz"} width="800" height="800" />
@@ -28,7 +28,7 @@ const Portfolio = () => {
         <div className={styles.imageWrapper}>
           <Image src={"/images/portfolio/schuelertreff-erp-system.png"} alt={"ERP SaaS System - Schuelertreff"} width="800" height="800"  />
           <div className={styles.textWrapper}>
-            <h3>ERP SaaS System</h3>
+            <h3>SaaS ERP System</h3>
             <p>
               <i>Schuelertreff</i>
             </p>
@@ -66,15 +66,31 @@ const Portfolio = () => {
             <div className={styles.iconButton}>
               <MdOutlineArrowOutward />
             </div>
+            <div className={styles.lowerIcons}>
+              <FaGithub />
+            </div>
           </div>
         </div>
       </div>
-
+      <div className={styles.project}>
+        <div className={styles.imageWrapper}>
+          <Image src={"/images/portfolio/ar-in-surgery-hololens-2.png"} alt={"AR in Surgery - Hololens 2"} width="800" height="800"  />
+          <div className={styles.textWrapper}>
+            <h3>AR in Surgery - Hololens 2</h3>
+            <p>
+              <i>University Hospital Leipzig</i>
+            </p>
+            <div className={styles.iconButton}>
+              <MdOutlineArrowOutward />
+            </div>
+          </div>
+        </div>
+      </div>
       <div className={styles.project}>
         <div className={styles.imageWrapper}>
           <Image src={"/images/portfolio/special-solutions-management-system.png"} alt={"Management SaaS System - Special Solutions"} width="800" height="800"  />
           <div className={styles.textWrapper}>
-            <h3>Management SaaS System</h3>
+            <h3>SaaS Management System</h3>
             <p>
               <i>Special Solutions</i>
             </p>

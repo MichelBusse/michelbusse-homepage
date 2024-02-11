@@ -1,5 +1,6 @@
-import { useEffect, useRef } from "react";
+"use client";
 
+import { useEffect, useRef } from "react";
 import styles from "./MouseCircle.module.scss";
 
 const MouseCircle = () => {

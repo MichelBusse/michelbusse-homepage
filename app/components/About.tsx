@@ -1,9 +1,9 @@
 import { SectionRefsProps } from "../page";
 import styles from "./About.module.scss";
 
-const About = ({sectionRefs} : SectionRefsProps) => {
+const About = () => {
   return (
-    <section id="about" className={styles.about} ref={sectionRefs.aboutRef}>
+    <section id="about" className={styles.about}>
       <div className={styles.placeholder}>
       </div>
       <div className={styles.textWrapper}>

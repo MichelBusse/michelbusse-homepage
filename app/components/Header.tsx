@@ -3,9 +3,9 @@ import { SectionRefsProps } from "../page";
 import Image from "next/image";
 import Link from "next/link";
 
-const Header = ({ sectionRefs }: SectionRefsProps) => {
+const Header = () => {
   return (
-    <header className={styles.header} ref={sectionRefs.headerRef}>
+    <header id={"header"} className={styles.header}>
       <div className={styles.textWrapper}>
         <div className={styles.text}>
           <p className={styles.preHeadline}>Hey, my name is</p>

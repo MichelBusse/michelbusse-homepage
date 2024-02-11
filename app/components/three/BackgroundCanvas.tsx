@@ -1,3 +1,5 @@
+"use client";
+
 import { Canvas } from "@react-three/fiber";
 import styles from "./BackgroundCanvas.module.scss";
 import BackgroundSphere from "./BackgroundSphere";
@@ -6,9 +8,8 @@ import { useRef } from "react";
 import CustomCamera from "./CustomCamera";
 import Cubes from "./Cubes";
 import MousePositionLight from "./MousePositionLight";
-import { SectionRefsProps } from "@/app/page";
 
-function BackgroundCanvas({sectionRefs} : SectionRefsProps) {
+function BackgroundCanvas() {
   const cameraRef = useRef<PerspectiveCamera>(null);
 
   return (
@@ -18,7 +19,7 @@ function BackgroundCanvas({sectionRefs} : SectionRefsProps) {
         <CustomCamera cameraRef={cameraRef} />
         <BackgroundSphere />
         <MousePositionLight cameraRef={cameraRef} />
-        <Cubes sectionRefs={sectionRefs}/>
+        <Cubes/>
       </Canvas>
     </div>
   );

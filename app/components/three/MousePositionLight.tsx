@@ -21,7 +21,7 @@ const MousePositionLight = ({ cameraRef }: Props) => {
         );
       }
     };
-
+    
     document.addEventListener("mousemove", handleMouseMove);
 
     return () => {

@@ -2,9 +2,9 @@ import styles from "./Technologies.module.scss";
 import { SectionRefsProps } from "../page";
 import Image from "next/image";
 
-const Technologies = ({sectionRefs} : SectionRefsProps) => {
+const Technologies = () => {
   return (
-    <section className={styles.technologies} ref={sectionRefs.technologiesRef}>
+    <section id={"technologies"} className={styles.technologies}>
       <div className={styles.gridWrapper}>
         <div className={styles.gridColumn}>
           <div className={styles.boxWrapper}>
