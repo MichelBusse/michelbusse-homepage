@@ -28,7 +28,7 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          ssh deploy 'echo "hey"'
+          ssh deploy 'pwd'
 
       - name: Start Docker Compose
         run: |
