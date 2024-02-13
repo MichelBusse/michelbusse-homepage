@@ -28,7 +28,7 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          ssh deploy 'cd /home/schale/development/michelbusse-homepage && pwd'
+          ssh deploy 'cd /home/schale/development/michelbusse-homepage && bash deploy.sh'
 
       - name: Start Docker Compose
         run: |
