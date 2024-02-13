@@ -13,7 +13,7 @@ jobs:
           echo "$SSH_KEY" > ~/.ssh/deploy.key
           chmod 600 ~/.ssh/deploy.key
           cat >>~/.ssh/config <<END
-          Host staging
+          Host deploy
             HostName $SSH_HOST
             User $SSH_USER
             Port $SSH_PORT
@@ -28,8 +28,8 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          ssh staging 'cd /home/schale/development/michelbusse-homepage'
+          ssh deploy 'echo "hey"'
 
       - name: Start Docker Compose
         run: |
-          ssh staging 'cd /home/schale/development/michelbusse-homepage && docker compose up -d --build'
+          ssh deploy 'cd /home/schale/development/michelbusse-homepage && docker compose up -d --build'
