@@ -31,7 +31,7 @@ const MousePositionLight = ({ cameraRef }: Props) => {
 
   return (
     <>
-      <pointLight ref={lightRef} position={[0, 0, 5]} intensity={40} distance={1.5}/>
+      <pointLight ref={lightRef} position={[0, 0, 5]} intensity={8} distance={1.5}/>
     </>
   );
 };

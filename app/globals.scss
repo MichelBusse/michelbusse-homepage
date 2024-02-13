@@ -61,7 +61,7 @@ button:hover::before {
   position: relative;
 }
 
-input, textarea {
+input[type="email"], textarea {
   margin: 0.5em 0;
   position: relative;
   box-sizing: border-box;
@@ -78,18 +78,6 @@ input, textarea {
   border-radius: 0;
 }
 
-input:focus, textarea:focus{
+input[type="email"], textarea:focus{
   outline: none;
-}
-
-input ~ div, textarea ~ div{
-  position: absolute;
-  top: 0;
-  left: 0;
-  translate: 0.8rem 1.7rem;
-  transition: all 0.1s ease-in-out;
-}
-
-input:focus ~ div, textarea:focus ~ div{
-  translate: 0 -50%;
 }

@@ -1,13 +1,15 @@
 "use client";
 
 import { useGLTF } from "@react-three/drei";
-import { RefObject, forwardRef, useRef, useState } from "react";
+import { RefObject, forwardRef, useState } from "react";
 import { Euler, Group, Mesh, Vector3 } from "three";
 import CubeText from "./CubeText";
 import { useFrame } from "@react-three/fiber";
+import CubeImage from "./CubeImage";
 
 type Props = {
   section: RefObject<number>;
+  imageUrl: string;
   letterAbout: string;
   letterPortfolio: string;
   letterCareer: string;
@@ -29,13 +31,21 @@ const Cube = forwardRef<Group, Props>((props, ref) => {
       <mesh geometry={(nodes.Cube as Mesh).geometry}>
         <meshStandardMaterial color={0xffffff} />
       </mesh>
+      <CubeImage
+        visible={currentSection == 0}
+        imageUrl={props.imageUrl}
+        position={new Vector3(0, 0, 0.501)}
+        rotation={new Euler(1 * Math.PI, 1 * Math.PI, 1 * Math.PI)}
+        scale={new Vector3(0.7, 0.7, 0.7)}
+        color={0x000000}
+      />
       <CubeText
         visible={currentSection == 1}
         text={props.letterAbout}
         position={new Vector3(0, 0, -0.501)}
         rotation={new Euler(1 * Math.PI, 0, 0)}
         scale={new Vector3(1, 1, 1)}
-        color={0xbbbbbb}
+        color={0x888888}
       />
       <CubeText
         visible={currentSection == 2}
@@ -43,7 +53,7 @@ const Cube = forwardRef<Group, Props>((props, ref) => {
         position={new Vector3(0, 0, 0.501)}
         rotation={new Euler(1 * Math.PI, 1 * Math.PI, 1 * Math.PI)}
         scale={new Vector3(1, 1, 1)}
-        color={0xbbbbbb}
+        color={0x888888}
       />
       <CubeText
         visible={currentSection == 3}
@@ -51,7 +61,7 @@ const Cube = forwardRef<Group, Props>((props, ref) => {
         position={new Vector3(0, 0, -0.501)}
         rotation={new Euler(1 * Math.PI, 0, 0)}
         scale={new Vector3(1, 1, 1)}
-        color={0xbbbbbb}
+        color={0x888888}
       />
       <CubeText
         visible={currentSection == 4}
@@ -59,7 +69,7 @@ const Cube = forwardRef<Group, Props>((props, ref) => {
         position={new Vector3(0, 0, 0.501)}
         rotation={new Euler(1 * Math.PI, 1 * Math.PI, 1 * Math.PI)}
         scale={new Vector3(1, 1, 1)}
-        color={0xbbbbbb}
+        color={0x888888}
       />
     </group>
   );

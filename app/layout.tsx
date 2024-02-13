@@ -8,6 +8,9 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,8 +29,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <MouseCircle />
         <BackgroundCanvas />
+        <ToastContainer position="bottom-left"/>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

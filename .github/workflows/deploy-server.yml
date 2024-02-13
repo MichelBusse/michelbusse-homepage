@@ -1,0 +1,28 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-server:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install SSH Client
+        run: sudo apt-get update -y && sudo apt-get -y install openssh-client
+
+      - name: Set Permissions for SSH Key
+        run: chmod og= ${{ secrets.ID_RSA }}
+
+      - name: Deploy to Server
+        run: |
+          ssh -p ${{ secrets.SERVER_PORT }} -i ${{ secrets.ID_RSA }} -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "cd /home/schale/development/michelbusse-homepage; bash" < deploy.sh
+
+      - name: Start Docker Compose
+        run: |
+          ssh -p ${{ secrets.SERVER_PORT }} -i ${{ secrets.ID_RSA }} -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} 'cd /home/schale/development/michelbusse-homepage && docker compose up -d --build'
