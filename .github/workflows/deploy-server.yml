@@ -11,7 +11,7 @@ jobs:
         run: |
           mkdir -p ~/.ssh/
           echo "$SSH_KEY" > ~/.ssh/deploy.key
-          chmod 600 ~/.ssh/staging.key
+          chmod 600 ~/.ssh/deploy.key
           cat >>~/.ssh/config <<END
           Host staging
             HostName $SSH_HOST
