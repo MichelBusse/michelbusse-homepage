@@ -1,0 +1,12 @@
+version: "3"
+services:
+  m-to-b-homepage:
+    container_name: michelbusse-homepage
+    image: m-to-b/michelbusse-homepage
+    restart: unless-stopped
+    networks:
+      - swag-net
+
+networks:
+  swag-net:
+    external: true
