@@ -1,34 +1,9 @@
 @import '../colors';
 
-.about {
-  margin: 0 auto;
-  max-width: 160em;
-  position: relative;
-  width: 100%;
-  min-height: 100dvh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.placeholder {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.textWrapper {
-  width: 50%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 2rem;
-}
-
 .text {
   position: relative;
-  max-width: 35em;
+  max-width: 35rem;
+  box-sizing: border-box;
 }
 
 .text h2 {

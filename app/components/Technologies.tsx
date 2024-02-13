@@ -1,5 +1,4 @@
 import styles from "./Technologies.module.scss";
-import { SectionRefsProps } from "../page";
 import Image from "next/image";
 
 const Technologies = () => {

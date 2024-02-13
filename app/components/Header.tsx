@@ -1,5 +1,4 @@
 import styles from "./Header.module.scss";
-import { SectionRefsProps } from "../page";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,11 +13,19 @@ const Header = () => {
             and I am a passionate
             <br /> software engineer.
           </p>
-          <Link href={"#about"}><button>Discover More</button></Link>
+          <Link href={"#about"}>
+            <button>Discover More</button>
+          </Link>
         </div>
       </div>
       <div className={styles.imageWrapper}>
-        <Image src={"/images/header.png"} alt="Header Portrait Photo" width={1000} height={1000} priority/>
+        <Image
+          src={"/images/header.png"}
+          alt="Header Portrait Photo"
+          width={1000}
+          height={1000}
+          priority
+        />
       </div>
     </header>
   );

@@ -6,6 +6,7 @@ import Technologies from "./components/Technologies";
 import Portfolio from "./components/Portfolio";
 import Career from "./components/Career";
 import HeadlinePlaceholder from "./components/HeadlinePlaceholder";
+import Contact from "./components/Contact";
 
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <Portfolio />
       <HeadlinePlaceholder id={"careerHeadline"} />
       <Career />
+      <Contact />
     </main>
   );
 }

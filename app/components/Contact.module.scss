@@ -1,0 +1,95 @@
+@import "../colors";
+@import "../utils.scss";
+
+.text {
+  box-sizing: border-box;
+  position: relative;
+  max-width: 35rem;
+  padding: 3rem;
+
+  width: 60rem;
+  max-width: 100%;
+
+  font-size: 1.1rem;
+
+  @media (max-width: 960px) {
+    padding: 0;
+  }
+}
+
+.text h2 {
+  font-size: 3.1rem;
+  margin: 0.8rem 0;
+}
+
+.text hr {
+  position: relative;
+  align-self: flex-start;
+  transform: translate(-2em);
+  width: 50%;
+  margin: 1rem 0;
+}
+
+.text textarea {
+  height: 10rem;
+}
+
+.text input,
+.text textarea {
+  font-size: 1.1rem;
+  border-color: $light-grey-color;
+  margin: 1rem 0;
+}
+
+.text input::placeholder,
+.text textarea::placeholder {
+  color: $light-grey-color;
+}
+
+.text button {
+  font-size: 1.1rem;
+  width: 100%;
+  margin: 0;
+}
+
+.text .info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 1rem 0;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+
+.text .info a {
+  color: white;
+  text-decoration: none;
+}
+
+.text .info span {
+  @media (max-width: 600px) {
+    margin-bottom: 0.8rem;
+  }
+}
+
+.text .icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.8rem;
+}
+
+.text .icons .spacer {
+  width: 1rem;
+}
+
+.text .icons i {
+  margin: 0 0.5rem;
+}

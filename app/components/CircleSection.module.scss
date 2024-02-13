@@ -1,0 +1,43 @@
+.circleSection {
+  margin: 0 auto;
+  max-width: 160em;
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  @media (max-width: 960px) {
+    min-height: auto;
+    flex-direction: column;
+  }
+}
+
+.placeholder {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 960px) {
+    width: 100%;
+    height: min(100dvw, 20rem);
+  }
+}
+
+.textWrapper {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+
+  @media (max-width: 960px) {
+    width: 100%;
+    justify-content: center;
+    padding: 2rem 2rem 4rem 2rem;
+  }
+}

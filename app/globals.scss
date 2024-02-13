@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'utils';
 
 html,
 body {
@@ -25,7 +26,7 @@ button {
   margin: 0.5em 0;
   overflow: hidden;
   cursor: pointer;
-  transition: color 0.15s ease-in-out;
+  transition: color .8s ease-in-out;
   font-weight: bold;
 
   &:focus {
@@ -47,11 +48,48 @@ button::before {
   background: white;
   z-index: -1;
   translate: -100%;
-  transition-duration: 0.15s;
+  transition-duration: .8s;
   transition-timing-function: ease-in-out;
   transition-property: translate transform;
 }
 
 button:hover::before {
   translate: 0;
+}
+
+.inputWrapper{
+  position: relative;
+}
+
+input, textarea {
+  margin: 0.5em 0;
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: 2px solid $white-color;
+  color: $white-color;
+  padding: 0.8em 0.8em;
+  font-family: "Roboto", sans-serif;
+  resize: none;
+
+  @include glassEffect;
+  border-radius: 0;
+}
+
+input:focus, textarea:focus{
+  outline: none;
+}
+
+input ~ div, textarea ~ div{
+  position: absolute;
+  top: 0;
+  left: 0;
+  translate: 0.8rem 1.7rem;
+  transition: all 0.1s ease-in-out;
+}
+
+input:focus ~ div, textarea:focus ~ div{
+  translate: 0 -50%;
 }

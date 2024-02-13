@@ -18,6 +18,13 @@ const Career = () => {
           </div>
         </div>
         <div className={styles.timestamp}>
+          <div className={styles.time}>2022</div>
+          <div className={styles.description}>
+            <h3>Participation in study of accuracy</h3>
+            <p>@ UPMC Pittsburgh</p>
+          </div>
+        </div>
+        <div className={styles.timestamp}>
           <div className={styles.time}>2021 - 2022</div>
           <div className={styles.description}>
             <h3>Software Engineer & Scientific Assistant</h3>
@@ -51,8 +58,8 @@ const Career = () => {
             <p>@ University Leipzig</p>
             <ul>
               <li>Graduation with grade <b>1,6</b></li>
-              <li>Bachelor's thesis on "Augmented Reality Navigation for transnasal pituitary surgery"</li>
-              <li>Focus on machine learning, database systems, and data visualization</li>
+              <li>Bachelor&apos;s thesis on &quot;Augmented Reality Navigation for transnasal pituitary surgery&quot;</li>
+              <li>Emphasis on machine learning, database systems, and data visualization</li>
             </ul>
           </div>
         </div>
@@ -66,6 +73,13 @@ const Career = () => {
               <li>Bilingual profile (in-depth language training)</li>
               <li>English (fluently), Spanish (basics), French (basics)</li>
             </ul>
+          </div>
+        </div>
+        <div className={styles.timestamp}>
+          <div className={styles.time}>2019</div>
+          <div className={styles.description}>
+            <h3>5th Place Computer Science Contest</h3>
+            <p>@ Computer Science Contest Saxony</p>
           </div>
         </div>
       </div>

@@ -11,6 +11,7 @@ type Props = {
   letterAbout: string;
   letterPortfolio: string;
   letterCareer: string;
+  letterContact: string;
 };
 
 const Cube = forwardRef<Group, Props>((props, ref) => {
@@ -22,8 +23,6 @@ const Cube = forwardRef<Group, Props>((props, ref) => {
       setCurrentSection(props.section.current);
     }
   })
-
-  console.log(currentSection)
 
   return (
     <group ref={ref}>
@@ -51,6 +50,14 @@ const Cube = forwardRef<Group, Props>((props, ref) => {
         text={props.letterCareer}
         position={new Vector3(0, 0, -0.501)}
         rotation={new Euler(1 * Math.PI, 0, 0)}
+        scale={new Vector3(1, 1, 1)}
+        color={0xbbbbbb}
+      />
+      <CubeText
+        visible={currentSection == 4}
+        text={props.letterContact}
+        position={new Vector3(0, 0, 0.501)}
+        rotation={new Euler(1 * Math.PI, 1 * Math.PI, 1 * Math.PI)}
         scale={new Vector3(1, 1, 1)}
         color={0xbbbbbb}
       />

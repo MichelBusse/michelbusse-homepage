@@ -1,3 +1,5 @@
+@import "../utils.scss";
+
 .portfolio {
   position: relative;
   width: 100%;
@@ -7,70 +9,92 @@
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
+
+  @media (max-width: 960px){
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
-.project{
-    box-sizing: border-box;
-    display: flex; 
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-end;
-    position: relative;
-    padding-right: 2.5rem;
-    padding-bottom: 2.5rem;
-    margin: 2.5rem;
-    cursor: pointer;
-}
-.imageWrapper{
-    position: relative;
-    width: 30rem;
-    height: auto;
-    transition: translate 0.3s ease-in-out;
-}
-.imageWrapper img{
+.project {
+  box-sizing: border-box;
+  width: 50%;
+  flex: 50% 1 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  padding: 2.5rem;
+  cursor: pointer;
+
+  @media (max-width: 960px){
+    width: 40rem;
+    max-width: 100%;
+  }
+
+  @media (max-width: 600px){
     width: 100%;
-    height: auto;
+  }
+
+  @media (max-width: 450px){
+    padding: 1rem;
+  }
 }
-.textWrapper{
-    position: absolute;
-    right: -2.5rem;
-    bottom: -2.5rem;
-    box-sizing: border-box;
-    min-width: 20rem;
+.imageWrapper {
+  position: relative;
+  box-sizing: border-box;
+  width: 32.5rem;
+  padding-right: 2.5rem;
+  padding-bottom: 2.5rem;
+  max-width: 100%;
+  height: auto;
+  transition: translate 0.3s ease-in-out;
 
-    font-size: 1.1rem;
+  @media (max-width: 600px){
+    padding: 0;
+  }
+}
+.imageWrapper img {
+  width: 100%;
+  height: auto;
+}
+.textWrapper {
+  position: absolute;
+  right: 0rem;
+  bottom: 0;
+  box-sizing: border-box;
+  min-width: 20rem;
 
-    padding: 2rem;
-    padding-right: 4rem; // Keep room for arrow
+  font-size: 1.1rem;
 
-    background-color: #2f2f2fa6;  
-    backdrop-filter: blur(5px);
-    background-blend-mode: overlay;
-    box-shadow: 0 10px 15px rgb(0 0 0 / 20%);
-    border-radius: 0.8rem;
-    
-    transition: translate 0.3s ease-in-out;
+  padding: 2rem;
+  padding-right: 4rem; // Keep room for arrow
+
+  @include glassEffect;
+
+  transition: translate 0.3s ease-in-out;
 }
 
-.textWrapper h3{
-    font-size: 1.2rem;
-    margin: 0;
+.textWrapper h3 {
+  font-size: 1.2rem;
+  margin: 0;
 }
 
-.textWrapper p{
-    margin: 0;
-    margin-top: 1rem;
+.textWrapper p {
+  margin: 0;
+  margin-top: 1rem;
 }
 
-.iconButton{
-    position: absolute;
-    top: 1.6rem;
-    right: 1.6rem;
-    font-size: 2rem;
+.iconButton {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  font-size: 2rem;
 }
 
-.lowerIcons{
-    font-size: 1.2rem;
-    margin: 0;
-    margin-top: 1rem;
+.lowerIcons {
+  font-size: 1.2rem;
+  margin: 0;
+  margin-top: 1rem;
 }

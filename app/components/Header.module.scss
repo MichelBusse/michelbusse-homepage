@@ -2,15 +2,21 @@
 
 .header {
   margin: 0 auto;
-  max-width: 160em;
+  width: 160rem;
+  max-width: 100%;
   position: relative;
   box-sizing: border-box;
-  padding: 2rem 0;
-  height: 100dvh;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
+  min-height: 100dvh;
+  padding: 4rem 0;
+
+  @media (max-width: 600px) {
+    flex-direction: column-reverse;
+    min-height: auto;
+  }
 }
 
 /* Styles for header text */
@@ -23,12 +29,35 @@
   justify-content: center;
   align-items: flex-end;
   padding: 2rem;
+
+  @media (max-width: 960px) {
+    width: 24rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 601px) and (max-width: 720px) {
+    width: 19rem;
+    padding: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0 2rem;
+    align-items: flex-start;
+  }
 }
 
 .text .preHeadline {
   font-size: 1.1rem;
   color: $light-grey-color;
   margin: 1rem 0;
+
+  @media (max-width: 600px) {
+    margin-top: 0;
+  }
 }
 
 .text h1 {
@@ -36,6 +65,18 @@
   font-size: 3.1rem;
   font-weight: normal;
   margin: 1rem 0;
+
+  @media (max-width: 1128px) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: 960px) {
+    font-size: 2.5rem;
+  }
+
+  @media (min-width: 601px) and (max-width: 720px) {
+    font-size: 2.1rem;
+  }
 }
 
 .text .slogan {
@@ -44,6 +85,10 @@
   font-weight: bold;
   color: $light-grey-color;
   margin: 1rem 0;
+
+  @media (min-width: 601px) and (max-width: 720px) {
+    font-size: 1.4rem;
+  }
 }
 
 .text button {
@@ -56,21 +101,43 @@
 .imageWrapper {
   position: relative;
   width: 40%;
-  max-height: 100dvh;
+  max-height: calc(100dvh - 8rem);
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 2rem;
+  padding: 0 2rem;
   position: relative;
+
+  @media (max-width: 960px) {
+    width: 50%;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  @media (max-width: 800px) {
+    padding: 0 1rem;
+  }
+
+  @media (max-width: 600px) {
+    max-height: none;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+  }
 }
 
 .imageWrapper img {
   display: block;
   position: relative;
-  max-width: 100%;
+  width: 100%;
+  height: auto;
   max-height: 100%;
   object-fit: contain;
   object-position: center center;
+
+  @media (max-width: 960px) {
+    object-position: center center;
+  }
 }
