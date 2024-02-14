@@ -76,6 +76,14 @@ const Cubes = () => {
 
   // Call on every frame
   useFrame(({ clock }) => {
+    const canvasWrapper = document.getElementById("canvasWrapper");
+    if(canvasWrapper == null){
+      return;
+    }
+
+    const windowWidth = canvasWrapper.clientWidth;
+    const windowHeight = canvasWrapper.clientHeight;
+
     // Calculate relative horizontal size in 3D space in percent of the referenced elements width (100% is half of elements width)
     const getRelativeHorizontalSize = (
       element: HTMLElement,
@@ -85,7 +93,7 @@ const Cubes = () => {
 
       elementWidth = element.getBoundingClientRect().width;
 
-      return (((percent / 100) * elementWidth) / window.innerHeight) * 3.5;
+      return (((percent / 100) * elementWidth) / windowHeight) * 3.5;
     };
 
     // Calculate relative horizontal position in 3D space in percent of the referenced elements width (0% is centered position)
@@ -97,8 +105,8 @@ const Cubes = () => {
       elementCenter =
         ((element.offsetLeft +
           element.getBoundingClientRect().width * 0.5 -
-          window.innerWidth * 0.5) /
-          window.innerWidth) *
+          windowWidth * 0.5) /
+          windowWidth) *
         20;
 
       return elementCenter + getRelativeHorizontalSize(element, percent);
@@ -110,7 +118,7 @@ const Cubes = () => {
 
       elementHeight = element.getBoundingClientRect().height;
 
-      return (((percent / 100) * elementHeight) / window.innerHeight) * 3.5;
+      return (((percent / 100) * elementHeight) / windowHeight) * 3.5;
     };
 
     // Calculate relative vertical position in 3D space in percent of the referenced elements height (0% is centered position)
@@ -123,8 +131,8 @@ const Cubes = () => {
       elementCenter =
         ((element.offsetTop +
           element.getBoundingClientRect().height * 0.5 -
-          window.innerHeight * 0.5) /
-          window.innerHeight) *
+          windowHeight * 0.5) /
+          windowHeight) *
         -7;
 
       return elementCenter - getRelativeVerticalSize(element, percent);
@@ -219,7 +227,7 @@ const Cubes = () => {
         new Vector3(0.9, 0.9, 0.9),
       ];
 
-      if (window.innerWidth < 1050) {
+      if (windowWidth < 1050) {
         baseScales = [
           // Header
           new Vector3(0.7, 0.7, 0.7),
@@ -234,7 +242,7 @@ const Cubes = () => {
         ];
       }
 
-      if (window.innerWidth < 960) {
+      if (windowWidth < 960) {
         // Header
         basePositions[0] = new Vector3(
           getRelativeHorizontalPosition(headerSection, 0),
@@ -257,7 +265,7 @@ const Cubes = () => {
         );
       }
 
-      if (window.innerWidth < 600) {
+      if (windowWidth < 600) {
         // About
         basePositions[1] = new Vector3(
           getRelativeHorizontalPosition(aboutSection, 0),
@@ -285,7 +293,7 @@ const Cubes = () => {
         ];
       }
 
-      if (window.innerWidth < 450) {
+      if (windowWidth < 450) {
         // About
         basePositions[1] = new Vector3(
           getRelativeHorizontalPosition(aboutSection, 0),
@@ -304,7 +312,7 @@ const Cubes = () => {
       // Change currentSection and sectionChangedTime if threshold is passed
       if (
         window.scrollY >=
-        contactSection.offsetTop - window.innerHeight * 0.75
+        contactSection.offsetTop - windowHeight * 0.75
       ) {
         if (currentSection != 4) {
           currentSection != -1 && (sectionChangedTime = clock.elapsedTime);
@@ -312,7 +320,7 @@ const Cubes = () => {
         }
       } else if (
         window.scrollY >=
-        careerSection.offsetTop - window.innerHeight * 0.75
+        careerSection.offsetTop - windowHeight * 0.75
       ) {
         if (currentSection != 3) {
           currentSection != -1 && (sectionChangedTime = clock.elapsedTime);
@@ -320,7 +328,7 @@ const Cubes = () => {
         }
       } else if (
         window.scrollY >=
-        portfolioSection.offsetTop - window.innerHeight * 0.75
+        portfolioSection.offsetTop - windowHeight * 0.75
       ) {
         if (currentSection != 2) {
           currentSection != -1 && (sectionChangedTime = clock.elapsedTime);
@@ -328,7 +336,7 @@ const Cubes = () => {
         }
       } else if (
         window.scrollY >=
-        aboutSection.offsetTop - window.innerHeight * 0.75
+        aboutSection.offsetTop - windowHeight * 0.75
       ) {
         if (currentSection != 1) {
           currentSection != -1 && (sectionChangedTime = clock.elapsedTime);
@@ -336,7 +344,7 @@ const Cubes = () => {
         }
       } else if (
         window.scrollY >=
-        headerSection.offsetTop - window.innerHeight * 0.75
+        headerSection.offsetTop - windowHeight * 0.75
       ) {
         if (currentSection != 0) {
           currentSection != -1 && (sectionChangedTime = clock.elapsedTime);
@@ -360,7 +368,7 @@ const Cubes = () => {
               getRelativeHorizontalSize(headerSection, 15),
               1.5
             );
-            if (window.innerWidth < 960) {
+            if (windowWidth < 960) {
               horizontalExtend = getRelativeHorizontalPosition(
                 headerSection,
                 400
@@ -405,10 +413,10 @@ const Cubes = () => {
               getRelativeHorizontalSize(aboutSection, 25),
               2
             );
-            if (window.innerWidth < 960) {
+            if (windowWidth < 960) {
               radius = 1.2;
             }
-            if (window.innerWidth < 450) {
+            if (windowWidth < 450) {
               radius = 1;
             }
 
@@ -437,7 +445,7 @@ const Cubes = () => {
               getRelativeHorizontalSize(portfolioSection, 180),
               13
             );
-            if (window.innerWidth < 450) {
+            if (windowWidth < 450) {
               horizontalExtend = Math.min(
                 getRelativeHorizontalSize(portfolioSection, 200),
                 13
@@ -462,7 +470,7 @@ const Cubes = () => {
               getRelativeHorizontalSize(careerSection, 180),
               13
             );
-            if (window.innerWidth < 450) {
+            if (windowWidth < 450) {
               horizontalExtend = Math.min(
                 getRelativeHorizontalSize(careerSection, 200),
                 13
@@ -491,10 +499,10 @@ const Cubes = () => {
               getRelativeHorizontalSize(contactSection, 25),
               2
             );
-            if (window.innerWidth < 960) {
+            if (windowWidth < 960) {
               radius = 1.2;
             }
-            if (window.innerWidth < 450) {
+            if (windowWidth < 450) {
               radius = 1;
             }
 

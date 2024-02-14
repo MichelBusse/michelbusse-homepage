@@ -11,20 +11,34 @@ const CustomCamera = ({ cameraRef }: Props) => {
   const { set } = useThree();
 
   useEffect(() => {
+    const canvasWrapper = document.getElementById("canvasWrapper");
+    if(canvasWrapper == null){
+      return;
+    }
+
+    const windowWidth = canvasWrapper.clientWidth;
+    const windowHeight = canvasWrapper.clientHeight;
+
     // Set default camera and parameters
     if (cameraRef.current != null) {
       void set({ camera: cameraRef.current! });
-      cameraRef.current.aspect = window.innerWidth / window.innerHeight
+      cameraRef.current.aspect = windowWidth / windowHeight;
       cameraRef.current.updateProjectionMatrix();
     }
   }, [cameraRef, set]);
 
   useFrame((state) => {
+    const canvasWrapper = document.getElementById("canvasWrapper");
+    if(canvasWrapper == null){
+      return;
+    }
+    const windowHeight = canvasWrapper.clientHeight;
+
     // Update camera according to scroll position
-    state.camera.position.y = -window.scrollY / (window.innerHeight / 7);
+    state.camera.position.y = -window.scrollY / (windowHeight / 7);
     directionalLightRef.current &&
       (directionalLightRef.current.position.y =
-        -window.scrollY / (window.innerHeight / 6));
+        -window.scrollY / (windowHeight / 6));
   });
 
   return (

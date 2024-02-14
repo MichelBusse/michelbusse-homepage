@@ -10,13 +10,21 @@ const MousePositionLight = ({ cameraRef }: Props) => {
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
-      const x = event.clientX / window.innerWidth - 0.5;
-      const y = event.clientY / window.innerHeight - 0.5;
+      const canvasWrapper = document.getElementById("canvasWrapper");
+      if(canvasWrapper == null){
+        return;
+      }
+  
+      const windowWidth = canvasWrapper.clientWidth;
+      const windowHeight = canvasWrapper.clientHeight;
+
+      const x = event.clientX / windowWidth - 0.5;
+      const y = event.clientY / windowHeight - 0.5;
 
       if (lightRef.current != null && cameraRef.current != null) {
         lightRef.current?.position.set(
-          x * window.innerWidth * 0.009,
-          y * window.innerHeight * -0.009 + cameraRef.current.position.y,
+          x * windowWidth * 0.009,
+          y * windowHeight * -0.009 + cameraRef.current.position.y,
           1
         );
       }

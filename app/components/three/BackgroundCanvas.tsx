@@ -13,7 +13,7 @@ function BackgroundCanvas() {
   const cameraRef = useRef<PerspectiveCamera>(null);
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} id="canvasWrapper">
       <Canvas>
         <ambientLight args={[0xffffff, 0.5]} />
         <CustomCamera cameraRef={cameraRef} />
