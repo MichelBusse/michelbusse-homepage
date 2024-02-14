@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { NextRequest, NextResponse } from "next/server";
 
 import nodemailer from "nodemailer";
 
@@ -7,23 +8,17 @@ const transporter = nodemailer.createTransport({
   port: 25,
 });
 
-export async function POST(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if(!req.body.email || !req.body.text){
-    res.status(500).end();
-    return;
+export async function POST(req: NextRequest, res: NextResponse) {
+  let data = await req.json();
+  if (!data.email || !data.text) {
+    return new NextResponse("Error", { status: 500 });
   }
 
   const mailData = {
-    from: req.body.email,
+    from: data.email,
     to: "contact@michelbusse.dev",
     subject: `Kontaktformulat - michelbusse.dev`,
-    text:
-      req.body.text +
-      "\n\nE-Mail: " +
-      req.body.email,
+    text: data.text + "\n\nE-Mail: " + data.email,
   };
 
   let mailRes = await new Promise((resolve, reject) => {
@@ -38,8 +33,8 @@ export async function POST(
   });
 
   if (mailRes) {
-    res.status(200).end();
+    return new NextResponse("Success!", { status: 200 });
   } else {
-    res.status(500).end();
+    return new NextResponse("Error", { status: 500 });
   }
 }
