@@ -7,7 +7,7 @@ const transporter = nodemailer.createTransport({
   port: 25,
 });
 
-export default async function handler(
+export async function POST(
   req: NextApiRequest,
   res: NextApiResponse
 ) {

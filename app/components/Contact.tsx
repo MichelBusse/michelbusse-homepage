@@ -26,7 +26,7 @@ const Contact = () => {
       return;
     }
 
-    fetch("/api/contactSection", {
+    fetch("/api/contact", {
       method: "POST",
       headers: {
         Accept: "application/json, text/plain, */*",
