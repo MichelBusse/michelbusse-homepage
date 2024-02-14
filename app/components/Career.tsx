@@ -100,7 +100,11 @@ const Career = () => {
           <div className={styles.timestamp}>
             <div className={styles.time}>2020</div>
             <div className={styles.description}>
-              <h3>Graduation from Highschool (A levels / Abitur)</h3>
+              <h3>
+                Graduation from Highschool
+                <br />
+                (A levels / Abitur)
+              </h3>
               <p>@ Christoph-Graupner-Gymnasium</p>
               <ul>
                 <li>
