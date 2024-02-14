@@ -10,7 +10,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
-  min-height: 100dvh;
+  min-height: 100lvh;
   padding: 4rem 0;
 
   @media (max-width: 600px) {
@@ -62,8 +62,8 @@
 
 .text h1 {
   font-family: "Roboto Mono", "Roboto", sans-serif;
-  font-size: 3.1rem;
   font-weight: normal;
+  font-size: 3.1rem;
   margin: 1rem 0;
 
   @media (max-width: 1128px) {
@@ -140,4 +140,20 @@
   @media (max-width: 960px) {
     object-position: center center;
   }
+}
+
+.icons{
+  font-size: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.icons a{
+  color: inherit;
+}
+
+.spacer{
+  width: 1rem;
 }

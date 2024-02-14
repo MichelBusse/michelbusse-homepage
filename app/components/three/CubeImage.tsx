@@ -12,7 +12,6 @@ type Props = {
   position: Vector3;
   scale: Vector3;
   rotation: Euler;
-  color: ColorRepresentation;
   visible: boolean;
 };
 
@@ -28,7 +27,7 @@ function CubeImage(props: Props) {
           scale={props.scale}
         >
           <planeGeometry attach="geometry" args={[1, 1]} />
-          <meshStandardMaterial attach="material" map={texture} transparent color={props.color}/>
+          <meshStandardMaterial attach="material" map={texture} transparent/>
         </mesh>
       )}
     </>

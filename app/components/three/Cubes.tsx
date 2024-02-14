@@ -2,7 +2,7 @@
 
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import { Group, Quaternion, Vector3 } from "three";
+import { Euler, Group, Quaternion, Vector3 } from "three";
 import Cube from "./Cube";
 
 const Cubes = () => {
@@ -14,7 +14,7 @@ const Cubes = () => {
       targetPosition: new Vector3(0, 0, 0),
       targetScale: new Vector3(1, 1, 1),
       targetRotation: new Quaternion(),
-      imageUrl: "/images/technologies/android.svg",
+      imageUrl: "/images/technologies/android-grey.svg",
       letterAbout: "A",
       letterPortfolio: "W",
       letterCareer: "S",
@@ -26,7 +26,7 @@ const Cubes = () => {
       targetPosition: new Vector3(0, 0, 0),
       targetScale: new Vector3(1, 1, 1),
       targetRotation: new Quaternion(),
-      imageUrl: "/images/technologies/flutter.svg",
+      imageUrl: "/images/technologies/flutter-grey.svg",
       letterAbout: "B",
       letterPortfolio: "O",
       letterCareer: "T",
@@ -38,7 +38,7 @@ const Cubes = () => {
       targetPosition: new Vector3(0, 0, 0),
       targetScale: new Vector3(1, 1, 1),
       targetRotation: new Quaternion(),
-      imageUrl: "/images/technologies/ios.png",
+      imageUrl: "/images/technologies/ios-grey.svg",
       letterAbout: "O",
       letterPortfolio: "R",
       letterCareer: "E",
@@ -50,7 +50,7 @@ const Cubes = () => {
       targetPosition: new Vector3(0, 0, 0),
       targetScale: new Vector3(1, 1, 1),
       targetRotation: new Quaternion(),
-      imageUrl: "/images/technologies/reactjs.png",
+      imageUrl: "/images/technologies/react-grey.svg",
       letterAbout: "U",
       letterPortfolio: "K",
       letterCareer: "P",
@@ -62,7 +62,7 @@ const Cubes = () => {
       targetPosition: new Vector3(0, 0, 0),
       targetScale: new Vector3(1, 1, 1),
       targetRotation: new Quaternion(),
-      imageUrl: "/images/technologies/unity.png",
+      imageUrl: "/images/technologies/unity-grey.svg",
       letterAbout: "T",
       letterPortfolio: "S",
       letterCareer: "S",
@@ -135,8 +135,8 @@ const Cubes = () => {
     let headerSection = document.getElementById("header");
     let aboutSection = document.getElementById("about");
     let technologiesSection = document.getElementById("technologies");
-    let portfolioHeadlineSection = document.getElementById("portfolioHeadline");
-    let careerHeadlineSection = document.getElementById("careerHeadline");
+    let portfolioSection = document.getElementById("portfolio");
+    let careerSection = document.getElementById("career");
     let contactSection = document.getElementById("contact");
 
     // Check if sections are not null
@@ -144,8 +144,8 @@ const Cubes = () => {
       headerSection == null ||
       aboutSection == null ||
       technologiesSection == null ||
-      portfolioHeadlineSection == null ||
-      careerHeadlineSection == null ||
+      portfolioSection == null ||
+      careerSection == null ||
       contactSection == null
     ) {
       cubes[0].targetPosition = new Vector3(10, 0, 0);
@@ -169,16 +169,16 @@ const Cubes = () => {
           getRelativeVerticalPosition(aboutSection, 0),
           0
         ),
-        // PortfolioHeadline
+        // Portfolio
         new Vector3(
           0,
-          getRelativeVerticalPosition(portfolioHeadlineSection, 0),
+          getRelativeVerticalPosition(portfolioSection, 0),
           0
         ),
-        // CareerHeadline
+        // Career
         new Vector3(
           0,
-          getRelativeVerticalPosition(careerHeadlineSection, 0),
+          getRelativeVerticalPosition(careerSection, 0),
           0
         ),
         // Contact
@@ -196,9 +196,9 @@ const Cubes = () => {
         new Quaternion().setFromAxisAngle(new Vector3(0, 0, 0), 0),
         // About
         new Quaternion().setFromAxisAngle(new Vector3(1, 0, 0), Math.PI),
-        // PortfolioHeadline
+        // Portfolio
         new Quaternion().setFromAxisAngle(new Vector3(0, 0, 0), 0),
-        // CareerHeadline
+        // Career
         new Quaternion().setFromAxisAngle(new Vector3(1, 0, 0), Math.PI),
         // Contact
         new Quaternion().setFromAxisAngle(new Vector3(0, 0, 0), 0),
@@ -211,9 +211,9 @@ const Cubes = () => {
         new Vector3(0.7, 0.7, 0.7),
         // About
         new Vector3(0.9, 0.9, 0.9),
-        // PortfolioHeadline
+        // Portfolio
         new Vector3(0.9, 0.9, 0.9),
-        // CareerHeadline
+        // Career
         new Vector3(0.9, 0.9, 0.9),
         // Contact
         new Vector3(0.9, 0.9, 0.9),
@@ -225,9 +225,9 @@ const Cubes = () => {
           new Vector3(0.7, 0.7, 0.7),
           // About
           new Vector3(0.8, 0.8, 0.8),
-          // PortfolioHeadline
+          // Portfolio
           new Vector3(0.8, 0.8, 0.8),
-          // CareerHeadline
+          // Career
           new Vector3(0.8, 0.8, 0.8),
           // Contact
           new Vector3(0.8, 0.8, 0.8),
@@ -276,9 +276,9 @@ const Cubes = () => {
           new Vector3(0.7, 0.7, 0.7),
           // About
           new Vector3(0.7, 0.7, 0.7),
-          // PortfolioHeadline
+          // Portfolio
           new Vector3(0.5, 0.5, 0.5),
-          // CareerHeadline
+          // Career
           new Vector3(0.5, 0.5, 0.5),
           // Contact
           new Vector3(0.7, 0.7, 0.7),
@@ -312,7 +312,7 @@ const Cubes = () => {
         }
       } else if (
         window.scrollY >=
-        careerHeadlineSection.offsetTop - window.innerHeight * 0.75
+        careerSection.offsetTop - window.innerHeight * 0.75
       ) {
         if (currentSection != 3) {
           currentSection != -1 && (sectionChangedTime = clock.elapsedTime);
@@ -320,7 +320,7 @@ const Cubes = () => {
         }
       } else if (
         window.scrollY >=
-        portfolioHeadlineSection.offsetTop - window.innerHeight * 0.75
+        portfolioSection.offsetTop - window.innerHeight * 0.75
       ) {
         if (currentSection != 2) {
           currentSection != -1 && (sectionChangedTime = clock.elapsedTime);
@@ -378,6 +378,23 @@ const Cubes = () => {
                 verticalExtend * 0.5,
               0
             );
+
+            cube.targetRotation = new Quaternion();
+
+            const delay = 30;
+            const duration = 0.75;
+
+            const interval =
+              (clock.elapsedTime + (index / cubes.length) * delay) % delay;
+            if (interval < duration) {
+              cube.targetRotation = new Quaternion().setFromEuler(
+                new Euler(
+                  index % 3 == 0 ? (interval / duration) * Math.PI * 2 : 0,
+                  index % 3 == 1 ? (interval / duration) * Math.PI * 2 : 0,
+                  index % 3 == 2 ? (interval / duration) * Math.PI * 2 : 0,
+                )
+              );
+            }
           }
 
           // About Section
@@ -409,18 +426,20 @@ const Cubes = () => {
               ) * radius,
               0
             );
+
+            cube.targetRotation = new Quaternion();
           }
 
           // Portfolio Headline Section
-          if (cube.section.current == 2 && portfolioHeadlineSection != null) {
+          if (cube.section.current == 2 && portfolioSection != null) {
             // Parameters for arrangement in current section
             let horizontalExtend = Math.min(
-              getRelativeHorizontalSize(portfolioHeadlineSection, 180),
+              getRelativeHorizontalSize(portfolioSection, 180),
               13
             );
             if (window.innerWidth < 450) {
               horizontalExtend = Math.min(
-                getRelativeHorizontalSize(portfolioHeadlineSection, 200),
+                getRelativeHorizontalSize(portfolioSection, 200),
                 13
               );
             }
@@ -432,18 +451,20 @@ const Cubes = () => {
               0,
               0
             );
+
+            cube.targetRotation = new Quaternion();
           }
 
           // Career Headline Section
-          if (cube.section.current == 3 && careerHeadlineSection != null) {
+          if (cube.section.current == 3 && careerSection != null) {
             // Parameters for arrangement in current section
             let horizontalExtend = Math.min(
-              getRelativeHorizontalSize(careerHeadlineSection, 180),
+              getRelativeHorizontalSize(careerSection, 180),
               13
             );
             if (window.innerWidth < 450) {
               horizontalExtend = Math.min(
-                getRelativeHorizontalSize(careerHeadlineSection, 200),
+                getRelativeHorizontalSize(careerSection, 200),
                 13
               );
             }
@@ -455,6 +476,8 @@ const Cubes = () => {
               0,
               0
             );
+
+            cube.targetRotation = new Quaternion();
           }
 
           // Contact Section
@@ -489,13 +512,15 @@ const Cubes = () => {
               ) * radius,
               0
             );
+
+            cube.targetRotation = new Quaternion();
           }
 
           // Set target position for cube in current section
           cube.targetPosition.add(basePositions[cube.section.current]);
 
           // Set target rotation for cube in current section
-          cube.targetRotation = baseRotations[cube.section.current];
+          cube.targetRotation.multiply(baseRotations[cube.section.current]);
 
           // Set target scale of cube in current section responsively
           cube.targetScale = baseScales[cube.section.current];
@@ -504,7 +529,7 @@ const Cubes = () => {
     }
 
     // How smooth the transforms should appear
-    let smoothness = 0.05;
+    let smoothness = 0.08;
 
     // Move cubes to targetPosition and add rotation
     cubes.forEach((cube) => {

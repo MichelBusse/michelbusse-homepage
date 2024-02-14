@@ -1,6 +1,8 @@
 import styles from "./Header.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+import { FaLinkedin, FaGithub, FaStackOverflow } from "react-icons/fa";
+import DiscoverMoreButton from "./DicoverMoreButton";
 
 const Header = () => {
   return (
@@ -13,9 +15,26 @@ const Header = () => {
             and I am a passionate
             <br /> software engineer.
           </p>
-          <Link href={"#about"}>
-            <button>Discover More</button>
-          </Link>
+          <DiscoverMoreButton />
+          <div className={styles.icons}>
+            <Link
+              target="_blank"
+              href={"https://www.linkedin.com/in/michel-busse"}
+            >
+              <FaLinkedin />
+            </Link>
+            <div className={styles.spacer}></div>
+            <Link target="_blank" href={"https://github.com/MichelBusse"}>
+              <FaGithub />
+            </Link>
+            <div className={styles.spacer}></div>
+            <Link
+              target="_blank"
+              href={"https://stackoverflow.com/users/21434824/michel"}
+            >
+              <FaStackOverflow />
+            </Link>
+          </div>
         </div>
       </div>
       <div className={styles.imageWrapper}>

@@ -10,7 +10,7 @@ const Technologies = () => {
             <div className={styles.box}>
               <h3>VR / AR</h3>
               <ul>
-                <li><div className={styles.logo}><Image src={"/images/technologies/unity.png"} alt={"Unity Logo"} width={10} height={10}/></div>Unity</li>
+                <li><div className={styles.logo}><Image src={"/images/technologies/unity.svg"} alt={"Unity Logo"} width={10} height={10}/></div>Unity</li>
                 <li><div className={styles.logo}><Image src={"/images/technologies/mrtk.png"} alt={"MRTK Logo"} width={10} height={10}/></div>MRTK</li>
                 <li><div className={styles.logo}><Image src={"/images/technologies/realitykit.png"} alt={"RealityKit Logo"} width={10} height={10}/></div>RealityKit</li>
                 <li><div className={styles.logo}><Image src={"/images/technologies/opencv.png"} alt={"OpenCV Logo"} width={10} height={10}/></div>OpenCV</li>
@@ -21,7 +21,7 @@ const Technologies = () => {
             <div className={styles.box}>
               <h3>Web</h3>
               <ul>
-                <li><div className={styles.logo}><Image src={"/images/technologies/reactjs.png"} alt={"ReactJS Logo"} width={10} height={10}/></div>ReactJS</li>
+                <li><div className={styles.logo}><Image src={"/images/technologies/react.svg"} alt={"ReactJS Logo"} width={10} height={10}/></div>ReactJS</li>
                 <li><div className={styles.logo}><Image src={"/images/technologies/nextjs.svg"} alt={"NextJS Logo"} width={10} height={10}/></div>NextJS</li>
                 <li><div className={styles.logo}><Image src={"/images/technologies/vite.png"} alt={"Vite Logo"} width={10} height={10}/></div>Vite</li>
                 <li><div className={styles.logo}><Image src={"/images/technologies/threejs.png"} alt={"ThreeJS Logo"} width={10} height={10}/></div>ThreeJS</li>
@@ -52,7 +52,7 @@ const Technologies = () => {
               <h3>Mobile</h3>
               <ul>
                 <li><div className={styles.logo}><Image src={"/images/technologies/flutter.svg"} alt={"Flutter Logo"} width={10} height={10}/></div>Flutter (Dart)</li>
-                <li><div className={styles.logo}><Image src={"/images/technologies/ios.png"} alt={"IOS Logo"} width={10} height={10}/></div>Native IOS (Swift)</li>
+                <li><div className={styles.logo}><Image src={"/images/technologies/ios.svg"} alt={"IOS Logo"} width={10} height={10}/></div>Native IOS (Swift)</li>
                 <li><div className={styles.logo}><Image src={"/images/technologies/android.svg"} alt={"Android Logo"} width={10} height={10}/></div>Native Android (Kotlin)</li>
               </ul>
             </div>

@@ -15,17 +15,17 @@ const Navbar = () => {
       let headerSection = document.getElementById("header");
       let aboutSection = document.getElementById("about");
       let technologiesSection = document.getElementById("technologies");
-      let portfolioHeadlineSection =
-        document.getElementById("portfolioHeadline");
-      let careerHeadlineSection = document.getElementById("careerHeadline");
+      let portfolioSection =
+        document.getElementById("portfolio");
+      let careerSection = document.getElementById("career");
       let contactSection = document.getElementById("contact");
 
       if (
         headerSection == null ||
         aboutSection == null ||
         technologiesSection == null ||
-        portfolioHeadlineSection == null ||
-        careerHeadlineSection == null ||
+        portfolioSection == null ||
+        careerSection == null ||
         contactSection == null
       ) {
         return;
@@ -39,12 +39,12 @@ const Navbar = () => {
         setCurrentSection("contact");
       } else if (
         window.scrollY >=
-        careerHeadlineSection.offsetTop - window.innerHeight * 0.75
+        careerSection.offsetTop - window.innerHeight * 0.75
       ) {
         setCurrentSection("career");
       } else if (
         window.scrollY >=
-        portfolioHeadlineSection.offsetTop - window.innerHeight * 0.75
+        portfolioSection.offsetTop - window.innerHeight * 0.75
       ) {
         setCurrentSection("portfolio");
       } else if (
@@ -84,12 +84,12 @@ const Navbar = () => {
             About
           </li>
         </Link>
-        <Link href={"/#portfolioHeadline"}>
+        <Link href={"/#portfolio"}>
           <li className={currentSection == "portfolio" ? styles.active : ""}>
             Portfolio
           </li>
         </Link>
-        <Link href={"/#careerHeadline"}>
+        <Link href={"/#career"}>
           <li className={currentSection == "career" ? styles.active : ""}>
             Career
           </li>
@@ -121,12 +121,12 @@ const Navbar = () => {
               About
             </li>
           </Link>
-          <Link href={"/#portfolioHeadline"}>
+          <Link href={"/#portfolio"}>
             <li className={currentSection == "portfolio" ? styles.active : ""}>
               Portfolio
             </li>
           </Link>
-          <Link href={"/#careerHeadline"}>
+          <Link href={"/#career"}>
             <li className={currentSection == "career" ? styles.active : ""}>
               Career
             </li>

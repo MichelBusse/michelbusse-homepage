@@ -37,7 +37,6 @@ const Cube = forwardRef<Group, Props>((props, ref) => {
         position={new Vector3(0, 0, 0.501)}
         rotation={new Euler(1 * Math.PI, 1 * Math.PI, 1 * Math.PI)}
         scale={new Vector3(0.7, 0.7, 0.7)}
-        color={0x000000}
       />
       <CubeText
         visible={currentSection == 1}

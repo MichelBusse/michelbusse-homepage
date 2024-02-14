@@ -8,7 +8,7 @@ const HeadlinePlaceholder = ({id} : Props) => {
   return (
     <section
       id={id}
-      className={styles.portfolioHeadline}
+      className={styles.headlinePlaceholder}
     ></section>
   );
 };
