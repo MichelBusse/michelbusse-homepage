@@ -40,8 +40,6 @@ const MouseCircle = () => {
         mouseY,
         destinationX,
         destinationY,
-        distanceX,
-        distanceY,
       } = positionRef.current;
 
       // Cancel if no mouse position is yet determined
@@ -53,8 +51,8 @@ const MouseCircle = () => {
         positionRef.current.destinationX = mouseX;
         positionRef.current.destinationY = mouseY;
       } else {
-        const distanceX = (mouseX - destinationX) * 0.4;
-        const distanceY = (mouseY - destinationY) * 0.4;
+        const distanceX = (mouseX - destinationX);
+        const distanceY = (mouseY - destinationY);
 
         if (Math.abs(distanceX) + Math.abs(distanceY) < 0.1) {
           positionRef.current.destinationX = mouseX;
