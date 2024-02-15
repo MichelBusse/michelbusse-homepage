@@ -8,7 +8,7 @@ const Career = () => {
       <section className={styles.career}>
         <div className={styles.timestamps}>
           <div className={styles.timestamp}>
-            <div className={styles.time}>2022</div>
+            <div className={styles.time}>2024</div>
             <div className={styles.description}>
               <h3>Research exchange with Apple&nbsp;Park&nbsp;Cupertino</h3>
               <p>@ Apple Park Cupertino</p>
