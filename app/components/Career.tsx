@@ -7,13 +7,23 @@ const Career = () => {
       <HeadlinePlaceholder id={"career"} />
       <section className={styles.career}>
         <div className={styles.timestamps}>
+          <div className={styles.timestamp}>
+            <div className={styles.time}>2022</div>
+            <div className={styles.description}>
+              <h3>Research exchange with Apple&nbsp;Park&nbsp;Cupertino</h3>
+              <p>@ Apple Park Cupertino</p>
+              <ul>
+                <li>Presentation of AR navigation system on Vision Pro</li>
+              </ul>
+            </div>
+          </div>
           <div className={styles.timeline}>
             <div className={styles.arrowHead}></div>
           </div>
           <div className={styles.timestamp}>
             <div className={styles.time}>since 2023</div>
             <div className={styles.description}>
-              <h3>Senior Software Engineer & Scientific Assistant</h3>
+              <h3>Senior Software Engineer & Scientific&nbsp;Assistant</h3>
               <p>@ Fraunhofer IWU</p>
               <ul>
                 <li>Training new employees</li>
@@ -31,18 +41,17 @@ const Career = () => {
           <div className={styles.timestamp}>
             <div className={styles.time}>2022</div>
             <div className={styles.description}>
-              <h3>Presentation in Pittsburgh, US</h3>
+              <h3>Research exchange with UPMC&nbsp;Pittsburgh</h3>
               <p>@ UPMC Pittsburgh</p>
               <ul>
                 <li>Presentation of AR navigation system</li>
-                <li>Participation in study of accuracy</li>
               </ul>
             </div>
           </div>
           <div className={styles.timestamp}>
             <div className={styles.time}>2021 - 2022</div>
             <div className={styles.description}>
-              <h3>Software Engineer & Scientific Assistant</h3>
+              <h3>Software Engineer & Scientific&nbsp;Assistant</h3>
               <p>@ Leipzig University Hospital</p>
               <ul>
                 <li>
@@ -59,7 +68,7 @@ const Career = () => {
           <div className={styles.timestamp}>
             <div className={styles.time}>since 2020</div>
             <div className={styles.description}>
-              <h3>Owner & Software Engineer</h3>
+              <h3>Owner & Software&nbsp;Engineer</h3>
               <p>@ M-to-B Software</p>
               <ul>
                 <li>
@@ -80,7 +89,7 @@ const Career = () => {
           <div className={styles.timestamp}>
             <div className={styles.time}>2020 - 2024</div>
             <div className={styles.description}>
-              <h3>Bachelor of Science Computer Science</h3>
+              <h3>Bachelor of Science Computer&nbsp;Science</h3>
               <p>@ University Leipzig</p>
               <ul>
                 <li>

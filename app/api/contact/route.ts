@@ -1,4 +1,3 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import { NextRequest, NextResponse } from "next/server";
 
 import nodemailer from "nodemailer";
@@ -17,7 +16,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
   const mailData = {
     from: data.email,
     to: "contact@michelbusse.dev",
-    subject: `Kontaktformulat - michelbusse.dev`,
+    subject: `Kontaktformular - michelbusse.dev`,
     text: data.text + "\n\nE-Mail: " + data.email,
   };
 

@@ -105,10 +105,12 @@
   height: calc(100dvh - 3.9rem);
   background-color: $dark-blue-color;
   translate: calc(100% + 5rem);
-  transition: all 1s ease-in-out;
+  transition: translate 0.5s ease-in-out;
   padding: 2rem 0;
   padding-left: 5rem;
   clip-path: polygon(0 0, 100% 0,100% 100%, 5rem 100%);  
+  overflow: hidden;
+  transform: translateZ(0);
 }
 
 .mobileMenu.visible {
@@ -118,12 +120,14 @@
 .mobileMenu ul{
   padding: 0;
   list-style: none;
+  transform: translateZ(0);
 }
 
 .mobileMenu li{
   position: relative;
   font-size: 1.2rem;
   margin: 2rem 0;
+  transform: translateZ(0);
 }
 
 .mobileMenu li::before {
@@ -176,7 +180,7 @@
   width: 100%;
   height: 0.15rem;
   background: $white-color;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .mobileMenuButton .bar1 {
@@ -211,15 +215,15 @@
 .mobileMenuButton.active .bar1 {
   transform: rotate(45deg);
   translate: 20%;
-  transition-delay: 0.3s;
+  transition-delay: 0.15s;
 }
 
 .mobileMenuButton.active .bar2 {
-  transform: translate(100%);
+  transform: translate(105%);
 }
 
 .mobileMenuButton.active .bar3 {
   transform: rotate(-45deg);
   translate: 20%;
-  transition-delay: 0.3s;
+  transition-delay: 0.15s;
 }
