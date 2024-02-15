@@ -13,7 +13,7 @@ const Career = () => {
               <h3>Research exchange with Apple&nbsp;Park&nbsp;Cupertino</h3>
               <p>@ Apple Park Cupertino</p>
               <ul>
-                <li>Presentation of AR navigation system on Vision Pro</li>
+                <li>Presentation of AR navigation system on Apple&nbsp;Vision&nbsp;Pro</li>
               </ul>
             </div>
           </div>
@@ -26,7 +26,6 @@ const Career = () => {
               <h3>Senior Software Engineer & Scientific&nbsp;Assistant</h3>
               <p>@ Fraunhofer IWU</p>
               <ul>
-                <li>Training new employees</li>
                 <li>
                   Leading development of iOS app for AR based navigation in
                   surgery
@@ -35,6 +34,7 @@ const Career = () => {
                   Leading development of intrasurgical navigation app for Apple
                   Vision Pro
                 </li>
+                <li>Training of new employees</li>
               </ul>
             </div>
           </div>
@@ -44,7 +44,7 @@ const Career = () => {
               <h3>Research exchange with UPMC&nbsp;Pittsburgh</h3>
               <p>@ UPMC Pittsburgh</p>
               <ul>
-                <li>Presentation of AR navigation system</li>
+                <li>Presentation of AR navigation system on Hololens&nbsp;2</li>
               </ul>
             </div>
           </div>
@@ -72,7 +72,7 @@ const Career = () => {
               <p>@ M-to-B Software</p>
               <ul>
                 <li>
-                  Development of apps for Android, iOS and Web on behalf of
+                  Development of apps for Android, iOS, and Web on behalf of
                   customers
                 </li>
                 <li>
@@ -119,14 +119,14 @@ const Career = () => {
                 <li>
                   Graduation with GPA <b>1.2</b>
                 </li>
-                <li>Top of the year (price awarded)</li>
+                <li>One of the best of the year (price awarded)</li>
                 <li>Bilingual profile (in-depth language training)</li>
                 <li>English (fluently), Spanish (basics), French (basics)</li>
               </ul>
             </div>
           </div>
           <div className={styles.timestamp}>
-            <div className={styles.time}>2019</div>
+            <div className={styles.time}>2020</div>
             <div className={styles.description}>
               <h3>5th Place Computer Science Contest</h3>
               <p>@ Computer Science Contest Saxony</p>

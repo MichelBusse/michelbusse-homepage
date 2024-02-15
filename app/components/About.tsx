@@ -17,9 +17,9 @@ const About = () => {
             incredible team, we&apos;ve tackled all sorts of projects, from intricate
             client demands to cutting-edge innovations. The thrill of presenting
             and refining those systems at places like UPMC Pittsburgh and Apple
-            Headquarters Cupertino has only fueled my excitement for more
+            Park Cupertino has only fueled my excitement for more
             challenges and projects to sink into. I hope you enjoy browsing
-            through my portfolio and I look forward to hearing from you!
+            through my portfolio, and I look forward to hearing from you!
           </p>
         </div>
       </div>
