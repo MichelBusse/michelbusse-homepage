@@ -36,7 +36,6 @@ function BackgroundCanvas() {
         <BackgroundSphere />
         <MousePositionLight />
         <Cubes/>
-        <Stats/>
       </Canvas>
     </div>
   );
