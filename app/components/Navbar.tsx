@@ -28,6 +28,7 @@ const Navbar = () => {
         careerSection == null ||
         contactSection == null
       ) {
+        setCurrentSection("");
         return;
       }
 

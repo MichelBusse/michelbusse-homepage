@@ -1,13 +1,13 @@
 "use client";
 
-import { useGLTF } from "@react-three/drei";
 import { RefObject, forwardRef, useState } from "react";
-import { Euler, Group, Mesh, Vector3 } from "three";
+import { Euler, Group, Mesh, Object3D, Object3DEventMap, Vector3 } from "three";
 import CubeText from "./CubeText";
 import { useFrame } from "@react-three/fiber";
 import CubeImage from "./CubeImage";
 
 type Props = {
+  mesh: Mesh;
   section: RefObject<number>;
   imageUrl: string;
   letterAbout: string;
@@ -17,18 +17,20 @@ type Props = {
 };
 
 const Cube = forwardRef<Group, Props>((props, ref) => {
-  const { nodes } = useGLTF("/models/cube.glb");
   const [currentSection, setCurrentSection] = useState(0);
 
   useFrame(() => {
-    if(props.section.current != null && props.section.current != currentSection){
+    if (
+      props.section.current != null &&
+      props.section.current != currentSection
+    ) {
       setCurrentSection(props.section.current);
     }
-  })
+  });
 
   return (
     <group ref={ref}>
-      <mesh geometry={(nodes.Cube as Mesh).geometry}>
+      <mesh geometry={props.mesh.geometry}>
         <meshStandardMaterial color={0xffffff} />
       </mesh>
       <CubeImage
@@ -77,5 +79,3 @@ const Cube = forwardRef<Group, Props>((props, ref) => {
 Cube.displayName = "Cube";
 
 export default Cube;
-
-useGLTF.preload("/models/cube.glb");

@@ -4,21 +4,36 @@ import { Canvas } from "@react-three/fiber";
 import styles from "./BackgroundCanvas.module.scss";
 import BackgroundSphere from "./BackgroundSphere";
 import { PerspectiveCamera } from "three";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import CustomCamera from "./CustomCamera";
 import Cubes from "./Cubes";
 import MousePositionLight from "./MousePositionLight";
 
 function BackgroundCanvas() {
   const cameraRef = useRef<PerspectiveCamera>(null);
+  const [canvasHeight, setCanvasHeight] = useState(0);
+
+  useEffect(() => {
+    const refreshCanvasHeight = () => {
+      setCanvasHeight(window.outerHeight);
+    }
+
+    refreshCanvasHeight();
+
+    window.addEventListener("resize", refreshCanvasHeight);
+
+    return () => {
+      window.removeEventListener("resize", refreshCanvasHeight);
+    }
+  }, [])
 
   return (
-    <div className={styles.wrapper} id="canvasWrapper">
+    <div className={styles.wrapper} id="canvasWrapper" style={{height: canvasHeight}}>
       <Canvas>
         <ambientLight args={[0xffffff, 0.5]} />
         <CustomCamera cameraRef={cameraRef} />
         <BackgroundSphere />
-        <MousePositionLight cameraRef={cameraRef} />
+        <MousePositionLight />
         <Cubes/>
       </Canvas>
     </div>

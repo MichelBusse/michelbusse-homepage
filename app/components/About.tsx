@@ -4,7 +4,7 @@ import circleSectionStyle from "./CircleSection.module.scss";
 const About = () => {
   return (
     <section id="about" className={circleSectionStyle.circleSection}>
-      <div className={circleSectionStyle.placeholder}></div>
+      <div className={circleSectionStyle.placeholder} id={"aboutPlaceholder"}></div>
       <div className={circleSectionStyle.textWrapper}>
         <div className={styles.text}>
           <h2>About me</h2>

@@ -49,7 +49,7 @@ const Contact = () => {
 
   return (
     <section id={"contact"} className={circleSectionStyle.circleSection}>
-      <div className={circleSectionStyle.placeholder}></div>
+      <div className={circleSectionStyle.placeholder} id={"contactPlaceholder"}></div>
       <div className={circleSectionStyle.textWrapper}>
         <div className={styles.text}>
           <h2>Contact</h2>

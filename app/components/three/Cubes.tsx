@@ -1,9 +1,10 @@
 "use client";
 
-import { useFrame } from "@react-three/fiber";
+import { RootState, useFrame, useThree } from "@react-three/fiber";
 import { useRef } from "react";
-import { Euler, Group, Quaternion, Vector3 } from "three";
+import { Euler, Group, Mesh, Quaternion, Vector3 } from "three";
 import Cube from "./Cube";
+import { useGLTF } from "@react-three/drei";
 
 const Cubes = () => {
   // Create individual cubes.
@@ -101,15 +102,21 @@ const Cubes = () => {
       element: HTMLElement,
       percent: number
     ) => {
-      let elementCenter;
-      elementCenter =
-        ((element.offsetLeft +
-          element.getBoundingClientRect().width * 0.5 -
-          windowWidth * 0.5) /
-          windowWidth) *
-        20;
+      let offsetLeft = 0;
+      let calcElement : HTMLElement | null = element
+      while (calcElement) {
+        offsetLeft += calcElement.offsetLeft;
+        let parentElement = calcElement.offsetParent;
+        if(parentElement && (parentElement instanceof HTMLElement)){
+          calcElement = parentElement as HTMLElement
+        }else{
+          calcElement = null;
+        }
+      }      
+      const elementCenterHTML = offsetLeft + element.getBoundingClientRect().width * 0.5;
 
-      return elementCenter + getRelativeHorizontalSize(element, percent);
+      const elementCenterThree = (elementCenterHTML / windowWidth - 0.5) * windowWidth / windowHeight * 7
+      return elementCenterThree + getRelativeHorizontalSize(element, percent);
     };
 
     // Calculate relative vertical size in 3D space in percent of the referenced elements height (100% is half of elements height)
@@ -128,8 +135,20 @@ const Cubes = () => {
     ) => {
       let elementCenter;
 
+      let offsetTop = 0;
+      let calcElement : HTMLElement | null = element
+      while (calcElement) {
+          offsetTop += calcElement.offsetTop;
+          let parentElement = calcElement.offsetParent;
+          if(parentElement && (parentElement instanceof HTMLElement)){
+            calcElement = parentElement as HTMLElement
+          }else{
+            calcElement = null;
+          }
+      }
+
       elementCenter =
-        ((element.offsetTop +
+        ((offsetTop +
           element.getBoundingClientRect().height * 0.5 -
           windowHeight * 0.5) /
           windowHeight) *
@@ -142,19 +161,23 @@ const Cubes = () => {
 
     let headerSection = document.getElementById("header");
     let aboutSection = document.getElementById("about");
+    let aboutPlaceholder = document.getElementById("aboutPlaceholder");
     let technologiesSection = document.getElementById("technologies");
     let portfolioSection = document.getElementById("portfolio");
     let careerSection = document.getElementById("career");
     let contactSection = document.getElementById("contact");
+    let contactPlaceholder = document.getElementById("contactPlaceholder");
 
     // Check if sections are not null
     if (
       headerSection == null ||
       aboutSection == null ||
+      aboutPlaceholder == null ||
       technologiesSection == null ||
       portfolioSection == null ||
       careerSection == null ||
-      contactSection == null
+      contactSection == null ||
+      contactPlaceholder == null
     ) {
       cubes[0].targetPosition = new Vector3(10, 0, 0);
       cubes[1].targetPosition = new Vector3(10, 0, 0);
@@ -173,26 +196,26 @@ const Cubes = () => {
         ),
         // About
         new Vector3(
-          getRelativeHorizontalPosition(aboutSection, -50),
-          getRelativeVerticalPosition(aboutSection, 0),
+          getRelativeHorizontalPosition(aboutPlaceholder, 0),
+          getRelativeVerticalPosition(aboutPlaceholder, 0),
           0
         ),
         // Portfolio
         new Vector3(
-          0,
+          getRelativeHorizontalPosition(portfolioSection, 0),
           getRelativeVerticalPosition(portfolioSection, 0),
           0
         ),
         // Career
         new Vector3(
-          0,
+          getRelativeHorizontalPosition(careerSection, 0),
           getRelativeVerticalPosition(careerSection, 0),
           0
         ),
         // Contact
         new Vector3(
-          getRelativeHorizontalPosition(contactSection, -50),
-          getRelativeVerticalPosition(contactSection, 0),
+          getRelativeHorizontalPosition(contactPlaceholder, 0),
+          getRelativeVerticalPosition(contactPlaceholder, 0),
           0
         ),
       ];
@@ -246,39 +269,12 @@ const Cubes = () => {
         // Header
         basePositions[0] = new Vector3(
           getRelativeHorizontalPosition(headerSection, 0),
-          getRelativeVerticalPosition(aboutSection, -100) -
-            getRelativeHorizontalSize(aboutSection, 100),
-          0
-        );
-        // About
-        basePositions[1] = new Vector3(
-          getRelativeHorizontalPosition(aboutSection, 0),
-          getRelativeVerticalPosition(aboutSection, -100) - 1.6,
-          0
-        );
-
-        // Contact
-        basePositions[4] = new Vector3(
-          getRelativeHorizontalPosition(contactSection, 0),
-          getRelativeVerticalPosition(contactSection, -100) - 1.6,
+          getRelativeVerticalPosition(aboutPlaceholder, 0),
           0
         );
       }
 
       if (windowWidth < 600) {
-        // About
-        basePositions[1] = new Vector3(
-          getRelativeHorizontalPosition(aboutSection, 0),
-          getRelativeVerticalPosition(aboutSection, -100) - 1.4,
-          0
-        );
-
-        // Contact
-        basePositions[4] = new Vector3(
-          getRelativeHorizontalPosition(contactSection, 0),
-          getRelativeVerticalPosition(contactSection, -100) - 1.4,
-          0
-        );
         baseScales = [
           // Header
           new Vector3(0.7, 0.7, 0.7),
@@ -291,22 +287,6 @@ const Cubes = () => {
           // Contact
           new Vector3(0.7, 0.7, 0.7),
         ];
-      }
-
-      if (windowWidth < 450) {
-        // About
-        basePositions[1] = new Vector3(
-          getRelativeHorizontalPosition(aboutSection, 0),
-          getRelativeVerticalPosition(aboutSection, -100) - 1.3,
-          0
-        );
-
-        // Contact
-        basePositions[4] = new Vector3(
-          getRelativeHorizontalPosition(contactSection, 0),
-          getRelativeVerticalPosition(contactSection, -100) - 1.3,
-          0
-        );
       }
 
       // Change currentSection and sectionChangedTime if threshold is passed
@@ -541,6 +521,10 @@ const Cubes = () => {
 
     // Move cubes to targetPosition and add rotation
     cubes.forEach((cube) => {
+      if(!cube.ref.current){
+        return;
+      }
+
       // Jump to position if no previous position is set, otherwise transition smoothly
       if (cube.ref.current!.position.equals(new Vector3(0, 0, 0))) {
         cube.ref.current!.position.lerp(cube.targetPosition, 1);
@@ -560,11 +544,13 @@ const Cubes = () => {
     });
   });
 
+  const {nodes} = useGLTF("/models/cube.glb");
   return (
     <>
       {cubes.map((cube, index) => (
         <Cube
           ref={cube.ref}
+          mesh={(nodes.Cube as Mesh)}
           section={cube.section}
           key={index}
           imageUrl={cube.imageUrl}
@@ -579,3 +565,5 @@ const Cubes = () => {
 };
 
 export default Cubes;
+
+useGLTF.preload("/models/cube.glb");

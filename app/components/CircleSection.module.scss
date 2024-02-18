@@ -6,7 +6,7 @@
   min-height: 100lvh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   flex-direction: row;
 
   @media (max-width: 960px) {
@@ -17,9 +17,6 @@
 
 .placeholder {
   width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   @media (max-width: 960px) {
     width: 100%;

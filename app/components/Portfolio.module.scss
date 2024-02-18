@@ -42,7 +42,7 @@
   }
 
   @media (max-width: 450px){
-    padding: 1rem;
+    padding: 2rem 1rem;
   }
 }
 .imageWrapper {
@@ -57,6 +57,7 @@
 
   @media (max-width: 600px){
     padding: 0;
+    padding-bottom: 2.5rem;
   }
 }
 .imageWrapper img {

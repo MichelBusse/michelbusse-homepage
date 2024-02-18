@@ -1,6 +1,6 @@
 import { useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
-import { DirectionalLight, PerspectiveCamera } from "three";
+import { DirectionalLight, PerspectiveCamera, Vector3 } from "three";
 
 type Props = {
   cameraRef: React.RefObject<PerspectiveCamera>;
@@ -12,7 +12,7 @@ const CustomCamera = ({ cameraRef }: Props) => {
 
   useEffect(() => {
     const canvasWrapper = document.getElementById("canvasWrapper");
-    if(canvasWrapper == null){
+    if (canvasWrapper == null) {
       return;
     }
 
@@ -27,15 +27,25 @@ const CustomCamera = ({ cameraRef }: Props) => {
     }
   }, [cameraRef, set]);
 
-  useFrame((state) => {
+  let animationFrame: number;
+
+  useFrame(() => {
     const canvasWrapper = document.getElementById("canvasWrapper");
-    if(canvasWrapper == null){
+    if (canvasWrapper == null) {
       return;
     }
     const windowHeight = canvasWrapper.clientHeight;
 
     // Update camera according to scroll position
-    state.camera.position.y = -window.scrollY / (windowHeight / 7);
+    cameraRef.current?.position.lerp(
+      new Vector3(
+        cameraRef.current!.position.x,
+        -window.scrollY / (windowHeight / 7),
+        cameraRef.current!.position.z
+      ),
+      0.8
+    );
+
     directionalLightRef.current &&
       (directionalLightRef.current.position.y =
         -window.scrollY / (windowHeight / 6));
