@@ -110,17 +110,8 @@ const Cubes = () => {
       element: HTMLElement,
       percent: number
     ) => {
-      let offsetLeft = 0;
-      let calcElement: HTMLElement | null = element;
-      while (calcElement) {
-        offsetLeft += calcElement.offsetLeft;
-        let parentElement = calcElement.offsetParent;
-        if (parentElement && parentElement instanceof HTMLElement) {
-          calcElement = parentElement as HTMLElement;
-        } else {
-          calcElement = null;
-        }
-      }
+      const offsetLeft = element.getBoundingClientRect().left + window.scrollX
+
       const elementCenterHTML =
         offsetLeft + element.getBoundingClientRect().width * 0.5;
 
@@ -145,28 +136,18 @@ const Cubes = () => {
       element: HTMLElement,
       percent: number
     ) => {
-      let elementCenter;
+      const offsetTop = element.getBoundingClientRect().top + window.scrollY
 
-      let offsetTop = 0;
-      let calcElement: HTMLElement | null = element;
-      while (calcElement) {
-        offsetTop += calcElement.offsetTop;
-        let parentElement = calcElement.offsetParent;
-        if (parentElement && parentElement instanceof HTMLElement) {
-          calcElement = parentElement as HTMLElement;
-        } else {
-          calcElement = null;
-        }
-      }
+      const elementCenterHTML =
+        offsetTop + element.getBoundingClientRect().height * 0.5;
 
-      elementCenter =
-        ((offsetTop +
-          element.getBoundingClientRect().height * 0.5 -
+      const elementCenterThree =
+        ((elementCenterHTML -
           windowHeight * 0.5) /
           windowHeight) *
         -7;
 
-      return elementCenter - getRelativeVerticalSize(element, percent);
+      return elementCenterThree - getRelativeVerticalSize(element, percent);
     };
 
     // Relevant sections

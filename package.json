@@ -19,7 +19,8 @@
     "react-icons": "^5.0.1",
     "react-toastify": "^10.0.4",
     "sharp": "^0.33.2",
-    "three": "^0.161.0"
+    "three": "^0.161.0",
+    "typed.js": "^2.1.0"
   },
   "devDependencies": {
     "@types/node": "^20",

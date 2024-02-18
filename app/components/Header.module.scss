@@ -50,6 +50,16 @@
   }
 }
 
+.text{
+  width: 25rem;
+  @media (max-width: 1128px) {
+    width: 20rem;
+  }
+  @media (max-width: 960px) {
+    width: 100%;
+  }
+}
+
 .text .preHeadline {
   font-size: 1.1rem;
   color: $light-grey-color;

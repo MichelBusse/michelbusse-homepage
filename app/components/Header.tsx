@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedin, FaGithub, FaStackOverflow } from "react-icons/fa";
 import DiscoverMoreButton from "./DicoverMoreButton";
+import TypeWriter from "./TypeWriter";
 
 const Header = () => {
   return (
@@ -10,7 +11,9 @@ const Header = () => {
       <div className={styles.textWrapper}>
         <div className={styles.text}>
           <p className={styles.preHeadline}>Hey, my name is</p>
-          <h1>Michel Busse|</h1>
+          <h1>
+            <TypeWriter typewriterKey="headline">Michel Busse</TypeWriter>
+          </h1>
           <p className={styles.slogan}>
             and I am a passionate
             <br /> software engineer.

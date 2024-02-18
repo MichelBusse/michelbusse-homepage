@@ -6,6 +6,7 @@ import { FaLinkedin, FaGithub, FaStackOverflow } from "react-icons/fa";
 import Link from "next/link";
 import { MouseEventHandler, useState } from "react";
 import { toast } from "react-toastify";
+import TypeWriter from "./TypeWriter";
 
 const Contact = () => {
   const [formState, setFormState] = useState({
@@ -52,7 +53,7 @@ const Contact = () => {
       <div className={circleSectionStyle.placeholder} id={"contactPlaceholder"}></div>
       <div className={circleSectionStyle.textWrapper}>
         <div className={styles.text}>
-          <h2>Contact</h2>
+          <h2><TypeWriter typewriterKey="contact">Contact</TypeWriter></h2>
           <hr />
           <div className={styles.info}>
             <span>
