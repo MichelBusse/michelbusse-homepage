@@ -8,7 +8,6 @@ import { useEffect, useRef, useState } from "react";
 import CustomCamera from "./CustomCamera";
 import Cubes from "./Cubes";
 import MousePositionLight from "./MousePositionLight";
-import { Stats } from "@react-three/drei";
 
 function BackgroundCanvas() {
   const cameraRef = useRef<PerspectiveCamera>(null);

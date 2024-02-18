@@ -2,7 +2,15 @@
 
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import { Color, Euler, Group, Mesh, MeshLambertMaterial, Quaternion, Vector3 } from "three";
+import {
+  Color,
+  Euler,
+  Group,
+  Mesh,
+  MeshLambertMaterial,
+  Quaternion,
+  Vector3,
+} from "three";
 import Cube from "./Cube";
 import { useGLTF } from "@react-three/drei";
 
@@ -78,7 +86,7 @@ const Cubes = () => {
   // Call on every frame
   useFrame(({ clock }) => {
     const canvasWrapper = document.getElementById("canvasWrapper");
-    if(canvasWrapper == null){
+    if (canvasWrapper == null) {
       return;
     }
 
@@ -103,19 +111,23 @@ const Cubes = () => {
       percent: number
     ) => {
       let offsetLeft = 0;
-      let calcElement : HTMLElement | null = element
+      let calcElement: HTMLElement | null = element;
       while (calcElement) {
         offsetLeft += calcElement.offsetLeft;
         let parentElement = calcElement.offsetParent;
-        if(parentElement && (parentElement instanceof HTMLElement)){
-          calcElement = parentElement as HTMLElement
-        }else{
+        if (parentElement && parentElement instanceof HTMLElement) {
+          calcElement = parentElement as HTMLElement;
+        } else {
           calcElement = null;
         }
-      }      
-      const elementCenterHTML = offsetLeft + element.getBoundingClientRect().width * 0.5;
+      }
+      const elementCenterHTML =
+        offsetLeft + element.getBoundingClientRect().width * 0.5;
 
-      const elementCenterThree = (elementCenterHTML / windowWidth - 0.5) * windowWidth / windowHeight * 7
+      const elementCenterThree =
+        (((elementCenterHTML / windowWidth - 0.5) * windowWidth) /
+          windowHeight) *
+        7;
       return elementCenterThree + getRelativeHorizontalSize(element, percent);
     };
 
@@ -136,15 +148,15 @@ const Cubes = () => {
       let elementCenter;
 
       let offsetTop = 0;
-      let calcElement : HTMLElement | null = element
+      let calcElement: HTMLElement | null = element;
       while (calcElement) {
-          offsetTop += calcElement.offsetTop;
-          let parentElement = calcElement.offsetParent;
-          if(parentElement && (parentElement instanceof HTMLElement)){
-            calcElement = parentElement as HTMLElement
-          }else{
-            calcElement = null;
-          }
+        offsetTop += calcElement.offsetTop;
+        let parentElement = calcElement.offsetParent;
+        if (parentElement && parentElement instanceof HTMLElement) {
+          calcElement = parentElement as HTMLElement;
+        } else {
+          calcElement = null;
+        }
       }
 
       elementCenter =
@@ -239,31 +251,16 @@ const Cubes = () => {
 
       let baseScales = [
         // Header
-        new Vector3(0.7, 0.7, 0.7),
+        new Vector3(0.65, 0.65, 0.65),
         // About
-        new Vector3(0.9, 0.9, 0.9),
+        new Vector3(0.8, 0.8, 0.8),
         // Portfolio
-        new Vector3(0.9, 0.9, 0.9),
+        new Vector3(0.8, 0.8, 0.8),
         // Career
-        new Vector3(0.9, 0.9, 0.9),
+        new Vector3(0.8, 0.8, 0.8),
         // Contact
-        new Vector3(0.9, 0.9, 0.9),
+        new Vector3(0.8, 0.8, 0.8),
       ];
-
-      if (windowWidth < 1050) {
-        baseScales = [
-          // Header
-          new Vector3(0.7, 0.7, 0.7),
-          // About
-          new Vector3(0.8, 0.8, 0.8),
-          // Portfolio
-          new Vector3(0.8, 0.8, 0.8),
-          // Career
-          new Vector3(0.8, 0.8, 0.8),
-          // Contact
-          new Vector3(0.8, 0.8, 0.8),
-        ];
-      }
 
       if (windowWidth < 960) {
         // Header
@@ -277,7 +274,7 @@ const Cubes = () => {
       if (windowWidth < 600) {
         baseScales = [
           // Header
-          new Vector3(0.7, 0.7, 0.7),
+          new Vector3(0.65, 0.65, 0.65),
           // About
           new Vector3(0.7, 0.7, 0.7),
           // Portfolio
@@ -290,10 +287,7 @@ const Cubes = () => {
       }
 
       // Change currentSection and sectionChangedTime if threshold is passed
-      if (
-        window.scrollY >=
-        contactSection.offsetTop - windowHeight * 0.75
-      ) {
+      if (window.scrollY >= contactSection.offsetTop - windowHeight * 0.75) {
         if (currentSection != 4) {
           currentSection != -1 && (sectionChangedTime = clock.elapsedTime);
           currentSection = 4;
@@ -379,7 +373,7 @@ const Cubes = () => {
                 new Euler(
                   index % 3 == 0 ? (interval / duration) * Math.PI * 2 : 0,
                   index % 3 == 1 ? (interval / duration) * Math.PI * 2 : 0,
-                  index % 3 == 2 ? (interval / duration) * Math.PI * 2 : 0,
+                  index % 3 == 2 ? (interval / duration) * Math.PI * 2 : 0
                 )
               );
             }
@@ -521,7 +515,7 @@ const Cubes = () => {
 
     // Move cubes to targetPosition and add rotation
     cubes.forEach((cube) => {
-      if(!cube.ref.current){
+      if (!cube.ref.current) {
         return;
       }
 
@@ -544,10 +538,10 @@ const Cubes = () => {
     });
   });
 
-  const cubeGeometry = (useGLTF("/models/cube.glb").nodes.Cube as Mesh).geometry;
+  const cubeGeometry = (useGLTF("/models/cube.glb").nodes.Cube as Mesh)
+    .geometry;
   const cubeMaterial = new MeshLambertMaterial();
   cubeMaterial.color = new Color(0xffffff);
-
 
   return (
     <>
