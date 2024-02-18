@@ -17,7 +17,7 @@ const BackgroundSphere = () => {
   return (
     <mesh ref={backgroundSphere}>
       <sphereGeometry args={[10, 50, 50]} />
-      <meshStandardMaterial side={DoubleSide} wireframe color={new Color( 0x999999 )} />
+      <meshBasicMaterial side={DoubleSide} wireframe color={new Color( 0x444444 )} />
     </mesh>
   );
 };

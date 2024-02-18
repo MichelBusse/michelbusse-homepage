@@ -45,10 +45,6 @@ const CustomCamera = ({ cameraRef }: Props) => {
       ),
       0.8
     );
-
-    directionalLightRef.current &&
-      (directionalLightRef.current.position.y =
-        -window.scrollY / (windowHeight / 6));
   });
 
   return (

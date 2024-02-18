@@ -1,51 +1,53 @@
-import React from "react";
+import React, { RefObject, useRef } from "react";
 import {
-  ColorRepresentation,
   Euler,
   Mesh,
-  MeshStandardMaterial,
+  MeshLambertMaterial,
   Vector3,
 } from "three";
-import { FontLoader, TextGeometry } from "three/examples/jsm/Addons.js";
-import robotoFont from "../../lib/fonts/Roboto-Regular.json";
+import { Font, TextGeometry } from "three/examples/jsm/Addons.js";
+import { PrimitiveProps, useFrame } from "@react-three/fiber";
 
 type Props = {
+  section: RefObject<number>;
+  visibleSection: number;
   text: string;
   position: Vector3;
   scale: Vector3;
   rotation: Euler;
-  color: ColorRepresentation;
-  visible: boolean;
+  material: MeshLambertMaterial;
+  font: Font
 };
 
 function CubeText(props: Props) {
-  const fontLoader = new FontLoader();
-  const font = fontLoader.parse(robotoFont);
+  const meshRef = useRef<PrimitiveProps>(null);
 
   const textOptions = {
-    font: font,
+    font: props.font,
     size: 0.3,
     height: 0.001,
   };
 
   const textGeometry = new TextGeometry(props.text, textOptions);
 
-  const material = new MeshStandardMaterial({ color: props.color });
-  const textMesh = new Mesh(textGeometry, material);
+  const textMesh = new Mesh(textGeometry, props.material);
 
   textGeometry.center();
 
+  useFrame(() => {
+    if (meshRef.current) {
+      meshRef.current!.visible = props.section.current == props.visibleSection;
+    }
+  });
+
   return (
-    <>
-      {props.visible && (
-        <primitive
-          object={textMesh}
-          position={props.position}
-          rotation={props.rotation}
-          scale={props.scale}
-        />
-      )}
-    </>
+    <primitive
+      ref={meshRef}
+      object={textMesh}
+      position={props.position}
+      rotation={props.rotation}
+      scale={props.scale}
+    />
   );
 }
 

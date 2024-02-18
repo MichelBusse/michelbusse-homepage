@@ -1,8 +1,8 @@
 "use client";
 
-import { RootState, useFrame, useThree } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import { Euler, Group, Mesh, Quaternion, Vector3 } from "three";
+import { Color, Euler, Group, Mesh, MeshLambertMaterial, Quaternion, Vector3 } from "three";
 import Cube from "./Cube";
 import { useGLTF } from "@react-three/drei";
 
@@ -544,13 +544,18 @@ const Cubes = () => {
     });
   });
 
-  const {nodes} = useGLTF("/models/cube.glb");
+  const cubeGeometry = (useGLTF("/models/cube.glb").nodes.Cube as Mesh).geometry;
+  const cubeMaterial = new MeshLambertMaterial();
+  cubeMaterial.color = new Color(0xffffff);
+
+
   return (
     <>
       {cubes.map((cube, index) => (
         <Cube
           ref={cube.ref}
-          mesh={(nodes.Cube as Mesh)}
+          geometry={cubeGeometry}
+          material={cubeMaterial}
           section={cube.section}
           key={index}
           imageUrl={cube.imageUrl}

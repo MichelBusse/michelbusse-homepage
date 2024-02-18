@@ -1,13 +1,15 @@
 "use client";
 
-import { RefObject, forwardRef, useState } from "react";
-import { Euler, Group, Mesh, Object3D, Object3DEventMap, Vector3 } from "three";
+import { RefObject, forwardRef } from "react";
+import { BufferGeometry, Euler, Group, Material, MeshLambertMaterial, NormalBufferAttributes, Vector3 } from "three";
 import CubeText from "./CubeText";
-import { useFrame } from "@react-three/fiber";
 import CubeImage from "./CubeImage";
+import { FontLoader } from "three/examples/jsm/Addons.js";
+import robotoFont from "../../lib/fonts/Roboto-Regular.json";
 
 type Props = {
-  mesh: Mesh;
+  geometry: BufferGeometry<NormalBufferAttributes>;
+  material: Material;
   section: RefObject<number>;
   imageUrl: string;
   letterAbout: string;
@@ -17,60 +19,62 @@ type Props = {
 };
 
 const Cube = forwardRef<Group, Props>((props, ref) => {
-  const [currentSection, setCurrentSection] = useState(0);
+  const fontLoader = new FontLoader();
+  const font = fontLoader.parse(robotoFont);
 
-  useFrame(() => {
-    if (
-      props.section.current != null &&
-      props.section.current != currentSection
-    ) {
-      setCurrentSection(props.section.current);
-    }
-  });
+  const material = new MeshLambertMaterial({ color: 0x888888 })
 
   return (
     <group ref={ref}>
-      <mesh geometry={props.mesh.geometry}>
-        <meshStandardMaterial color={0xffffff} />
+      <mesh geometry={props.geometry} material={props.material}>
       </mesh>
       <CubeImage
-        visible={currentSection == 0}
+        section={props.section}
+        visibleSection={0}
         imageUrl={props.imageUrl}
         position={new Vector3(0, 0, 0.501)}
         rotation={new Euler(1 * Math.PI, 1 * Math.PI, 1 * Math.PI)}
         scale={new Vector3(0.7, 0.7, 0.7)}
       />
       <CubeText
-        visible={currentSection == 1}
+        section={props.section}
+        visibleSection={1}
         text={props.letterAbout}
         position={new Vector3(0, 0, -0.501)}
         rotation={new Euler(1 * Math.PI, 0, 0)}
         scale={new Vector3(1, 1, 1)}
-        color={0x888888}
+        material={material}
+        font={font}
       />
       <CubeText
-        visible={currentSection == 2}
+        section={props.section}
+        visibleSection={2}
         text={props.letterPortfolio}
         position={new Vector3(0, 0, 0.501)}
         rotation={new Euler(1 * Math.PI, 1 * Math.PI, 1 * Math.PI)}
         scale={new Vector3(1, 1, 1)}
-        color={0x888888}
+        material={material}
+        font={font}
       />
       <CubeText
-        visible={currentSection == 3}
+        section={props.section}
+        visibleSection={3}
         text={props.letterCareer}
         position={new Vector3(0, 0, -0.501)}
         rotation={new Euler(1 * Math.PI, 0, 0)}
         scale={new Vector3(1, 1, 1)}
-        color={0x888888}
+        material={material}
+        font={font}
       />
       <CubeText
-        visible={currentSection == 4}
+        section={props.section}
+        visibleSection={4}
         text={props.letterContact}
         position={new Vector3(0, 0, 0.501)}
         rotation={new Euler(1 * Math.PI, 1 * Math.PI, 1 * Math.PI)}
         scale={new Vector3(1, 1, 1)}
-        color={0x888888}
+        material={material}
+        font={font}
       />
     </group>
   );
