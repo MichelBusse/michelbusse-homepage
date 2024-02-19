@@ -25,7 +25,7 @@ const Portfolio = () => {
                 <i>Clubz</i>
               </p>
               <div className={styles.iconButton}>
-                <Link href={"https://m-to-b.com/en/projects/Mobile-Event-App"}>
+                <Link href={"/projects/social-network-app-clubz"}>
                   <MdOutlineArrowOutward />
                 </Link>
               </div>

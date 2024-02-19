@@ -110,7 +110,7 @@ const Cubes = () => {
       element: HTMLElement,
       percent: number
     ) => {
-      const offsetLeft = element.getBoundingClientRect().left + window.scrollX
+      const offsetLeft = element.getBoundingClientRect().left + window.scrollX;
 
       const elementCenterHTML =
         offsetLeft + element.getBoundingClientRect().width * 0.5;
@@ -136,16 +136,13 @@ const Cubes = () => {
       element: HTMLElement,
       percent: number
     ) => {
-      const offsetTop = element.getBoundingClientRect().top + window.scrollY
+      const offsetTop = element.getBoundingClientRect().top + window.scrollY;
 
       const elementCenterHTML =
         offsetTop + element.getBoundingClientRect().height * 0.5;
 
       const elementCenterThree =
-        ((elementCenterHTML -
-          windowHeight * 0.5) /
-          windowHeight) *
-        -7;
+        ((elementCenterHTML - windowHeight * 0.5) / windowHeight) * -7;
 
       return elementCenterThree - getRelativeVerticalSize(element, percent);
     };
@@ -161,26 +158,65 @@ const Cubes = () => {
     let contactSection = document.getElementById("contact");
     let contactPlaceholder = document.getElementById("contactPlaceholder");
 
+    let projectPlaceholder = document.getElementById("projectPlaceholder");
+
+    // Base positions in 3D space for each section
+
+    let basePositions = [
+      // Header
+      new Vector3(0, 0, 0),
+      // About
+      new Vector3(0, 0, 0),
+      // Portfolio
+      new Vector3(0, 0, 0),
+      // Career
+      new Vector3(0, 0, 0),
+      // Contact
+      new Vector3(0, 0, 0),
+    ];
+
+    // Base rotations in 3D space for each section
+
+    let baseRotations = [
+      // Header
+      new Quaternion().setFromAxisAngle(new Vector3(0, 0, 0), 0),
+      // About
+      new Quaternion().setFromAxisAngle(new Vector3(1, 0, 0), Math.PI),
+      // Portfolio
+      new Quaternion().setFromAxisAngle(new Vector3(0, 0, 0), 0),
+      // Career
+      new Quaternion().setFromAxisAngle(new Vector3(1, 0, 0), Math.PI),
+      // Contact
+      new Quaternion().setFromAxisAngle(new Vector3(0, 0, 0), 0),
+    ];
+
+    // Base scales in 3D space for each section
+
+    let baseScales = [
+      // Header
+      new Vector3(0.65, 0.65, 0.65),
+      // About
+      new Vector3(0.8, 0.8, 0.8),
+      // Portfolio
+      new Vector3(0.8, 0.8, 0.8),
+      // Career
+      new Vector3(0.8, 0.8, 0.8),
+      // Contact
+      new Vector3(0.8, 0.8, 0.8),
+    ];
+
     // Check if sections are not null
     if (
-      headerSection == null ||
-      aboutSection == null ||
-      aboutPlaceholder == null ||
-      technologiesSection == null ||
-      portfolioSection == null ||
-      careerSection == null ||
-      contactSection == null ||
-      contactPlaceholder == null
+      headerSection != null &&
+      aboutSection != null &&
+      aboutPlaceholder != null &&
+      technologiesSection != null &&
+      portfolioSection != null &&
+      careerSection != null &&
+      contactSection != null &&
+      contactPlaceholder != null
     ) {
-      cubes[0].targetPosition = new Vector3(10, 0, 0);
-      cubes[1].targetPosition = new Vector3(10, 0, 0);
-      cubes[2].targetPosition = new Vector3(10, 0, 0);
-      cubes[3].targetPosition = new Vector3(10, 0, 0);
-      cubes[4].targetPosition = new Vector3(10, 0, 0);
-    } else {
-      // Base positions in 3D space for each section
-
-      let basePositions = [
+      basePositions = [
         // Header
         new Vector3(
           getRelativeHorizontalPosition(headerSection, 80),
@@ -211,36 +247,6 @@ const Cubes = () => {
           getRelativeVerticalPosition(contactPlaceholder, 0),
           0
         ),
-      ];
-
-      // Base rotations in 3D space for each section
-
-      const baseRotations = [
-        // Header
-        new Quaternion().setFromAxisAngle(new Vector3(0, 0, 0), 0),
-        // About
-        new Quaternion().setFromAxisAngle(new Vector3(1, 0, 0), Math.PI),
-        // Portfolio
-        new Quaternion().setFromAxisAngle(new Vector3(0, 0, 0), 0),
-        // Career
-        new Quaternion().setFromAxisAngle(new Vector3(1, 0, 0), Math.PI),
-        // Contact
-        new Quaternion().setFromAxisAngle(new Vector3(0, 0, 0), 0),
-      ];
-
-      // Base scales in 3D space for each section
-
-      let baseScales = [
-        // Header
-        new Vector3(0.65, 0.65, 0.65),
-        // About
-        new Vector3(0.8, 0.8, 0.8),
-        // Portfolio
-        new Vector3(0.8, 0.8, 0.8),
-        // Career
-        new Vector3(0.8, 0.8, 0.8),
-        // Contact
-        new Vector3(0.8, 0.8, 0.8),
       ];
 
       if (windowWidth < 960) {
@@ -306,189 +312,277 @@ const Cubes = () => {
           currentSection = 0;
         }
       }
+    } else if (projectPlaceholder != null) {
+      basePositions = [
+        // ProjectPlaceholder
+        new Vector3(
+          getRelativeHorizontalPosition(projectPlaceholder, 0),
+          getRelativeVerticalPosition(projectPlaceholder, 0),
+          0
+        ),
+        new Vector3(
+          getRelativeHorizontalPosition(projectPlaceholder, 0),
+          getRelativeVerticalPosition(projectPlaceholder, 0),
+          0
+        ),
+        new Vector3(
+          getRelativeHorizontalPosition(projectPlaceholder, 0),
+          getRelativeVerticalPosition(projectPlaceholder, 0),
+          0
+        ),
+        new Vector3(
+          getRelativeHorizontalPosition(projectPlaceholder, 0),
+          getRelativeVerticalPosition(projectPlaceholder, 0),
+          0
+        ),
+        new Vector3(
+          getRelativeHorizontalPosition(projectPlaceholder, 0),
+          getRelativeVerticalPosition(projectPlaceholder, 0),
+          0
+        ),
+      ];
+      baseRotations = [
+        // ProjectPlaceholder
+        new Quaternion().setFromAxisAngle(new Vector3(1, 0, 0), Math.PI),
+        new Quaternion().setFromAxisAngle(new Vector3(1, 0, 0), Math.PI),
+        new Quaternion().setFromAxisAngle(new Vector3(1, 0, 0), Math.PI),
+        new Quaternion().setFromAxisAngle(new Vector3(1, 0, 0), Math.PI),
+        new Quaternion().setFromAxisAngle(new Vector3(1, 0, 0), Math.PI),
+      ];
+      baseScales = [
+        // ProjectPlaceholder
+        new Vector3(0.65, 0.65, 0.65),
+        new Vector3(0.65, 0.65, 0.65),
+        new Vector3(0.65, 0.65, 0.65),
+        new Vector3(0.65, 0.65, 0.65),
+        new Vector3(0.65, 0.65, 0.65),
+      ];
 
-      // Set custom arrangement position for each cube according to its current section
-      if (cubes.every((cube) => cube.ref.current != null)) {
-        cubes.forEach((cube, index) => {
-          // Set currentSection of individual cubes with delay depending on cubes index
-          if (clock.elapsedTime >= sectionChangedTime + index * 0.1) {
-            cube.section.current = currentSection;
-          }
+      if (windowWidth < 500) {
+        baseScales = [
+          // ProjectPlaceholder
+          new Vector3(0.5, 0.5, 0.5),
+          new Vector3(0.5, 0.5, 0.5),
+          new Vector3(0.5, 0.5, 0.5),
+          new Vector3(0.5, 0.5, 0.5),
+          new Vector3(0.5, 0.5, 0.5),
+        ];
+      }
 
-          // Header Section
-          if (cube.section.current == 0 && headerSection != null) {
-            // Parameters for arrangement in current section
+      if (currentSection != 0) {
+        currentSection != -1 && (sectionChangedTime = clock.elapsedTime);
+        currentSection = 0;
+      }
+    } else {
+      cubes[0].targetPosition = new Vector3(10, 0, 0);
+      cubes[1].targetPosition = new Vector3(10, 0, 0);
+      cubes[2].targetPosition = new Vector3(10, 0, 0);
+      cubes[3].targetPosition = new Vector3(10, 0, 0);
+      cubes[4].targetPosition = new Vector3(10, 0, 0);
+    }
 
-            let horizontalExtend = Math.min(
-              getRelativeHorizontalSize(headerSection, 15),
-              1.5
-            );
-            if (windowWidth < 960) {
-              horizontalExtend = getRelativeHorizontalPosition(
-                headerSection,
-                400
-              );
-            }
-            let verticalExtend = Math.min(
-              getRelativeVerticalSize(headerSection, 100),
-              4
-            );
+    // Set custom arrangement position for each cube according to its current section
+    if (cubes.every((cube) => cube.ref.current != null)) {
+      cubes.forEach((cube, index) => {
+        // Set currentSection of individual cubes with delay depending on cubes index
+        if (clock.elapsedTime >= sectionChangedTime + index * 0.1) {
+          cube.section.current = currentSection;
+        }
 
-            // Set target position of cube for arrangement in current section
-            cube.targetPosition = new Vector3(
-              -horizontalExtend * (index % 2) + horizontalExtend * 0.5,
-              -(verticalExtend / (cubes.length - 1)) * index +
-                verticalExtend * 0.5,
-              0
-            );
-
-            cube.targetRotation = new Quaternion();
-
-            const delay = 30;
-            const duration = 0.75;
-
-            const interval =
-              (clock.elapsedTime + (index / cubes.length) * delay) % delay;
-            if (interval < duration) {
-              cube.targetRotation = new Quaternion().setFromEuler(
-                new Euler(
-                  index % 3 == 0 ? (interval / duration) * Math.PI * 2 : 0,
-                  index % 3 == 1 ? (interval / duration) * Math.PI * 2 : 0,
-                  index % 3 == 2 ? (interval / duration) * Math.PI * 2 : 0
-                )
-              );
-            }
-          }
-
-          // About Section
-          if (cube.section.current == 1 && aboutSection != null) {
-            // Parameters for arrangement in current section
-            let speed = 0.1;
-            let radius = Math.min(
-              getRelativeHorizontalSize(aboutSection, 25),
-              2
-            );
-            if (windowWidth < 960) {
-              radius = 1.2;
-            }
-            if (windowWidth < 450) {
-              radius = 1;
-            }
-
-            // Set target position of cube for arrangement in current section
-            cube.targetPosition = new Vector3(
-              Math.sin(
-                ((2 * Math.PI) / cubes.length) * index +
-                  clock.elapsedTime * speed -
-                  0.5 * Math.PI
-              ) * radius,
-              Math.cos(
-                ((2 * Math.PI) / cubes.length) * index +
-                  clock.elapsedTime * speed -
-                  0.5 * Math.PI
-              ) * radius,
-              0
-            );
-
-            cube.targetRotation = new Quaternion();
-          }
-
-          // Portfolio Headline Section
-          if (cube.section.current == 2 && portfolioSection != null) {
-            // Parameters for arrangement in current section
-            let horizontalExtend = Math.min(
-              getRelativeHorizontalSize(portfolioSection, 180),
+        // Project Section
+        if (cube.section.current == 0 && projectPlaceholder != null) {
+          // Parameters for arrangement in current section
+          let horizontalExtend = Math.min(
+            getRelativeHorizontalSize(projectPlaceholder, 180),
+            13
+          );
+          if (windowWidth < 500) {
+            horizontalExtend = Math.min(
+              getRelativeHorizontalSize(projectPlaceholder, 200),
               13
             );
-            if (windowWidth < 450) {
-              horizontalExtend = Math.min(
-                getRelativeHorizontalSize(portfolioSection, 200),
-                13
-              );
-            }
-
-            // Set target position of cube for arrangement in current section
-            cube.targetPosition = new Vector3(
-              (index + 0.5) * (horizontalExtend / cubes.length) -
-                horizontalExtend * 0.5,
-              0,
-              0
-            );
-
-            cube.targetRotation = new Quaternion();
           }
 
-          // Career Headline Section
-          if (cube.section.current == 3 && careerSection != null) {
-            // Parameters for arrangement in current section
-            let horizontalExtend = Math.min(
-              getRelativeHorizontalSize(careerSection, 180),
+          // Set target position of cube for arrangement in current section
+          cube.targetPosition = new Vector3(
+            (index + 0.5) * (horizontalExtend / cubes.length) -
+              horizontalExtend * 0.5,
+            Math.sin(clock.elapsedTime + 0.5 * Math.PI * index) *
+              getRelativeVerticalSize(projectPlaceholder, 50),
+            0
+          );
+
+          cube.targetRotation = new Quaternion();
+        }
+
+        // Header Section
+        if (cube.section.current == 0 && headerSection != null) {
+          // Parameters for arrangement in current section
+
+          let horizontalExtend = Math.min(
+            getRelativeHorizontalSize(headerSection, 15),
+            1.5
+          );
+          if (windowWidth < 960) {
+            horizontalExtend = getRelativeHorizontalPosition(
+              headerSection,
+              400
+            );
+          }
+          let verticalExtend = Math.min(
+            getRelativeVerticalSize(headerSection, 100),
+            4
+          );
+
+          // Set target position of cube for arrangement in current section
+          cube.targetPosition = new Vector3(
+            -horizontalExtend * (index % 2) + horizontalExtend * 0.5,
+            -(verticalExtend / (cubes.length - 1)) * index +
+              verticalExtend * 0.5,
+            0
+          );
+
+          cube.targetRotation = new Quaternion();
+
+          const delay = 30;
+          const duration = 0.75;
+
+          const interval =
+            (clock.elapsedTime + (index / cubes.length) * delay) % delay;
+          if (interval < duration) {
+            cube.targetRotation = new Quaternion().setFromEuler(
+              new Euler(
+                index % 3 == 0 ? (interval / duration) * Math.PI * 2 : 0,
+                index % 3 == 1 ? (interval / duration) * Math.PI * 2 : 0,
+                index % 3 == 2 ? (interval / duration) * Math.PI * 2 : 0
+              )
+            );
+          }
+        }
+
+        // About Section
+        if (cube.section.current == 1 && aboutSection != null) {
+          // Parameters for arrangement in current section
+          let speed = 0.1;
+          let radius = Math.min(getRelativeHorizontalSize(aboutSection, 25), 2);
+          if (windowWidth < 960) {
+            radius = 1.2;
+          }
+          if (windowWidth < 450) {
+            radius = 1;
+          }
+
+          // Set target position of cube for arrangement in current section
+          cube.targetPosition = new Vector3(
+            Math.sin(
+              ((2 * Math.PI) / cubes.length) * index +
+                clock.elapsedTime * speed -
+                0.5 * Math.PI
+            ) * radius,
+            Math.cos(
+              ((2 * Math.PI) / cubes.length) * index +
+                clock.elapsedTime * speed -
+                0.5 * Math.PI
+            ) * radius,
+            0
+          );
+
+          cube.targetRotation = new Quaternion();
+        }
+
+        // Portfolio Headline Section
+        if (cube.section.current == 2 && portfolioSection != null) {
+          // Parameters for arrangement in current section
+          let horizontalExtend = Math.min(
+            getRelativeHorizontalSize(portfolioSection, 180),
+            13
+          );
+          if (windowWidth < 450) {
+            horizontalExtend = Math.min(
+              getRelativeHorizontalSize(portfolioSection, 200),
               13
             );
-            if (windowWidth < 450) {
-              horizontalExtend = Math.min(
-                getRelativeHorizontalSize(careerSection, 200),
-                13
-              );
-            }
-
-            // Set target position of cube for arrangement in current section
-            cube.targetPosition = new Vector3(
-              (index + 0.5) * (horizontalExtend / cubes.length) -
-                horizontalExtend * 0.5,
-              0,
-              0
-            );
-
-            cube.targetRotation = new Quaternion();
           }
 
-          // Contact Section
-          if (cube.section.current == 4 && contactSection != null) {
-            // Set target rotation for cube in current section
-            cube.targetRotation = baseRotations[cube.section.current];
+          // Set target position of cube for arrangement in current section
+          cube.targetPosition = new Vector3(
+            (index + 0.5) * (horizontalExtend / cubes.length) -
+              horizontalExtend * 0.5,
+            0,
+            0
+          );
 
-            // Parameters for arrangement in current section
-            let speed = 0.1;
-            let radius = Math.min(
-              getRelativeHorizontalSize(contactSection, 25),
-              2
+          cube.targetRotation = new Quaternion();
+        }
+
+        // Career Headline Section
+        if (cube.section.current == 3 && careerSection != null) {
+          // Parameters for arrangement in current section
+          let horizontalExtend = Math.min(
+            getRelativeHorizontalSize(careerSection, 180),
+            13
+          );
+          if (windowWidth < 450) {
+            horizontalExtend = Math.min(
+              getRelativeHorizontalSize(careerSection, 200),
+              13
             );
-            if (windowWidth < 960) {
-              radius = 1.2;
-            }
-            if (windowWidth < 450) {
-              radius = 1;
-            }
-
-            // Set target position of cube for arrangement in current section
-            cube.targetPosition = new Vector3(
-              Math.sin(
-                ((2 * Math.PI) / cubes.length) * index +
-                  clock.elapsedTime * speed -
-                  0.5 * Math.PI
-              ) * radius,
-              Math.cos(
-                ((2 * Math.PI) / cubes.length) * index +
-                  clock.elapsedTime * speed -
-                  0.5 * Math.PI
-              ) * radius,
-              0
-            );
-
-            cube.targetRotation = new Quaternion();
           }
 
+          // Set target position of cube for arrangement in current section
+          cube.targetPosition = new Vector3(
+            (index + 0.5) * (horizontalExtend / cubes.length) -
+              horizontalExtend * 0.5,
+            0,
+            0
+          );
+
+          cube.targetRotation = new Quaternion();
+        }
+
+        // Contact Section
+        if (cube.section.current == 4 && contactSection != null) {
+          // Parameters for arrangement in current section
+          let speed = 0.1;
+          let radius = Math.min(
+            getRelativeHorizontalSize(contactSection, 25),
+            2
+          );
+          if (windowWidth < 960) {
+            radius = 1.2;
+          }
+          if (windowWidth < 450) {
+            radius = 1;
+          }
+
+          // Set target position of cube for arrangement in current section
+          cube.targetPosition = new Vector3(
+            Math.sin(
+              ((2 * Math.PI) / cubes.length) * index +
+                clock.elapsedTime * speed -
+                0.5 * Math.PI
+            ) * radius,
+            Math.cos(
+              ((2 * Math.PI) / cubes.length) * index +
+                clock.elapsedTime * speed -
+                0.5 * Math.PI
+            ) * radius,
+            0
+          );
+
+          cube.targetRotation = new Quaternion();
+        }
+
+        if (cube.targetPosition) {
           // Set target position for cube in current section
           cube.targetPosition.add(basePositions[cube.section.current]);
+        }
+        // Set target rotation for cube in current section
+        cube.targetRotation.multiply(baseRotations[cube.section.current]);
 
-          // Set target rotation for cube in current section
-          cube.targetRotation.multiply(baseRotations[cube.section.current]);
-
-          // Set target scale of cube in current section responsively
-          cube.targetScale = baseScales[cube.section.current];
-        });
-      }
+        // Set target scale of cube in current section responsively
+        cube.targetScale = baseScales[cube.section.current];
+      });
     }
 
     // How smooth the transforms should appear
