@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import styles from "./Navbar.module.scss";
+import typewriterStyles from "./TypeWriter.module.scss"
 import { useEffect, useState } from "react";
 import TypeWriter from "./TypeWriter";
 
@@ -77,7 +78,7 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <Link href={"/"}>
         <div className={styles.logoWrapper}>
-          <span><TypeWriter typewriterKey="navbar" autoStart={true}>Michel Busse</TypeWriter></span>
+          <span>Michel Busse<span className={typewriterStyles.cursor}>|</span></span>
         </div>
       </Link>
       <ul className={styles.mainMenu}>
