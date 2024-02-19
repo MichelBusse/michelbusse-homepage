@@ -3,6 +3,7 @@
 import Link from "next/link";
 import styles from "./Navbar.module.scss";
 import { useEffect, useState } from "react";
+import TypeWriter from "./TypeWriter";
 
 const Navbar = () => {
   const [currentSection, setCurrentSection] = useState("");
@@ -76,7 +77,7 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <Link href={"/"}>
         <div className={styles.logoWrapper}>
-          <span>Michel Busse|</span>
+          <span><TypeWriter typewriterKey="navbar" autoStart={true}>Michel Busse</TypeWriter></span>
         </div>
       </Link>
       <ul className={styles.mainMenu}>

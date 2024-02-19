@@ -1,6 +1,6 @@
 version: "3"
 services:
-  m-to-b-homepage:
+  michelbusse-homepage:
     container_name: michelbusse-homepage
     image: m-to-b/michelbusse-homepage
     restart: unless-stopped
