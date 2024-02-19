@@ -12,7 +12,7 @@ const Header = () => {
         <div className={styles.text}>
           <p className={styles.preHeadline}>Hey, my name is</p>
           <h1>
-            <TypeWriter typewriterKey="headline">Michel Busse</TypeWriter>
+            <TypeWriter typewriterKey="headline" autoStart={true}>Michel Busse</TypeWriter>
           </h1>
           <p className={styles.slogan}>
             and I am a passionate

@@ -6,6 +6,7 @@ import styles from "./TypeWriter.module.scss";
 
 type Props = {
   typewriterKey: string;
+  autoStart?: boolean;
 };
 
 const TypeWriter = (props: PropsWithChildren<Props>) => {
@@ -28,18 +29,27 @@ const TypeWriter = (props: PropsWithChildren<Props>) => {
 
     const onScroll = () => {
       if (el.current) {
-        if (window.outerHeight * 0.65 > el.current.getBoundingClientRect().top) {
+        if (
+          window.outerHeight * 0.65 >
+          el.current.getBoundingClientRect().top
+        ) {
           typed.current?.start();
-        }else if(window.outerHeight < el.current.getBoundingClientRect().top){
+        } else if (
+          window.outerHeight < el.current.getBoundingClientRect().top
+        ) {
           typed.current?.stop();
           typed.current?.reset();
         }
       }
     };
 
-    onScroll();
+    if (props.autoStart) {
+      typed.current?.start();
+    } else {
+      onScroll();
 
-    document.addEventListener("scroll", onScroll);
+      document.addEventListener("scroll", onScroll);
+    }
 
     return () => {
       document.removeEventListener("scroll", onScroll);

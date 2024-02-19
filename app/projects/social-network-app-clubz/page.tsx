@@ -4,13 +4,21 @@ import listStyles from "../../TechnologiesList.module.scss";
 import { FaGithub, FaAppStoreIos } from "react-icons/fa";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import Link from "next/link";
+import TypeWriter from "@/app/components/TypeWriter";
 
 export default function SocialNetworkAppClubz() {
   return (
     <main className={styles.main}>
       <div className={styles.row}>
         <div className={styles.cell}>
-          <h1>Social Network App</h1>
+          <h1>
+            <TypeWriter
+              typewriterKey="social-network-app-clubz"
+              autoStart={true}
+            >
+              Social Network App
+            </TypeWriter>
+          </h1>
           <div className={styles.subheadline}>Clubz</div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
@@ -116,21 +124,32 @@ export default function SocialNetworkAppClubz() {
         <div className={styles.cell}>
           <h2>Links</h2>
           <ul className={styles.linksList}>
-            <Link href={"https://github.com/MichelBusse/clubz"} target={"_blank"}>
+            <Link
+              href={"https://github.com/MichelBusse/clubz"}
+              target={"_blank"}
+            >
               <li>
                 <div className={styles.linkLogo}>
                   <FaGithub />
                 </div>
               </li>
             </Link>
-            <Link href={"https://apps.apple.com/en/app/clubz/id6444685917"} target={"_blank"}>
+            <Link
+              href={"https://apps.apple.com/en/app/clubz/id6444685917"}
+              target={"_blank"}
+            >
               <li>
                 <div className={styles.linkLogo}>
                   <FaAppStoreIos />
                 </div>
               </li>
             </Link>
-            <Link href={"https://play.google.com/store/apps/details?id=com.m_to_b.clubz"} target={"_blank"}>
+            <Link
+              href={
+                "https://play.google.com/store/apps/details?id=com.m_to_b.clubz"
+              }
+              target={"_blank"}
+            >
               <li>
                 <div className={styles.linkLogo}>
                   <IoLogoGooglePlaystore />
