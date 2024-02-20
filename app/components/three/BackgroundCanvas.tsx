@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import CustomCamera from "./CustomCamera";
 import Cubes from "./Cubes";
 import MousePositionLight from "./MousePositionLight";
+import ScrollAlong from "./ScrollAlong";
 
 function BackgroundCanvas() {
   const cameraRef = useRef<PerspectiveCamera>(null);
@@ -16,7 +17,7 @@ function BackgroundCanvas() {
   useEffect(() => {
     const refreshCanvasHeight = () => {
       setCanvasHeight(window.outerHeight);
-    }
+    };
 
     refreshCanvasHeight();
 
@@ -24,17 +25,23 @@ function BackgroundCanvas() {
 
     return () => {
       window.removeEventListener("resize", refreshCanvasHeight);
-    }
-  }, [])
+    };
+  }, []);
 
   return (
-    <div className={styles.wrapper} id="canvasWrapper" style={{height: canvasHeight}}>
+    <div
+      className={styles.wrapper}
+      id="canvasWrapper"
+      style={{ height: canvasHeight }}
+    >
       <Canvas>
         <ambientLight args={[0xffffff, 0.5]} />
         <CustomCamera cameraRef={cameraRef} />
         <BackgroundSphere />
         <MousePositionLight />
-        <Cubes/>
+        <ScrollAlong>
+          <Cubes />
+        </ScrollAlong>
       </Canvas>
     </div>
   );

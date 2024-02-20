@@ -27,26 +27,6 @@ const CustomCamera = ({ cameraRef }: Props) => {
     }
   }, [cameraRef, set]);
 
-  let animationFrame: number;
-
-  useFrame(() => {
-    const canvasWrapper = document.getElementById("canvasWrapper");
-    if (canvasWrapper == null) {
-      return;
-    }
-    const windowHeight = canvasWrapper.clientHeight;
-
-    // Update camera according to scroll position
-    cameraRef.current?.position.lerp(
-      new Vector3(
-        cameraRef.current!.position.x,
-        -window.scrollY / (windowHeight / 7),
-        cameraRef.current!.position.z
-      ),
-      0.8
-    );
-  });
-
   return (
     <>
       <perspectiveCamera
