@@ -1,10 +1,10 @@
 import Image from "next/image";
 import styles from "../project.module.scss";
 import listStyles from "../../TechnologiesList.module.scss";
-import { FaGithub, FaAppStoreIos } from "react-icons/fa";
-import { IoLogoGooglePlaystore } from "react-icons/io5";
+import { FaLink } from "react-icons/fa";
 import Link from "next/link";
 import TypeWriter from "@/app/components/TypeWriter";
+import ProjectImagesCell from "@/app/components/ProjectImagesCell";
 
 export default function SocialNetworkAppClubz() {
   return (
@@ -16,10 +16,10 @@ export default function SocialNetworkAppClubz() {
               typewriterKey="social-network-app-clubz"
               autoStart={true}
             >
-              Social Network App
+              AR in Surgery - iOS & Apple&nbsp;Vision&nbsp;Pro
             </TypeWriter>
           </h1>
-          <div className={styles.subheadline}>Clubz</div>
+          <div className={styles.subheadline}>University Hospital Leipzig</div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
             velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
@@ -38,46 +38,46 @@ export default function SocialNetworkAppClubz() {
             <li className={listStyles.technologyItem}>
               <div className={listStyles.technologyLogo}>
                 <Image
-                  src={"/images/technologies/flutter.svg"}
-                  alt={"Flutter Logo"}
+                  src={"/images/technologies/visionos.svg"}
+                  alt={"VisionOS Logo"}
                   width={10}
                   height={10}
                 />
               </div>
-              Flutter (Dart)
+              Native visionOS (Swift)
             </li>
             <li className={listStyles.technologyItem}>
               <div className={listStyles.technologyLogo}>
                 <Image
-                  src={"/images/technologies/riverpod.svg"}
-                  alt={"Riverpod Logo"}
+                  src={"/images/technologies/ios.svg"}
+                  alt={"IOS Logo"}
                   width={10}
                   height={10}
                 />
               </div>
-              Riverpod
+              Native iOS (Swift)
             </li>
             <li className={listStyles.technologyItem}>
               <div className={listStyles.technologyLogo}>
                 <Image
-                  src={"/images/technologies/supabase.png"}
-                  alt={"Supabase Logo"}
+                  src={"/images/technologies/realitykit.png"}
+                  alt={"RealityKit Logo"}
                   width={10}
                   height={10}
                 />
               </div>
-              Supabase
+              RealityKit
             </li>
             <li className={listStyles.technologyItem}>
               <div className={listStyles.technologyLogo}>
                 <Image
-                  src={"/images/technologies/onesignal.svg"}
-                  alt={"OneSignal Logo"}
+                  src={"/images/technologies/arkit.webp"}
+                  alt={"ARKit Logo"}
                   width={10}
                   height={10}
                 />
               </div>
-              OneSignal
+              ARKit
             </li>
           </ul>
         </div>
@@ -125,95 +125,40 @@ export default function SocialNetworkAppClubz() {
           <h2>Links</h2>
           <ul className={styles.linksList}>
             <Link
-              href={"https://github.com/MichelBusse/clubz"}
+              href={"https://www.next3d.de/"}
               target={"_blank"}
             >
               <li>
                 <div className={styles.linkLogo}>
-                  <FaGithub />
-                </div>
-              </li>
-            </Link>
-            <Link
-              href={"https://apps.apple.com/en/app/clubz/id6444685917"}
-              target={"_blank"}
-            >
-              <li>
-                <div className={styles.linkLogo}>
-                  <FaAppStoreIos />
-                </div>
-              </li>
-            </Link>
-            <Link
-              href={
-                "https://play.google.com/store/apps/details?id=com.m_to_b.clubz"
-              }
-              target={"_blank"}
-            >
-              <li>
-                <div className={styles.linkLogo}>
-                  <IoLogoGooglePlaystore />
+                  <FaLink />
                 </div>
               </li>
             </Link>
           </ul>
           <p>
-            Check out the source code on GitHub or the live version on Google
-            Play and App Store.
+            View more information on the projects website. 
           </p>
         </div>
       </div>
       <div className={styles.row}>
-        <div className={styles.cell}>
-          <h2>Images</h2>
-          <div className={styles.images}>
-            <div className={styles.imageWrapper}>
-              <Image
-                src="/images/projects/social-network-app-clubz/1.png"
-                alt="Feed Page with Filter"
-                width={200}
-                height={200}
-              />
-              <div className={styles.caption}>Feed Page with Filter</div>
-            </div>
-            <div className={styles.imageWrapper}>
-              <Image
-                src="/images/projects/social-network-app-clubz/2.png"
-                alt="Profile Page"
-                width={200}
-                height={200}
-              />
-              <div className={styles.caption}>Profile Page</div>
-            </div>
-            <div className={styles.imageWrapper}>
-              <Image
-                src="/images/projects/social-network-app-clubz/3.png"
-                alt="Create Events"
-                width={200}
-                height={200}
-              />
-              <div className={styles.caption}>Create Events</div>
-            </div>
-            <div className={styles.imageWrapper}>
-              <Image
-                src="/images/projects/social-network-app-clubz/4.png"
-                alt="View Event Details"
-                width={200}
-                height={200}
-              />
-              <div className={styles.caption}>View Event Details</div>
-            </div>
-            <div className={styles.imageWrapper}>
-              <Image
-                src="/images/projects/social-network-app-clubz/5.png"
-                alt="Search Profiles"
-                width={200}
-                height={200}
-              />
-              <div className={styles.caption}>Search Profiles</div>
-            </div>
-          </div>
-        </div>
+        <ProjectImagesCell
+          images={[
+            "/images/projects/ar-in-surgery-hololens-2/1.png",
+            "/images/projects/ar-in-surgery-hololens-2/2.png",
+            "/images/projects/ar-in-surgery-hololens-2/3.png",
+            "/images/projects/ar-in-surgery-hololens-2/4.png",
+            "/images/projects/ar-in-surgery-hololens-2/5.png",
+            "/images/projects/ar-in-surgery-hololens-2/6.png",
+          ]}
+          captions={[
+            "AR navigation system at test in surgery",
+            "Navigation view through Hololens",
+            "Layout of main menu in Unity",
+            "Positioning of DICOM data in Unity",
+            "Observation of surgery with conventional navigation system",
+            "Instrument for instrument tracking",
+          ]}
+        />
       </div>
     </main>
   );

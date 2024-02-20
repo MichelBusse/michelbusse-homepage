@@ -87,7 +87,7 @@ const Technologies = () => {
                 <li className={listStyles.technologyItem}>
                   <div className={listStyles.technologyLogo}>
                     <Image
-                      src={"/images/technologies/vite.png"}
+                      src={"/images/technologies/vite.svg"}
                       alt={"Vite Logo"}
                       width={10}
                       height={10}

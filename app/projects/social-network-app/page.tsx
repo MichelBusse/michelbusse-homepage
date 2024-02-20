@@ -1,0 +1,187 @@
+import Image from "next/image";
+import styles from "../project.module.scss";
+import listStyles from "../../TechnologiesList.module.scss";
+import { FaGithub, FaAppStoreIos } from "react-icons/fa";
+import { IoLogoGooglePlaystore } from "react-icons/io5";
+import Link from "next/link";
+import TypeWriter from "@/app/components/TypeWriter";
+import ProjectImagesCell from "@/app/components/ProjectImagesCell";
+
+export default function SocialNetworkAppClubz() {
+  return (
+    <main className={styles.main}>
+      <div className={styles.row}>
+        <div className={styles.cell}>
+          <h1>
+            <TypeWriter
+              typewriterKey="social-network-app-clubz"
+              autoStart={true}
+            >
+              Social Network App
+            </TypeWriter>
+          </h1>
+          <div className={styles.subheadline}>Clubz</div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
+            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
+            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
+            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
+            suscipit fermentum sit amet id purus. Curabitur pellentesque
+            accumsan enim et faucibus.
+          </p>
+        </div>
+        <div className={styles.placeholder} id={"projectPlaceholder"}></div>
+      </div>
+      <div className={styles.row}>
+        <div className={styles.cell}>
+          <h2>Technologies</h2>
+          <ul className={listStyles.technologiesList}>
+            <li className={listStyles.technologyItem}>
+              <div className={listStyles.technologyLogo}>
+                <Image
+                  src={"/images/technologies/flutter.svg"}
+                  alt={"Flutter Logo"}
+                  width={10}
+                  height={10}
+                />
+              </div>
+              Flutter (Dart)
+            </li>
+            <li className={listStyles.technologyItem}>
+              <div className={listStyles.technologyLogo}>
+                <Image
+                  src={"/images/technologies/riverpod.svg"}
+                  alt={"Riverpod Logo"}
+                  width={10}
+                  height={10}
+                />
+              </div>
+              Riverpod
+            </li>
+            <li className={listStyles.technologyItem}>
+              <div className={listStyles.technologyLogo}>
+                <Image
+                  src={"/images/technologies/supabase.png"}
+                  alt={"Supabase Logo"}
+                  width={10}
+                  height={10}
+                />
+              </div>
+              Supabase
+            </li>
+            <li className={listStyles.technologyItem}>
+              <div className={listStyles.technologyLogo}>
+                <Image
+                  src={"/images/technologies/onesignal.svg"}
+                  alt={"OneSignal Logo"}
+                  width={10}
+                  height={10}
+                />
+              </div>
+              OneSignal
+            </li>
+          </ul>
+        </div>
+        <div className={styles.cell}>
+          <h2>Challenges</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
+            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
+            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
+            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
+            suscipit fermentum sit amet id purus. Curabitur pellentesque
+            accumsan enim et faucibus.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
+            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
+            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
+            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
+            suscipit fermentum sit amet id purus. Curabitur pellentesque
+            accumsan enim et faucibus.
+          </p>
+        </div>
+      </div>
+      <div className={styles.row}>
+        <div className={styles.cell}>
+          <h2>Results</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
+            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
+            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
+            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
+            suscipit fermentum sit amet id purus. Curabitur pellentesque
+            accumsan enim et faucibus.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
+            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
+            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
+            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
+            suscipit fermentum sit amet id purus. Curabitur pellentesque
+            accumsan enim et faucibus.
+          </p>
+        </div>
+        <div className={styles.cell}>
+          <h2>Links</h2>
+          <ul className={styles.linksList}>
+            <Link
+              href={"https://github.com/MichelBusse/clubz"}
+              target={"_blank"}
+            >
+              <li>
+                <div className={styles.linkLogo}>
+                  <FaGithub />
+                </div>
+              </li>
+            </Link>
+            <Link
+              href={"https://apps.apple.com/en/app/clubz/id6444685917"}
+              target={"_blank"}
+            >
+              <li>
+                <div className={styles.linkLogo}>
+                  <FaAppStoreIos />
+                </div>
+              </li>
+            </Link>
+            <Link
+              href={
+                "https://play.google.com/store/apps/details?id=com.m_to_b.clubz"
+              }
+              target={"_blank"}
+            >
+              <li>
+                <div className={styles.linkLogo}>
+                  <IoLogoGooglePlaystore />
+                </div>
+              </li>
+            </Link>
+          </ul>
+          <p>
+            Check out the source code on GitHub or the live version on Google
+            Play and App Store.
+          </p>
+        </div>
+      </div>
+      <div className={styles.row}>
+        <ProjectImagesCell
+          images={[
+            "/images/projects/social-network-app/1.png",
+            "/images/projects/social-network-app/2.png",
+            "/images/projects/social-network-app/3.png",
+            "/images/projects/social-network-app/4.png",
+            "/images/projects/social-network-app/5.png",
+          ]}
+          captions={[
+            "Feed Page with Filter",
+            "Profile Page",
+            "Create Events",
+            "View Event Details",
+            "Search Profiles",
+          ]}
+        />
+      </div>
+    </main>
+  );
+}

@@ -134,3 +134,7 @@ input[type="email"], textarea {
 input[type="email"], textarea:focus{
   outline: none;
 }
+
+#ReactSimpleImageViewer{
+  z-index: 10000;
+}

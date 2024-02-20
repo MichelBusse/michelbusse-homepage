@@ -25,7 +25,7 @@ const Portfolio = () => {
                 <i>Clubz</i>
               </p>
               <div className={styles.iconButton}>
-                <Link href={"/projects/social-network-app-clubz"}>
+                <Link href={"/projects/social-network-app"}>
                   <MdOutlineArrowOutward />
                 </Link>
               </div>
@@ -54,7 +54,7 @@ const Portfolio = () => {
                 <i>Schuelertreff</i>
               </p>
               <div className={styles.iconButton}>
-                <Link href={"https://m-to-b.com/en/projects/ERP-Software"}>
+                <Link href={"/projects/saas-erp-system"}>
                   <MdOutlineArrowOutward />
                 </Link>
               </div>
@@ -80,16 +80,12 @@ const Portfolio = () => {
               height="800"
             />
             <div className={styles.textWrapper}>
-              <h3>AR in Surgery - Hololens 2</h3>
+              <h3>AR in Surgery - Hololens&nbsp;2</h3>
               <p>
                 <i>University Hospital Leipzig</i>
               </p>
               <div className={styles.iconButton}>
-                <Link
-                  href={
-                    "https://m-to-b.com/en/projects/Augmented-Reality-Entwicklung"
-                  }
-                >
+                <Link href={"/projects/ar-in-surgery-hololens-2"}>
                   <MdOutlineArrowOutward />
                 </Link>
               </div>
@@ -107,10 +103,10 @@ const Portfolio = () => {
             <div className={styles.textWrapper}>
               <h3>Software Agency Homepage</h3>
               <p>
-                <i>M-to-B</i>
+                <i>M-to-B Software</i>
               </p>
               <div className={styles.iconButton}>
-                <Link href={"https://m-to-b.com/en"}>
+                <Link href={"/projects/software-agency-homepage"}>
                   <MdOutlineArrowOutward />
                 </Link>
               </div>
@@ -134,16 +130,12 @@ const Portfolio = () => {
               height="800"
             />
             <div className={styles.textWrapper}>
-              <h3>AR in Surgery - Hololens 2</h3>
+              <h3>AR in Surgery - iOS & Apple&nbsp;Vision&nbsp;Pro</h3>
               <p>
                 <i>University Hospital Leipzig</i>
               </p>
               <div className={styles.iconButton}>
-                <Link
-                  href={
-                    "https://m-to-b.com/en/projects/Augmented-Reality-Entwicklung"
-                  }
-                >
+                <Link href={"/projects/ar-in-surgery-ios-visionos"}>
                   <MdOutlineArrowOutward />
                 </Link>
               </div>
@@ -164,9 +156,7 @@ const Portfolio = () => {
                 <i>Special Solutions</i>
               </p>
               <div className={styles.iconButton}>
-                <Link
-                  href={"https://m-to-b.com/en/projects/Management-Software"}
-                >
+                <Link href={"/projects/saas-management-system"}>
                   <MdOutlineArrowOutward />
                 </Link>
               </div>
