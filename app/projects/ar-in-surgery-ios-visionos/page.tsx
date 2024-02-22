@@ -28,16 +28,16 @@ export default function SocialNetworkAppClubz() {
             .
           </p>
           <p>
-            Beyond the HoloLens 2, iPhones and newly released Apple Vision offer
-            possible navigation capabilities during surgeries through their
-            diverse AR features.
+            Beyond the HoloLens 2, iOS devices and the newly released Apple
+            Vision Pro offer promising navigation capabilities during surgeries
+            because of their diverse AR features.
           </p>
           <p>
-            Apple Vision is particularly intriguing due to its sharp and precise
-            display of AR content, while iOS systems are relevant primarily
-            because of their widespread availability. A precise and intuitive
-            navigation system on these platforms would be a groundbreaking
-            advancement in medicine.
+            The Apple Vision Pro is particularly intriguing due to its sharp and
+            precise display of AR content, while iOS systems are relevant
+            primarily because of their widespread availability. A precise and
+            intuitive navigation system on these platforms could be a
+            groundbreaking advancement in medicine.
           </p>
         </div>
         <div className={styles.placeholder} id={"projectPlaceholder"}></div>
@@ -95,11 +95,11 @@ export default function SocialNetworkAppClubz() {
         <div className={styles.cell}>
           <h2>Challenges</h2>
           <p>
-            From the feature perspective, the biggest challenges stayed the same
-            as on the Hololens 2: an accurate relationship between virtual and
-            real-world objects. But while all calculations had to be newly
-            invented for the Hololens, the same calculations can now be used and
-            have to be ported to iOS and visionOS.
+            From the features perspective, the biggest challenges were the same
+            as on the Hololens 2, like an accurate relationship between virtual
+            content and real-world objects. But because the necessary
+            calculations had already been implemented on the Hololens, the same
+            calculations could now be used and ported to iOS and visionOS.
           </p>
           <p>
             Developing on two operate systems that are similar, but not the same
@@ -122,12 +122,11 @@ export default function SocialNetworkAppClubz() {
           <p>
             A working prototype on visionOS leads to promising opportunities in
             the near future. With the Apple Vision, there are various
-            possibilities to increase the system&apos;s accuracy and functionality
-            because of its state-of-the-art technology.
+            possibilities to increase the system&apos;s accuracy and
+            functionality because of its state-of-the-art technology.
           </p>
           <p>
-            Both operating systems now support the same functionalities as
-            their{" "}
+            Both operating systems now support the same functionalities as their{" "}
             <Link href={"/projects/ar-in-surgery-hololens-2"}>
               counterpart on the Hololens
             </Link>
