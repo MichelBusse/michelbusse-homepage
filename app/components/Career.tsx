@@ -10,10 +10,13 @@ const Career = () => {
           <div className={styles.timestamp}>
             <div className={styles.time}>2024</div>
             <div className={styles.description}>
-              <h3>Research exchange with Apple&nbsp;Park&nbsp;Cupertino</h3>
+              <h3>Research exchange meet with Apple&nbsp;Park&nbsp;Cupertino</h3>
               <p>@ Apple Park Cupertino</p>
               <ul>
-                <li>Presentation of AR navigation system on Apple&nbsp;Vision&nbsp;Pro</li>
+                <li>
+                  Presentation of AR navigation system on
+                  Apple&nbsp;Vision&nbsp;Pro
+                </li>
               </ul>
             </div>
           </div>
@@ -41,7 +44,7 @@ const Career = () => {
           <div className={styles.timestamp}>
             <div className={styles.time}>2022</div>
             <div className={styles.description}>
-              <h3>Research exchange with UPMC&nbsp;Pittsburgh</h3>
+              <h3>Research exchange meet with UPMC&nbsp;Pittsburgh</h3>
               <p>@ UPMC Pittsburgh</p>
               <ul>
                 <li>Presentation of AR navigation system on Hololens&nbsp;2</li>
@@ -59,7 +62,7 @@ const Career = () => {
                   teaching of doctors and students
                 </li>
                 <li>
-                  Leading development of intrasurgical navigation app for
+                  Leading development of intrasurgical navigation app on
                   Microsoft Hololens 2
                 </li>
               </ul>
@@ -69,7 +72,7 @@ const Career = () => {
             <div className={styles.time}>since 2020</div>
             <div className={styles.description}>
               <h3>Owner & Software&nbsp;Engineer</h3>
-              <p>@ M-to-B Software</p>
+              <p>@ M-to-B Software Agency</p>
               <ul>
                 <li>
                   Development of apps for Android, iOS, and Web on behalf of
