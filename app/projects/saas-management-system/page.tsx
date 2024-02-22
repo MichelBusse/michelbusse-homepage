@@ -1,38 +1,10 @@
-"use client";
-
 import Image from "next/image";
 import styles from "../project.module.scss";
 import listStyles from "../../TechnologiesList.module.scss";
 import TypeWriter from "@/app/components/TypeWriter";
-import { useCallback, useState } from "react";
-import ImageViewer from "react-simple-image-viewer";
 import ProjectImagesCell from "@/app/components/ProjectImagesCell";
 
 export default function SaaSManagementSystem() {
-  const [currentImage, setCurrentImage] = useState(0);
-  const [isViewerOpen, setIsViewerOpen] = useState(false);
-  const images = [
-    "/images/projects/social-network-app/1.png",
-    "/images/projects/saas-management-system/2.png",
-    "/images/projects/saas-management-system/3.png",
-    "/images/projects/saas-management-system/4.png",
-    "/images/projects/saas-management-system/5.png",
-    "/images/projects/saas-management-system/6.png",
-    "/images/projects/saas-management-system/7.png",
-  ];
-
-  const openImageViewer = useCallback((index: number) => {
-    setCurrentImage(index);
-    setIsViewerOpen(true);
-    document.body.style.overflow = "hidden";
-  }, []);
-
-  const closeImageViewer = () => {
-    setCurrentImage(0);
-    setIsViewerOpen(false);
-    document.body.style.overflow = "auto";
-  };
-
   return (
     <main className={styles.main}>
       <div className={styles.row}>
@@ -44,12 +16,15 @@ export default function SaaSManagementSystem() {
           </h1>
           <div className={styles.subheadline}>Special-Solutions</div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            Special Solutions is a services company from Germany. Their team
+            used to manage all projects and operations of their employees
+            through one local Microsoft Excel table.
+          </p>
+          <p>
+            This system eventually couldn&apos;t cope anymore with the company&apos;s
+            growth, and therefore they needed an easy-to-use and lightweight app
+            to efficiently manage all projects and present the resulting
+            individual schedules to their employees.
           </p>
         </div>
         <div className={styles.placeholder} id={"projectPlaceholder"}></div>
@@ -109,39 +84,39 @@ export default function SaaSManagementSystem() {
         <div className={styles.cell}>
           <h2>Challenges</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            As is often the case, the real challenges in developing the software
+            system lied in the details. Alongside with the support of real-time
+            parallel editing, especially the implementation of comfort features
+            like copy, paste and bulk operations turned out to be the most
+            complex.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            Furthermore, a team system had to be implemented, where
+            administrators can create teams and project managers with different
+            permissions. Meanwhile, most of the features had to be customizable
+            by the admins, like reordering employees in the management board or
+            adjust the requested fields for the employee database. The database
+            was a challenge itself, because the necessary connection to AWS and
+            a secure transfer of all documents.
           </p>
         </div>
         <div className={styles.cell}>
           <h2>Results</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            The outcome of the development process was a lightweight management
+            system for the companies projects and employees. By supporting
+            real-time parallel editing and time saving comfort features, the
+            company could increase their efficiency by a significant amount. The
+            system comprises a database and a storage database for project and
+            employee related data. A permission system allows project managers
+            to manage their teams and plan their members schedules.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            Various customization options allow admins to further optimize and
+            personalize the software to their workflow. Mobile access for
+            customers automates the provision of individual schedules to the
+            employees and removed the need to send each schedule to each person
+            by hand.
           </p>
         </div>
       </div>

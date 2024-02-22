@@ -13,21 +13,22 @@ export default function SocialNetworkAppClubz() {
       <div className={styles.row}>
         <div className={styles.cell}>
           <h1>
-            <TypeWriter
-              typewriterKey="saas-erp-system"
-              autoStart={true}
-            >
+            <TypeWriter typewriterKey="saas-erp-system" autoStart={true}>
               SaaS ERP System
             </TypeWriter>
           </h1>
           <div className={styles.subheadline}>Schuelertreff</div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            Schueletreff was a German startup in the education industry. They
+            offered teaching services for private students and schools. Because
+            of their rapid growth, managing and planning their lessons and
+            teachers got nearly impossible.
+          </p>
+          <p>
+            They needed a customized solution specifically for their needs and
+            company. This was the start of an extensive management system that
+            comprises nearly all parts of their business and became fundamental
+            for their work.
           </p>
         </div>
         <div className={styles.placeholder} id={"projectPlaceholder"}></div>
@@ -85,20 +86,20 @@ export default function SocialNetworkAppClubz() {
         <div className={styles.cell}>
           <h2>Challenges</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            The biggest challenges when developing the ERP system became the
+            features themselves. A time matching system had to be implemented,
+            where matching teachers and time slots are matched with available
+            students. Furthermore, each teacher should have the ability to call
+            in sick, where then all affected lessons should be presented to the
+            admins and can easily be reassigned to other teachers. Personal data
+            submitted by new teachers had to be validated, and the application
+            process had to be represented in the app.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            Another big challenge in development was the communication with the
+            client, to always be on the same page regarding every functionality.
+            With all these features, the app must still remain intuitive and
+            clear to the users.
           </p>
         </div>
       </div>
@@ -106,20 +107,28 @@ export default function SocialNetworkAppClubz() {
         <div className={styles.cell}>
           <h2>Results</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            The final system became an extensive web app, which exactly mapped
+            and optimized the companies processes. Admins can manage every step
+            of the application process, create new applicant accounts, request
+            necessary data, automatically generate and provide work documents
+            and provide subjects and school types for each teacher.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            Customers and schools can be created and, just like with teachers,
+            saved with available time slots.
+          </p>
+          <p>
+            A complex time matching system allows admins to create new recurring
+            lessons by providing customers, requested subjects and optionally
+            further filters. Then they get a list of available teachers which
+            are appropriate for the specific clients and a list of possible
+            matching time slots for these teachers.
+          </p>
+          <p>
+            An admin dashboard summarizes all relevant data on one page.
+            Teachers can view their individual schedule on their account and
+            provide information for each lesson. They also can maintain their
+            personal data and call themselves in sick when needed.
           </p>
         </div>
         <div className={styles.cell}>
@@ -136,9 +145,7 @@ export default function SocialNetworkAppClubz() {
               </li>
             </Link>
           </ul>
-          <p>
-            Check out the source code on GitHub.
-          </p>
+          <p>Check out the source code on GitHub.</p>
         </div>
       </div>
       <div className={styles.row}>

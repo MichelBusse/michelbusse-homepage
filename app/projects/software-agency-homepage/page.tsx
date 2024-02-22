@@ -21,12 +21,17 @@ export default function SocialNetworkAppClubz() {
           </h1>
           <div className={styles.subheadline}>M-to-B Software</div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            The increasing number of private requests for development
+            assistance, coupled with a passion for programming and team
+            management, coalesced into the idea of founding a software agency.
+          </p>
+          <p>
+            &quot;M-to-B Software&quot; meant building a company from the ground
+            up, to help realize innovative visions of our clients.
+          </p>
+          <p>
+            This resulted in the need for a capable homepage, which tells our
+            story, explains our services and convinces new customers.
           </p>
         </div>
         <div className={styles.placeholder} id={"projectPlaceholder"}></div>
@@ -84,20 +89,19 @@ export default function SocialNetworkAppClubz() {
         <div className={styles.cell}>
           <h2>Challenges</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            Building a software agency itself comes along with so many
+            challenges and obstacles, it would be impossible to list them in one
+            paragraph.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            In case of the homepage, the biggest challenge was search engine
+            optimization to receive good rankings against our competitors.
+            Simultaneously, we wanted to achieve a reasonable structure into
+            understandable services and to provide a fully bilingual page.
+          </p>
+          <p>
+            Last but not least, the website also had to look innovative and
+            recognizable in comparison with our competitors.
           </p>
         </div>
       </div>
@@ -105,20 +109,16 @@ export default function SocialNetworkAppClubz() {
         <div className={styles.cell}>
           <h2>Results</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            The homepage for M-to-B Software became a responsive and modern
+            website based on NextJS. It received top 10 Google ranking for
+            competitive keywords in Germany and is ranking in top 3 for relevant
+            local keywords.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            A comprehensive but innovative design conveys our message and
+            services. These characteristics allowed the site to successfully
+            generate multiple relevant customer requests per month and built a
+            solid basis for the agency&apos;s customer acquisition.
           </p>
         </div>
         <div className={styles.cell}>

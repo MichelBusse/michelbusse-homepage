@@ -58,7 +58,7 @@ const TypeWriter = (props: PropsWithChildren<Props>) => {
         typed.current.destroy();
       }
     };
-  }, [props.typewriterKey]);
+  }, [props.typewriterKey, props.autoStart]);
 
   return (
     <>

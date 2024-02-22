@@ -124,7 +124,7 @@ const Portfolio = () => {
         <div className={styles.project}>
           <div className={styles.imageWrapper}>
             <Image
-              src={"/images/portfolio/ar-in-surgery-hololens-2.png"}
+              src={"/images/portfolio/ar-in-surgery-ios-visionos.png"}
               alt={"AR in Surgery - Hololens 2"}
               width="800"
               height="800"

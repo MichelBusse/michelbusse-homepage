@@ -13,7 +13,7 @@ export default function SocialNetworkAppClubz() {
         <div className={styles.cell}>
           <h1>
             <TypeWriter
-              typewriterKey="social-network-app-clubz"
+              typewriterKey="ar-in-surgery-ios-visionos"
               autoStart={true}
             >
               AR in Surgery - iOS & Apple&nbsp;Vision&nbsp;Pro
@@ -21,12 +21,23 @@ export default function SocialNetworkAppClubz() {
           </h1>
           <div className={styles.subheadline}>University Hospital Leipzig</div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            This project connects to{" "}
+            <Link href={"/projects/ar-in-surgery-hololens-2"}>
+              &quot;AR in Surgery - Hololens 2&quot;
+            </Link>
+            .
+          </p>
+          <p>
+            Beyond the HoloLens 2, iPhones and newly released Apple Vision offer
+            possible navigation capabilities during surgeries through their
+            diverse AR features.
+          </p>
+          <p>
+            Apple Vision is particularly intriguing due to its sharp and precise
+            display of AR content, while iOS systems are relevant primarily
+            because of their widespread availability. A precise and intuitive
+            navigation system on these platforms would be a groundbreaking
+            advancement in medicine.
           </p>
         </div>
         <div className={styles.placeholder} id={"projectPlaceholder"}></div>
@@ -84,20 +95,19 @@ export default function SocialNetworkAppClubz() {
         <div className={styles.cell}>
           <h2>Challenges</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            From the feature perspective, the biggest challenges stayed the same
+            as on the Hololens 2: an accurate relationship between virtual and
+            real-world objects. But while all calculations had to be newly
+            invented for the Hololens, the same calculations can now be used and
+            have to be ported to iOS and visionOS.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            Developing on two operate systems that are similar, but not the same
+            needed good organization and a well-structured codebase. Because the
+            Apple Vision was still unreleased in Germany, the development and
+            testing had to be mostly improvised on the available simulator.
+            Especially the required extensive communication between SwiftUI and
+            RealityKit turned out to be challenging to implement.
           </p>
         </div>
       </div>
@@ -105,29 +115,29 @@ export default function SocialNetworkAppClubz() {
         <div className={styles.cell}>
           <h2>Results</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            The outcome of the development for iOS is an intuitive and compact
+            prototype to bring surgical navigation abilities to common devices
+            for the first time and therefore offer incredible new use cases.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            A working prototype on visionOS leads to promising opportunities in
+            the near future. With the Apple Vision, there are various
+            possibilities to increase the system&apos;s accuracy and functionality
+            because of its state-of-the-art technology.
+          </p>
+          <p>
+            Both operating systems now support the same functionalities as
+            their{" "}
+            <Link href={"/projects/ar-in-surgery-hololens-2"}>
+              counterpart on the Hololens
+            </Link>
+            .
           </p>
         </div>
         <div className={styles.cell}>
           <h2>Links</h2>
           <ul className={styles.linksList}>
-            <Link
-              href={"https://www.next3d.de/"}
-              target={"_blank"}
-            >
+            <Link href={"https://www.next3d.de/"} target={"_blank"}>
               <li>
                 <div className={styles.linkLogo}>
                   <FaLink />
@@ -135,28 +145,22 @@ export default function SocialNetworkAppClubz() {
               </li>
             </Link>
           </ul>
-          <p>
-            View more information on the projects website. 
-          </p>
+          <p>View more information on the projects website.</p>
         </div>
       </div>
       <div className={styles.row}>
         <ProjectImagesCell
           images={[
-            "/images/projects/ar-in-surgery-hololens-2/1.png",
-            "/images/projects/ar-in-surgery-hololens-2/2.png",
-            "/images/projects/ar-in-surgery-hololens-2/3.png",
-            "/images/projects/ar-in-surgery-hololens-2/4.png",
-            "/images/projects/ar-in-surgery-hololens-2/5.png",
-            "/images/projects/ar-in-surgery-hololens-2/6.png",
+            "/images/projects/ar-in-surgery-ios-visionos/1.png",
+            "/images/projects/ar-in-surgery-ios-visionos/2.png",
+            "/images/projects/ar-in-surgery-ios-visionos/3.png",
+            "/images/projects/ar-in-surgery-ios-visionos/4.png",
           ]}
           captions={[
-            "AR navigation system at test in surgery",
-            "Navigation view through Hololens",
-            "Layout of main menu in Unity",
-            "Positioning of DICOM data in Unity",
-            "Observation of surgery with conventional navigation system",
-            "Instrument for instrument tracking",
+            "Loading data from files",
+            "Placing models in space",
+            "Tracking of instrument and visualizing position on surface",
+            "Tracking of instrument and visualizing position in brain",
           ]}
         />
       </div>

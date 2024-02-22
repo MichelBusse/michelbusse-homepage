@@ -25,6 +25,17 @@ const Technologies = () => {
                 <li className={listStyles.technologyItem}>
                   <div className={listStyles.technologyLogo}>
                     <Image
+                      src={"/images/technologies/visionos.svg"}
+                      alt={"VisionOS Logo"}
+                      width={10}
+                      height={10}
+                    />
+                  </div>
+                  VisionOS
+                </li>
+                <li className={listStyles.technologyItem}>
+                  <div className={listStyles.technologyLogo}>
+                    <Image
                       src={"/images/technologies/mrtk.png"}
                       alt={"MRTK Logo"}
                       width={10}
@@ -43,17 +54,6 @@ const Technologies = () => {
                     />
                   </div>
                   RealityKit
-                </li>
-                <li className={listStyles.technologyItem}>
-                  <div className={listStyles.technologyLogo}>
-                    <Image
-                      src={"/images/technologies/opencv.png"}
-                      alt={"OpenCV Logo"}
-                      width={10}
-                      height={10}
-                    />
-                  </div>
-                  OpenCV
                 </li>
               </ul>
             </div>
@@ -202,6 +202,17 @@ const Technologies = () => {
                     />
                   </div>
                   Python
+                </li>
+                <li className={listStyles.technologyItem}>
+                  <div className={listStyles.technologyLogo}>
+                    <Image
+                      src={"/images/technologies/opencv.png"}
+                      alt={"OpenCV Logo"}
+                      width={10}
+                      height={10}
+                    />
+                  </div>
+                  OpenCV
                 </li>
               </ul>
             </div>

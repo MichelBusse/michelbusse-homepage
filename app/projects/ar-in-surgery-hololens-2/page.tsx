@@ -22,12 +22,19 @@ export default function SocialNetworkAppClubz() {
           </h1>
           <div className={styles.subheadline}>University Hospital Leipzig</div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            Despite advancements in technology, surgery still heavily relies on
+            the expertise of the surgeon. Conventional navigation systems in
+            neurosurgery are constrained by their significant space and time
+            requirements. However, leveraging intuitive and space-saving
+            solutions through AR technology could potentially address this
+            issue.
+          </p>
+          <p>
+            The objective of this project is to create a modular navigation
+            software tailored for use at the University Hospital Leipzig. This
+            development process involves direct collaboration with doctors and
+            medical technicians to ensure alignment with their needs and
+            expertise.
           </p>
         </div>
         <div className={styles.placeholder} id={"projectPlaceholder"}></div>
@@ -85,20 +92,24 @@ export default function SocialNetworkAppClubz() {
         <div className={styles.cell}>
           <h2>Challenges</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            Because the Microsoft Hololens 2 being a rather unpopular and
+            expensive platform, the resources for developing complex software
+            are limited. Together with complicated documentation and an unusual
+            setup, this lead to a challenging development experience.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            In terms of content, the biggest challenges were an accurate
+            relationship between real world structures and virtual objects, a
+            real-time tracking of instruments and a master-follower-mode to
+            visualize the same experience on multiple devices. All this needed
+            to be implemented while keeping the design as simple as possible to
+            allow untrained users to find their way around on an unfamiliar
+            platform.
+          </p>
+          <p>
+            Communication with medical professionals turned out to be
+            challenging as well, because of different technical terms and
+            understandings of complexity.
           </p>
         </div>
       </div>
@@ -106,29 +117,28 @@ export default function SocialNetworkAppClubz() {
         <div className={styles.cell}>
           <h2>Results</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            The development process resulted in an intuitive and modular AR
+            navigation system for the University Hospital Leipzig. The system
+            supports localization of real world structures in the patient&apos;s body
+            through a landmark based registration process. Any surgical
+            instrument can be tracked in real-time by simply attaching markers
+            and setting them up in the system. After importing standardized
+            DICOM data from for example MRI scans, the instrument position
+            inside the patient&apos;s body can be visualized.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            velit, finibus non erat ullamcorper, tempus ultricies elit. Praesent
-            dui justo, lacinia ut dictum nec, sodales ac risus. Cras id libero
-            vel dui efficitur pellentesque. Nulla sit amet ligula eget lectus
-            suscipit fermentum sit amet id purus. Curabitur pellentesque
-            accumsan enim et faucibus.
+            Various extensions like a spatial drawing module to draw on body
+            structures can be simply added to the system.
+          </p>
+          <p>
+            Multiple precision studies confirmed the feasibility of surgical
+            navigation with the Hololens 2 and further test the accuracy.
           </p>
         </div>
         <div className={styles.cell}>
           <h2>Links</h2>
           <ul className={styles.linksList}>
-            <Link
-              href={"https://www.next3d.de/"}
-              target={"_blank"}
-            >
+            <Link href={"https://www.next3d.de/"} target={"_blank"}>
               <li>
                 <div className={styles.linkLogo}>
                   <FaLink />
@@ -136,7 +146,9 @@ export default function SocialNetworkAppClubz() {
               </li>
             </Link>
             <Link
-              href={"https://www.thieme-connect.com/products/ejournals/abstract/10.1055/a-2083-7766"}
+              href={
+                "https://www.thieme-connect.com/products/ejournals/abstract/10.1055/a-2083-7766"
+              }
               target={"_blank"}
             >
               <li>
@@ -147,7 +159,8 @@ export default function SocialNetworkAppClubz() {
             </Link>
           </ul>
           <p>
-            View more information on the projects website or its scientific paper. 
+            View more information on the projects website or its scientific
+            paper.
           </p>
         </div>
       </div>
@@ -167,7 +180,7 @@ export default function SocialNetworkAppClubz() {
             "Layout of main menu in Unity",
             "Positioning of DICOM data in Unity",
             "Observation of surgery with conventional navigation system",
-            "Instrument for instrument tracking",
+            "Surgical instrument for tracking",
           ]}
         />
       </div>
