@@ -10,7 +10,9 @@ const Career = () => {
           <div className={styles.timestamp}>
             <div className={styles.time}>2024</div>
             <div className={styles.description}>
-              <h3>Research exchange meet with Apple&nbsp;Park&nbsp;Cupertino</h3>
+              <h3>
+                Research exchange meet with Apple&nbsp;Park&nbsp;Cupertino
+              </h3>
               <p>@ Apple Park Cupertino</p>
               <ul>
                 <li>
@@ -30,12 +32,8 @@ const Career = () => {
               <p>@ Fraunhofer IWU</p>
               <ul>
                 <li>
-                  Leading development of iOS app for AR based navigation in
-                  surgery
-                </li>
-                <li>
-                  Leading development of intrasurgical navigation app for Apple
-                  Vision Pro
+                  Lead development of an intrasurgical navigation app for Apple
+                  Vision Pro and iOS
                 </li>
                 <li>Training of new employees</li>
               </ul>
@@ -58,12 +56,12 @@ const Career = () => {
               <p>@ Leipzig University Hospital</p>
               <ul>
                 <li>
-                  Leading development of AR based, multi-user application for
-                  teaching of doctors and students
+                  Lead development of an intrasurgical navigation app on
+                  Microsoft Hololens 2
                 </li>
                 <li>
-                  Leading development of intrasurgical navigation app on
-                  Microsoft Hololens 2
+                  Lead development of an AR-based multi-user teaching
+                  application
                 </li>
               </ul>
             </div>
@@ -75,17 +73,12 @@ const Career = () => {
               <p>@ M-to-B Software Agency</p>
               <ul>
                 <li>
-                  Development of apps for Android, iOS, and Web on behalf of
-                  customers
+                  Development of apps, SaaS systems and sophisticated websites
+                  on behalf of customers
                 </li>
-                <li>
-                  Development of individual SaaS systems on behalf of customers
-                </li>
-                <li>Development of complex websites on behalf of customers</li>
                 <li>Development of in-house apps and software products</li>
-                <li>Management of teams and projects</li>
+                <li>Management of teams, projects, and customers</li>
                 <li>Administration and business development</li>
-                <li>Communication with customers</li>
               </ul>
             </div>
           </div>
