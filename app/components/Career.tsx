@@ -1,5 +1,6 @@
 import styles from "./Career.module.scss";
 import HeadlinePlaceholder from "./HeadlinePlaceholder";
+import RevealOnScroll from "./RevealOnScroll";
 
 const Career = () => {
   return (
@@ -7,7 +8,13 @@ const Career = () => {
       <HeadlinePlaceholder id={"career"} />
       <section className={styles.career}>
         <div className={styles.timestamps}>
-          <div className={styles.timestamp}>
+          <div className={styles.timeline}>
+            <div className={styles.arrowHead}></div>
+          </div>
+          <RevealOnScroll
+            className={styles.timestamp}
+            visibleClassName={styles.visible}
+          >
             <div className={styles.time}>2024</div>
             <div className={styles.description}>
               <h3>
@@ -21,11 +28,11 @@ const Career = () => {
                 </li>
               </ul>
             </div>
-          </div>
-          <div className={styles.timeline}>
-            <div className={styles.arrowHead}></div>
-          </div>
-          <div className={styles.timestamp}>
+          </RevealOnScroll>
+          <RevealOnScroll
+            className={styles.timestamp}
+            visibleClassName={styles.visible}
+          >
             <div className={styles.time}>since 2023</div>
             <div className={styles.description}>
               <h3>Senior Software Engineer & Scientific&nbsp;Assistant</h3>
@@ -38,8 +45,11 @@ const Career = () => {
                 <li>Training of new employees</li>
               </ul>
             </div>
-          </div>
-          <div className={styles.timestamp}>
+          </RevealOnScroll>
+          <RevealOnScroll
+            className={styles.timestamp}
+            visibleClassName={styles.visible}
+          >
             <div className={styles.time}>2022</div>
             <div className={styles.description}>
               <h3>Research exchange meet with UPMC&nbsp;Pittsburgh</h3>
@@ -48,8 +58,11 @@ const Career = () => {
                 <li>Presentation of AR navigation system on Hololens&nbsp;2</li>
               </ul>
             </div>
-          </div>
-          <div className={styles.timestamp}>
+          </RevealOnScroll>
+          <RevealOnScroll
+            className={styles.timestamp}
+            visibleClassName={styles.visible}
+          >
             <div className={styles.time}>2021 - 2022</div>
             <div className={styles.description}>
               <h3>Software Engineer & Scientific&nbsp;Assistant</h3>
@@ -65,8 +78,11 @@ const Career = () => {
                 </li>
               </ul>
             </div>
-          </div>
-          <div className={styles.timestamp}>
+          </RevealOnScroll>
+          <RevealOnScroll
+            className={styles.timestamp}
+            visibleClassName={styles.visible}
+          >
             <div className={styles.time}>since 2020</div>
             <div className={styles.description}>
               <h3>Owner & Software&nbsp;Engineer</h3>
@@ -81,8 +97,11 @@ const Career = () => {
                 <li>Administration and business development</li>
               </ul>
             </div>
-          </div>
-          <div className={styles.timestamp}>
+          </RevealOnScroll>
+          <RevealOnScroll
+            className={styles.timestamp}
+            visibleClassName={styles.visible}
+          >
             <div className={styles.time}>2020 - 2024</div>
             <div className={styles.description}>
               <h3>Bachelor of Science Computer&nbsp;Science</h3>
@@ -101,8 +120,11 @@ const Career = () => {
                 </li>
               </ul>
             </div>
-          </div>
-          <div className={styles.timestamp}>
+          </RevealOnScroll>
+          <RevealOnScroll
+            className={styles.timestamp}
+            visibleClassName={styles.visible}
+          >
             <div className={styles.time}>2020</div>
             <div className={styles.description}>
               <h3>
@@ -120,14 +142,17 @@ const Career = () => {
                 <li>English (fluently), Spanish (basics), French (basics)</li>
               </ul>
             </div>
-          </div>
-          <div className={styles.timestamp}>
+          </RevealOnScroll>
+          <RevealOnScroll
+            className={styles.timestamp}
+            visibleClassName={styles.visible}
+          >
             <div className={styles.time}>2020</div>
             <div className={styles.description}>
               <h3>5th Place Computer Science Contest</h3>
               <p>@ Computer Science Contest Saxony</p>
             </div>
-          </div>
+          </RevealOnScroll>
         </div>
       </section>
     </>
