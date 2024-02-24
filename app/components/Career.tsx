@@ -35,7 +35,7 @@ const Career = () => {
           >
             <div className={styles.time}>since 2023</div>
             <div className={styles.description}>
-              <h3>Senior Software Engineer & Scientific&nbsp;Assistant</h3>
+              <h3>Software Engineer & Scientific&nbsp;Assistant</h3>
               <p>@ Fraunhofer IWU</p>
               <ul>
                 <li>
