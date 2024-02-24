@@ -104,7 +104,7 @@ export default function SaaSManagementSystem() {
           <h2>Results</h2>
           <p>
             The outcome of the development process was a lightweight management
-            system for projects and employees of the customer's company. By supporting
+            system for projects and employees of the customer&apos;s company. By supporting
             real-time parallel editing and time saving comfort features, the
             company could increase their efficiency by a significant amount. The
             system comprises a database and a storage database for project and
