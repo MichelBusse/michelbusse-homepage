@@ -32,7 +32,7 @@ const RevealOnScroll = (props: PropsWithChildren<Props>) => {
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
-  }, []);
+  }, [props.visibleClassName]);
 
   return (
     <div className={`${props.className}`} ref={divRef}>
