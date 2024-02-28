@@ -7,7 +7,7 @@ import Link from "next/link";
 import TypeWriter from "@/app/components/TypeWriter";
 import ProjectImagesCell from "@/app/components/ProjectImagesCell";
 
-export default function SocialNetworkAppClubz() {
+export default function SocialNetworkApp() {
   return (
     <main className={styles.main}>
       <div className={styles.row}>
@@ -123,7 +123,7 @@ export default function SocialNetworkAppClubz() {
             through a landmark based registration process. Any surgical
             instrument can be tracked in real-time by simply attaching markers
             and setting them up in the system. After importing standardized
-            DICOM data from for example MRI scans, the instrument position
+            DICOM data, for example from MRI scans, the instrument position
             inside the patient&apos;s body can be visualized.
           </p>
           <p>

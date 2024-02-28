@@ -151,28 +151,6 @@ const Technologies = () => {
                 <li className={listStyles.technologyItem}>
                   <div className={listStyles.technologyLogo}>
                     <Image
-                      src={"/images/technologies/postgresql.png"}
-                      alt={"PostgreSQL Logo"}
-                      width={10}
-                      height={10}
-                    />
-                  </div>
-                  PostgreSQL
-                </li>
-                <li className={listStyles.technologyItem}>
-                  <div className={listStyles.technologyLogo}>
-                    <Image
-                      src={"/images/technologies/mongodb.svg"}
-                      alt={"MongoDB Logo"}
-                      width={10}
-                      height={10}
-                    />
-                  </div>
-                  MongoDB
-                </li>
-                <li className={listStyles.technologyItem}>
-                  <div className={listStyles.technologyLogo}>
-                    <Image
                       src={"/images/technologies/nodejs.png"}
                       alt={"NodeJS Logo"}
                       width={10}
@@ -180,6 +158,17 @@ const Technologies = () => {
                     />
                   </div>
                   NodeJS
+                </li>
+                <li className={listStyles.technologyItem}>
+                  <div className={listStyles.technologyLogo}>
+                    <Image
+                      src={"/images/technologies/postgresql.png"}
+                      alt={"PostgreSQL Logo"}
+                      width={10}
+                      height={10}
+                    />
+                  </div>
+                  PostgreSQL
                 </li>
                 <li className={listStyles.technologyItem}>
                   <div className={listStyles.technologyLogo}>
@@ -202,6 +191,17 @@ const Technologies = () => {
                     />
                   </div>
                   Python
+                </li>
+                <li className={listStyles.technologyItem}>
+                  <div className={listStyles.technologyLogo}>
+                    <Image
+                      src={"/images/technologies/csharp.svg"}
+                      alt={"C# Logo"}
+                      width={10}
+                      height={10}
+                    />
+                  </div>
+                  C#
                 </li>
                 <li className={listStyles.technologyItem}>
                   <div className={listStyles.technologyLogo}>
