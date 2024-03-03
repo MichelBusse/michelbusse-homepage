@@ -62,16 +62,6 @@ const Portfolio = () => {
                   <MdOutlineArrowOutward />
                 </Link>
               </div>
-              <div className={styles.lowerIcons}>
-                <Link
-                  target={"_blank"}
-                  href={
-                    "https://github.com/MichelBusse/erp-system-schuelertreff"
-                  }
-                >
-                  <FaGithub />
-                </Link>
-              </div>
             </div>
           </div>
         </div>
