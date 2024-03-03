@@ -83,6 +83,8 @@ export default function SocialNetworkAppClubz() {
             </li>
           </ul>
         </div>
+      </div>
+      <div className={styles.row}>
         <div className={styles.cell}>
           <h2>Challenges</h2>
           <p>
@@ -102,8 +104,6 @@ export default function SocialNetworkAppClubz() {
             clear to the users.
           </p>
         </div>
-      </div>
-      <div className={styles.row}>
         <div className={styles.cell}>
           <h2>Results</h2>
           <p>
@@ -130,22 +130,6 @@ export default function SocialNetworkAppClubz() {
             provide information for each lesson. They also can maintain their
             personal data and call themselves in sick when needed.
           </p>
-        </div>
-        <div className={styles.cell}>
-          <h2>Links</h2>
-          <ul className={styles.linksList}>
-            <Link
-              href={"https://github.com/MichelBusse/erp-system-schuelertreff"}
-              target={"_blank"}
-            >
-              <li>
-                <div className={styles.linkLogo}>
-                  <FaGithub />
-                </div>
-              </li>
-            </Link>
-          </ul>
-          <p>Check out the source code on GitHub.</p>
         </div>
       </div>
       <div className={styles.row}>
