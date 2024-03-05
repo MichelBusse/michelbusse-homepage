@@ -31,6 +31,12 @@
   align-items: flex-end;
   position: relative;
   padding: 2.5rem;
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-delay: 0.2s;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+  transform: scale(0.9);
 
   @media (max-width: 960px){
     width: 40rem;
@@ -45,6 +51,12 @@
     padding: 2rem 1rem;
   }
 }
+
+.project.visible{
+  opacity: 1;
+  transform: scale(1);
+}
+
 .imageWrapper {
   position: relative;
   box-sizing: border-box;

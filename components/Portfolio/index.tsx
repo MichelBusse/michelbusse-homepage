@@ -5,13 +5,17 @@ import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import HeadlinePlaceholder from "@/components/HeadlinePlaceholder";
+import RevealOnScroll from "../RevealOnScroll";
 
 const Portfolio = () => {
   return (
     <>
       <HeadlinePlaceholder id={"portfolio"} />
       <section className={styles.portfolio}>
-        <div className={styles.project}>
+        <RevealOnScroll
+          className={styles.project}
+          visibleClassName={styles.visible}
+        >
           <div className={styles.imageWrapper}>
             <Link href={"/projects/social-network-app"}>
               <Image
@@ -41,8 +45,11 @@ const Portfolio = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className={styles.project}>
+        </RevealOnScroll>
+        <RevealOnScroll
+          className={styles.project}
+          visibleClassName={styles.visible}
+        >
           <div className={styles.imageWrapper}>
             <Link href={"/projects/saas-erp-system"}>
               <Image
@@ -64,8 +71,11 @@ const Portfolio = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className={styles.project}>
+        </RevealOnScroll>
+        <RevealOnScroll
+          className={styles.project}
+          visibleClassName={styles.visible}
+        >
           <div className={styles.imageWrapper}>
             <Link href={"/projects/ar-in-surgery-hololens-2"}>
               <Image
@@ -87,8 +97,11 @@ const Portfolio = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className={styles.project}>
+        </RevealOnScroll>
+        <RevealOnScroll
+          className={styles.project}
+          visibleClassName={styles.visible}
+        >
           <div className={styles.imageWrapper}>
             <Link href={"/projects/software-agency-homepage"}>
               <Image
@@ -118,8 +131,11 @@ const Portfolio = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className={styles.project}>
+        </RevealOnScroll>
+        <RevealOnScroll
+          className={styles.project}
+          visibleClassName={styles.visible}
+        >
           <div className={styles.imageWrapper}>
             <Link href={"/projects/ar-in-surgery-ios-visionos"}>
               <Image
@@ -141,8 +157,11 @@ const Portfolio = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className={styles.project}>
+        </RevealOnScroll>
+        <RevealOnScroll
+          className={styles.project}
+          visibleClassName={styles.visible}
+        >
           <div className={styles.imageWrapper}>
             <Link href={"/projects/saas-management-system"}>
               <Image
@@ -166,7 +185,7 @@ const Portfolio = () => {
               </div>
             </div>
           </div>
-        </div>
+        </RevealOnScroll>
       </section>
     </>
   );

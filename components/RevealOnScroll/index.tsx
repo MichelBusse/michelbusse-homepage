@@ -17,7 +17,7 @@ const RevealOnScroll = (props: PropsWithChildren<Props>) => {
 
       if (
         divRef.current.getBoundingClientRect().top <
-        window.innerHeight * 0.9
+        window.innerHeight * 0.8
       ) {
         divRef.current.classList.add(props.visibleClassName);
       } else {
