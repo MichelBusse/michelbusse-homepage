@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.scss";
-import MouseCircle from "./components/MouseCircle";
-import BackgroundCanvas from "./components/three/BackgroundCanvas";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import "@/styles/globals.scss";
+import MouseCircle from "@/components/MouseCircle";
+import BackgroundCanvas from "@/components/Three/BackgroundCanvas";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Head from "next/head";

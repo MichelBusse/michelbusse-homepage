@@ -1,16 +1,16 @@
-import Image from "next/image";
-import styles from "../project.module.scss";
-import listStyles from "../../TechnologiesList.module.scss";
+import styles from "@/styles/ProjectPage.module.scss";
 import { FaLink } from "react-icons/fa";
 import Link from "next/link";
-import TypeWriter from "@/app/components/TypeWriter";
-import ProjectImagesCell from "@/app/components/ProjectImagesCell";
+import TypeWriter from "@/components/TypeWriter";
+import ProjectImagesCell from "@/components/ProjectImagesCell";
+import ProjectCell from "@/components/ProjectCell";
+import TechnologiesList from "@/components/TechnologiesList";
 
 export default function SocialNetworkAppClubz() {
   return (
     <main className={styles.main}>
       <div className={styles.row}>
-        <div className={styles.cell}>
+        <ProjectCell>
           <h1>
             <TypeWriter
               typewriterKey="ar-in-surgery-ios-visionos"
@@ -39,60 +39,23 @@ export default function SocialNetworkAppClubz() {
             intuitive navigation system on these platforms could be a
             groundbreaking advancement in medicine.
           </p>
-        </div>
+        </ProjectCell>
         <div className={styles.placeholder} id={"projectPlaceholder"}></div>
       </div>
       <div className={styles.row}>
-        <div className={styles.cell}>
+        <ProjectCell>
           <h2>Technologies</h2>
-          <ul className={listStyles.technologiesList}>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/visionos.svg"}
-                  alt={"VisionOS Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              Native visionOS (Swift)
-            </li>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/ios.svg"}
-                  alt={"IOS Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              Native iOS (Swift)
-            </li>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/realitykit.png"}
-                  alt={"RealityKit Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              RealityKit
-            </li>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/arkit.webp"}
-                  alt={"ARKit Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              ARKit
-            </li>
-          </ul>
-        </div>
-        <div className={styles.cell}>
+          <TechnologiesList
+            technologies={[
+              { logoSrc: "/images/technologies/visionos.svg", name: "Native visionOS (Swift)" },
+              { logoSrc: "/images/technologies/ios.svg", name: "Native iOS (Swift)" },
+              { logoSrc: "/images/technologies/realitykit.png", name: "RealityKit" },
+              { logoSrc: "/images/technologies/arkit.webp", name: "ARKit" },
+              { logoSrc: "/images/technologies/nodejs.png", name: "NodeJS" },
+            ]}
+          />
+        </ProjectCell>
+        <ProjectCell>
           <h2>Challenges</h2>
           <p>
             From the features perspective, the biggest challenges were the same
@@ -109,10 +72,10 @@ export default function SocialNetworkAppClubz() {
             Especially the required extensive communication between SwiftUI and
             RealityKit turned out to be challenging to implement.
           </p>
-        </div>
+        </ProjectCell>
       </div>
       <div className={styles.row}>
-        <div className={styles.cell}>
+        <ProjectCell>
           <h2>Results</h2>
           <p>
             The outcome of the development for iOS is an intuitive and compact
@@ -132,8 +95,8 @@ export default function SocialNetworkAppClubz() {
             </Link>
             .
           </p>
-        </div>
-        <div className={styles.cell}>
+        </ProjectCell>
+        <ProjectCell>
           <h2>Links</h2>
           <ul className={styles.linksList}>
             <Link href={"https://www.next3d.de/"} target={"_blank"}>
@@ -145,7 +108,7 @@ export default function SocialNetworkAppClubz() {
             </Link>
           </ul>
           <p>View more information on the projects website.</p>
-        </div>
+        </ProjectCell>
       </div>
       <div className={styles.row}>
         <ProjectImagesCell

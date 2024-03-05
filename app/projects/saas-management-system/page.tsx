@@ -1,14 +1,14 @@
-import Image from "next/image";
-import styles from "../project.module.scss";
-import listStyles from "../../TechnologiesList.module.scss";
-import TypeWriter from "@/app/components/TypeWriter";
-import ProjectImagesCell from "@/app/components/ProjectImagesCell";
+import styles from "@/styles/ProjectPage.module.scss";
+import TypeWriter from "@/components/TypeWriter";
+import ProjectImagesCell from "@/components/ProjectImagesCell";
+import ProjectCell from "@/components/ProjectCell";
+import TechnologiesList from "@/components/TechnologiesList";
 
 export default function SaaSManagementSystem() {
   return (
     <main className={styles.main}>
       <div className={styles.row}>
-        <div className={styles.cell}>
+        <ProjectCell>
           <h1>
             <TypeWriter typewriterKey="saas-management-system" autoStart={true}>
               SaaS Management System
@@ -26,62 +26,24 @@ export default function SaaSManagementSystem() {
             to efficiently manage all projects and present the resulting
             individual schedules to their employees.
           </p>
-        </div>
+        </ProjectCell>
         <div className={styles.placeholder} id={"projectPlaceholder"}></div>
       </div>
       <div className={styles.row}>
-        <div className={styles.cell}>
+        <ProjectCell>
           <h2>Technologies</h2>
-          <ul className={listStyles.technologiesList}>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/react.svg"}
-                  alt={"React Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              React
-            </li>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/postgresql.png"}
-                  alt={"PostgreSQL Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              PostgreSQL
-            </li>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/aws.png"}
-                  alt={"AWS Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              Amazon Web Services
-            </li>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/nodejs.png"}
-                  alt={"Nodejs Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              NodeJS
-            </li>
-          </ul>
-        </div>
+          <TechnologiesList
+            technologies={[
+              { logoSrc: "/images/technologies/react.svg", name: "React" },
+              { logoSrc: "/images/technologies/nodejs.png", name: "NodeJS" },
+              { logoSrc: "/images/technologies/postgresql.png", name: "PostgreSQL" },
+              { logoSrc: "/images/technologies/aws.png", name: "AWS" },
+            ]}
+          />
+        </ProjectCell>
       </div>
       <div className={styles.row}>
-        <div className={styles.cell}>
+        <ProjectCell>
           <h2>Challenges</h2>
           <p>
             As is often the case, the real challenges in developing the software
@@ -99,8 +61,8 @@ export default function SaaSManagementSystem() {
             was a challenge itself, because the necessary connection to AWS and
             a secure transfer of all documents.
           </p>
-        </div>
-        <div className={styles.cell}>
+        </ProjectCell>
+        <ProjectCell>
           <h2>Results</h2>
           <p>
             The outcome of the development process was a lightweight management
@@ -118,7 +80,7 @@ export default function SaaSManagementSystem() {
             employees and removed the need to send each schedule to each person
             by hand.
           </p>
-        </div>
+        </ProjectCell>
       </div>
       <div className={styles.row}>
         <ProjectImagesCell

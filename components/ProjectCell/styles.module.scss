@@ -1,0 +1,15 @@
+@import "@/styles/utils";
+
+.cell {
+  box-sizing: border-box;
+  flex: 1 1 0;
+  margin: 1rem;
+  padding: 2rem;
+  @include glassEffect;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 400px) {
+    margin: 0.5rem;
+  }
+}

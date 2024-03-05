@@ -1,16 +1,16 @@
-import Image from "next/image";
-import styles from "../project.module.scss";
-import listStyles from "../../TechnologiesList.module.scss";
+import styles from "@/styles/ProjectPage.module.scss";
 import { FaGithub, FaLink } from "react-icons/fa";
 import Link from "next/link";
-import TypeWriter from "@/app/components/TypeWriter";
-import ProjectImagesCell from "@/app/components/ProjectImagesCell";
+import TypeWriter from "@/components/TypeWriter";
+import ProjectImagesCell from "@/components/ProjectImagesCell";
+import ProjectCell from "@/components/ProjectCell";
+import TechnologiesList from "@/components/TechnologiesList";
 
 export default function SocialNetworkAppClubz() {
   return (
     <main className={styles.main}>
       <div className={styles.row}>
-        <div className={styles.cell}>
+        <ProjectCell>
           <h1>
             <TypeWriter
               typewriterKey="software-agency-homepage"
@@ -33,60 +33,22 @@ export default function SocialNetworkAppClubz() {
             This resulted in the need for a capable homepage, which tells our
             story, explains our services and convinces new customers.
           </p>
-        </div>
+        </ProjectCell>
         <div className={styles.placeholder} id={"projectPlaceholder"}></div>
       </div>
       <div className={styles.row}>
-        <div className={styles.cell}>
+        <ProjectCell>
           <h2>Technologies</h2>
-          <ul className={listStyles.technologiesList}>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/nextjs.svg"}
-                  alt={"Flutter Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              NextJS
-            </li>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/react.svg"}
-                  alt={"React Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              React
-            </li>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/seo.png"}
-                  alt={"SEO Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              Search Engine Optimization
-            </li>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/scrum.png"}
-                  alt={"OneSignal Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              Scrum
-            </li>
-          </ul>
-        </div>
-        <div className={styles.cell}>
+          <TechnologiesList
+            technologies={[
+              { logoSrc: "/images/technologies/nextjs.svg", name: "NextJS" },
+              { logoSrc: "/images/technologies/react.svg", name: "React" },
+              { logoSrc: "/images/technologies/typescript.svg", name: "TypeScript" },
+              { logoSrc: "/images/technologies/seo.png", name: "Search Engine Optimization" },
+            ]}
+          />
+        </ProjectCell>
+        <ProjectCell>
           <h2>Challenges</h2>
           <p>
             Building a software agency itself comes along with so many
@@ -103,10 +65,10 @@ export default function SocialNetworkAppClubz() {
             Last but not least, the website also had to look innovative and
             recognizable in comparison with our competitors.
           </p>
-        </div>
+        </ProjectCell>
       </div>
       <div className={styles.row}>
-        <div className={styles.cell}>
+        <ProjectCell>
           <h2>Results</h2>
           <p>
             The homepage for M-to-B Software became a responsive and modern
@@ -120,8 +82,8 @@ export default function SocialNetworkAppClubz() {
             generate multiple relevant customer requests per month and built a
             solid basis for the agency&apos;s customer acquisition.
           </p>
-        </div>
-        <div className={styles.cell}>
+        </ProjectCell>
+        <ProjectCell>
           <h2>Links</h2>
           <ul className={styles.linksList}>
             <Link
@@ -146,7 +108,7 @@ export default function SocialNetworkAppClubz() {
             Check out the source code on GitHub or the live version of the
             website.
           </p>
-        </div>
+        </ProjectCell>
       </div>
       <div className={styles.row}>
         <ProjectImagesCell

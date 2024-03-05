@@ -1,0 +1,229 @@
+@import "@/styles/utils.scss";
+@import "@/styles/colors.scss";
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  z-index: 900;
+
+  background: rgba(0, 6, 14, 0.5);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 10px 15px rgb(0 0 0 / 20%);
+
+  border-radius: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: background-color 0.5s ease-in-out;
+
+  @media (max-width: 750px) {
+    background-color: $dark-blue-color;
+  }
+}
+
+.logoWrapper {
+  margin: 0 2rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoWrapper span {
+  font-family: "Roboto Mono", "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+.navbar a {
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+}
+
+.mainMenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  @media (max-width: 750px) {
+    display: none;
+  }
+}
+
+.mainMenu li {
+  height: 100%;
+  height: 100%;
+  font-size: 1.1rem;
+  margin: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.mainMenu li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% -100%;
+  width: 0.5rem;
+  height: 0.5rem;
+  width: 0;
+  height: 0;
+  transition: translate 0.3s ease-in-out;
+
+  border-left: 0.8rem solid transparent;
+  border-right: 0.8rem solid transparent;
+  border-top: 0.8rem solid $white-color;
+}
+
+.mainMenu li.active::before,
+.mainMenu li:hover::before {
+  translate: -50% 0;
+}
+
+.mobileMenu {
+  position: fixed;
+  box-sizing: border-box;
+  top: 3.9rem;
+  right: 0;
+  width: 13rem;
+  height: calc(100dvh - 3.9rem);
+  background-color: $dark-blue-color;
+  translate: calc(100% + 5rem);
+  transition: translate 0.5s ease-in-out;
+  padding: 2rem 0;
+  padding-left: 5rem;
+  clip-path: polygon(0 0, 100% 0,100% 100%, 5rem 100%);  
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.mobileMenu.visible {
+  translate: 0;
+}
+
+.mobileMenu ul{
+  padding: 0;
+  list-style: none;
+  transform: translateZ(0);
+}
+
+.mobileMenu li{
+  position: relative;
+  font-size: 1.2rem;
+  margin: 2rem 0;
+  transform: translateZ(0);
+}
+
+.mobileMenu li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  translate: 100% -50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  width: 0;
+  height: 0;
+  transition: translate 0.3s ease-in-out;
+  transform: rotate(90deg);
+
+  border-left: 0.8rem solid transparent;
+  border-right: 0.8rem solid transparent;
+  border-top: 0.8rem solid $white-color;
+}
+
+
+.mobileMenu li.active::before,
+.mobileMenu li:hover::before {
+  translate: 0 -50%;
+}
+
+
+.mobileMenuButton {
+  display: none;
+  position: relative;
+  width: 1.5rem;
+  height: 1.2rem;
+  margin: 0 2rem;
+  border: none;
+  padding: 0;
+
+  @media (max-width: 750px) {
+    display: block;
+  }
+}
+
+.mobileMenuButton::before {
+  content: none;
+}
+
+.mobileMenuButton .bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0.15rem;
+  background: $white-color;
+  transition: all 0.3s ease-in-out;
+}
+
+.mobileMenuButton .bar1 {
+  transform-origin: top left;
+  transition-delay: 0;
+}
+
+.mobileMenuButton .bar2 {
+  left: auto;
+  right: 0;
+  width: 70%;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.mobileMenuButton .bar3 {
+  top: auto;
+  bottom: 0;
+  transform-origin: bottom left;
+  transition-delay: 0;
+}
+
+.mobileMenuButton:hover .bar2 {
+  width: 100%;
+}
+
+.mobileMenuButton.active:hover .bar2 {
+  width: 70%;
+}
+
+
+.mobileMenuButton.active .bar1 {
+  transform: rotate(45deg);
+  translate: 20%;
+  transition-delay: 0.15s;
+}
+
+.mobileMenuButton.active .bar2 {
+  transform: translate(105%);
+}
+
+.mobileMenuButton.active .bar3 {
+  transform: rotate(-45deg);
+  translate: 20%;
+  transition-delay: 0.15s;
+}

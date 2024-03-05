@@ -1,17 +1,17 @@
-import Image from "next/image";
-import styles from "../project.module.scss";
-import listStyles from "../../TechnologiesList.module.scss";
+import styles from "@/styles/ProjectPage.module.scss";
 import { FaGithub, FaAppStoreIos } from "react-icons/fa";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import Link from "next/link";
-import TypeWriter from "@/app/components/TypeWriter";
-import ProjectImagesCell from "@/app/components/ProjectImagesCell";
+import TypeWriter from "@/components/TypeWriter";
+import ProjectImagesCell from "@/components/ProjectImagesCell";
+import ProjectCell from "@/components/ProjectCell";
+import TechnologiesList from "@/components/TechnologiesList";
 
 export default function SocialNetworkAppClubz() {
   return (
     <main className={styles.main}>
       <div className={styles.row}>
-        <div className={styles.cell}>
+        <ProjectCell>
           <h1>
             <TypeWriter
               typewriterKey="social-network-app"
@@ -37,60 +37,22 @@ export default function SocialNetworkAppClubz() {
             since there is no other current alternative to efficiently market
             events.
           </p>
-        </div>
+        </ProjectCell>
         <div className={styles.placeholder} id={"projectPlaceholder"}></div>
       </div>
       <div className={styles.row}>
-        <div className={styles.cell}>
+        <ProjectCell>
           <h2>Technologies</h2>
-          <ul className={listStyles.technologiesList}>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/flutter.svg"}
-                  alt={"Flutter Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              Flutter (Dart)
-            </li>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/riverpod.svg"}
-                  alt={"Riverpod Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              Riverpod
-            </li>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/supabase.png"}
-                  alt={"Supabase Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              Supabase
-            </li>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/onesignal.svg"}
-                  alt={"OneSignal Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              OneSignal
-            </li>
-          </ul>
-        </div>
-        <div className={styles.cell}>
+          <TechnologiesList
+            technologies={[
+              { logoSrc: "/images/technologies/flutter.svg", name: "Flutter" },
+              { logoSrc: "/images/technologies/riverpod.svg", name: "Riverpod" },
+              { logoSrc: "/images/technologies/supabase.png", name: "Supabase" },
+              { logoSrc: "/images/technologies/postgresql.png", name: "PostgreSQL" },
+            ]}
+          />
+        </ProjectCell>
+        <ProjectCell>
           <h2>Challenges</h2>
           <p>
             When developing the social network app, it was crucial to keep the
@@ -110,10 +72,10 @@ export default function SocialNetworkAppClubz() {
             align with all policies of Google and Apple to get approval on both
             stores.
           </p>
-        </div>
+        </ProjectCell>
       </div>
       <div className={styles.row}>
-        <div className={styles.cell}>
+        <ProjectCell>
           <h2>Results</h2>
           <p>
             Clubz became a scalable full-stack app, which is now live on the App
@@ -134,8 +96,8 @@ export default function SocialNetworkAppClubz() {
             In summary, Clubz is able to solve the initial problem and now is at
             the beginning of building a local community
           </p>
-        </div>
-        <div className={styles.cell}>
+        </ProjectCell>
+        <ProjectCell>
           <h2>Links</h2>
           <ul className={styles.linksList}>
             <Link
@@ -175,7 +137,7 @@ export default function SocialNetworkAppClubz() {
             Check out the source code on GitHub or the live version on Google
             Play and App Store.
           </p>
-        </div>
+        </ProjectCell>
       </div>
       <div className={styles.row}>
         <ProjectImagesCell

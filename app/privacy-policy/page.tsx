@@ -1,8 +1,8 @@
-import styles from "./privacyPolicy.module.scss";
+import TextPage from "@/components/TextPage";
 
 export default function PrivacyPolicy() {
   return (
-    <main className={styles.privacyPolicy}>
+    <TextPage>
       <h1>Privacy Policy</h1>
       <p>
         The person responsible within the meaning of data protection laws, in
@@ -348,6 +348,6 @@ export default function PrivacyPolicy() {
           (Version #2020-09-30).
         </em>
       </p>
-    </main>
+    </TextPage>
   );
 }

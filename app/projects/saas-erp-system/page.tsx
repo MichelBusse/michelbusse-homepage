@@ -1,17 +1,14 @@
-import Image from "next/image";
-import styles from "../project.module.scss";
-import listStyles from "../../TechnologiesList.module.scss";
-import { FaGithub, FaAppStoreIos } from "react-icons/fa";
-import { IoLogoGooglePlaystore } from "react-icons/io5";
-import Link from "next/link";
-import TypeWriter from "@/app/components/TypeWriter";
-import ProjectImagesCell from "@/app/components/ProjectImagesCell";
+import styles from "@/styles/ProjectPage.module.scss";
+import TypeWriter from "@/components/TypeWriter";
+import ProjectImagesCell from "@/components/ProjectImagesCell";
+import ProjectCell from "@/components/ProjectCell";
+import TechnologiesList from "@/components/TechnologiesList";
 
 export default function SocialNetworkAppClubz() {
   return (
     <main className={styles.main}>
       <div className={styles.row}>
-        <div className={styles.cell}>
+        <ProjectCell>
           <h1>
             <TypeWriter typewriterKey="saas-erp-system" autoStart={true}>
               SaaS ERP System
@@ -30,62 +27,25 @@ export default function SocialNetworkAppClubz() {
             comprises nearly all parts of their business and became fundamental
             for their work.
           </p>
-        </div>
+        </ProjectCell>
         <div className={styles.placeholder} id={"projectPlaceholder"}></div>
       </div>
       <div className={styles.row}>
-        <div className={styles.cell}>
+        <ProjectCell>
           <h2>Technologies</h2>
-          <ul className={listStyles.technologiesList}>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/react.svg"}
-                  alt={"React Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              React
-            </li>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/vite.svg"}
-                  alt={"Vite Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              Vite
-            </li>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/nest.svg"}
-                  alt={"NestJS Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              NestJS
-            </li>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/postgresql.png"}
-                  alt={"PostgreSQL Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              PostgreSQL
-            </li>
-          </ul>
-        </div>
+          <TechnologiesList
+            technologies={[
+              { logoSrc: "/images/technologies/react.svg", name: "React" },
+              { logoSrc: "/images/technologies/typescript.svg", name: "TypeScript" },
+              { logoSrc: "/images/technologies/nodejs.png", name: "NodeJS" },
+              { logoSrc: "/images/technologies/nest.svg", name: "NestJS" },
+              { logoSrc: "/images/technologies/postgresql.png", name: "PostgreSQL" },
+            ]}
+          />
+        </ProjectCell>
       </div>
       <div className={styles.row}>
-        <div className={styles.cell}>
+        <ProjectCell>
           <h2>Challenges</h2>
           <p>
             The biggest challenges when developing the ERP system became the
@@ -103,8 +63,8 @@ export default function SocialNetworkAppClubz() {
             With all these features, the app must still remain intuitive and
             clear to the users.
           </p>
-        </div>
-        <div className={styles.cell}>
+        </ProjectCell>
+        <ProjectCell>
           <h2>Results</h2>
           <p>
             The final system became an extensive web app, which exactly mapped
@@ -130,7 +90,7 @@ export default function SocialNetworkAppClubz() {
             provide information for each lesson. They also can maintain their
             personal data and call themselves in sick when needed.
           </p>
-        </div>
+        </ProjectCell>
       </div>
       <div className={styles.row}>
         <ProjectImagesCell

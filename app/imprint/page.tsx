@@ -1,8 +1,8 @@
-import styles from "./imprint.module.scss";
+import TextPage from "@/components/TextPage";
 
 export default function Imprint() {
   return (
-    <main className={styles.imprint}>
+    <TextPage>
       <h1>Impressum</h1>
 
       <h3>Angaben gem&auml;&szlig; &sect; 5 TMG</h3>
@@ -62,6 +62,6 @@ export default function Imprint() {
         entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden
         wir derartige Inhalte umgehend entfernen.
       </p>
-    </main>
+    </TextPage>
   );
 }

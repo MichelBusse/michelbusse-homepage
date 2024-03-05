@@ -1,17 +1,17 @@
-import Image from "next/image";
-import styles from "../project.module.scss";
-import listStyles from "../../TechnologiesList.module.scss";
+import styles from "@/styles/ProjectPage.module.scss";
 import { FaLink } from "react-icons/fa";
 import { MdSchool } from "react-icons/md";
 import Link from "next/link";
-import TypeWriter from "@/app/components/TypeWriter";
-import ProjectImagesCell from "@/app/components/ProjectImagesCell";
+import TypeWriter from "@/components/TypeWriter";
+import ProjectImagesCell from "@/components/ProjectImagesCell";
+import ProjectCell from "@/components/ProjectCell";
+import TechnologiesList from "@/components/TechnologiesList";
 
 export default function SocialNetworkApp() {
   return (
     <main className={styles.main}>
       <div className={styles.row}>
-        <div className={styles.cell}>
+        <ProjectCell>
           <h1>
             <TypeWriter
               typewriterKey="ar-in-surgery-hololens-2"
@@ -36,60 +36,22 @@ export default function SocialNetworkApp() {
             medical technicians to ensure alignment with their needs and
             expertise.
           </p>
-        </div>
+        </ProjectCell>
         <div className={styles.placeholder} id={"projectPlaceholder"}></div>
       </div>
       <div className={styles.row}>
-        <div className={styles.cell}>
+        <ProjectCell>
           <h2>Technologies</h2>
-          <ul className={listStyles.technologiesList}>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/unity.svg"}
-                  alt={"Unity Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              Unity
-            </li>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/mrtk.png"}
-                  alt={"MRTK Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              Mixed Reality Toolkit
-            </li>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/uwp.svg"}
-                  alt={"UWP Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              Universal Windows Platform
-            </li>
-            <li className={listStyles.technologyItem}>
-              <div className={listStyles.technologyLogo}>
-                <Image
-                  src={"/images/technologies/opencv.png"}
-                  alt={"OpenCV Logo"}
-                  width={10}
-                  height={10}
-                />
-              </div>
-              OpenCV
-            </li>
-          </ul>
-        </div>
-        <div className={styles.cell}>
+          <TechnologiesList
+            technologies={[
+              { logoSrc: "/images/technologies/unity.svg", name: "Unity" },
+              { logoSrc: "/images/technologies/csharp.svg", name: "C#" },
+              { logoSrc: "/images/technologies/mrtk.png", name: "MRTK" },
+              { logoSrc: "/images/technologies/opencv.png", name: "OpenCV" },
+            ]}
+          />
+        </ProjectCell>
+        <ProjectCell>
           <h2>Challenges</h2>
           <p>
             Because the Microsoft Hololens 2 being a rather unpopular and
@@ -111,16 +73,16 @@ export default function SocialNetworkApp() {
             challenging as well, because of different technical terms and
             understandings of complexity.
           </p>
-        </div>
+        </ProjectCell>
       </div>
       <div className={styles.row}>
-        <div className={styles.cell}>
+        <ProjectCell>
           <h2>Results</h2>
           <p>
             The development process resulted in an intuitive and modular AR
             navigation system for the University Hospital Leipzig. The system
-            supports localization of real world structures in the patient&apos;s body
-            through a landmark based registration process. Any surgical
+            supports localization of real world structures in the patient&apos;s
+            body through a landmark based registration process. Any surgical
             instrument can be tracked in real-time by simply attaching markers
             and setting them up in the system. After importing standardized
             DICOM data, for example from MRI scans, the instrument position
@@ -134,8 +96,8 @@ export default function SocialNetworkApp() {
             Multiple precision studies confirmed the feasibility of surgical
             navigation with the Hololens 2 and further test the accuracy.
           </p>
-        </div>
-        <div className={styles.cell}>
+        </ProjectCell>
+        <ProjectCell>
           <h2>Links</h2>
           <ul className={styles.linksList}>
             <Link href={"https://www.next3d.de/"} target={"_blank"}>
@@ -162,7 +124,7 @@ export default function SocialNetworkApp() {
             View more information on the projects website or its scientific
             paper.
           </p>
-        </div>
+        </ProjectCell>
       </div>
       <div className={styles.row}>
         <ProjectImagesCell
