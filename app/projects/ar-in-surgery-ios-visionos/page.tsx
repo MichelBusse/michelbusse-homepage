@@ -47,11 +47,10 @@ export default function SocialNetworkAppClubz() {
           <h2>Technologies</h2>
           <TechnologiesList
             technologies={[
-              { logoSrc: "/images/technologies/visionos.svg", name: "Native visionOS (Swift)" },
-              { logoSrc: "/images/technologies/ios.svg", name: "Native iOS (Swift)" },
+              { logoSrc: "/images/technologies/visionos.svg", name: "visionOS (Swift)" },
+              { logoSrc: "/images/technologies/ios.svg", name: "iOS (Swift)" },
               { logoSrc: "/images/technologies/realitykit.png", name: "RealityKit" },
               { logoSrc: "/images/technologies/arkit.webp", name: "ARKit" },
-              { logoSrc: "/images/technologies/nodejs.png", name: "NodeJS" },
             ]}
           />
         </ProjectCell>

@@ -47,7 +47,7 @@ export default function SocialNetworkApp() {
               { logoSrc: "/images/technologies/unity.svg", name: "Unity" },
               { logoSrc: "/images/technologies/csharp.svg", name: "C#" },
               { logoSrc: "/images/technologies/mrtk.png", name: "MRTK" },
-              { logoSrc: "/images/technologies/opencv.png", name: "OpenCV" },
+              { logoSrc: "/images/technologies/nodejs.svg", name: "NodeJS" },
             ]}
           />
         </ProjectCell>

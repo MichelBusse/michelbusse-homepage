@@ -37,7 +37,7 @@ export default function SocialNetworkAppClubz() {
             technologies={[
               { logoSrc: "/images/technologies/react.svg", name: "React" },
               { logoSrc: "/images/technologies/typescript.svg", name: "TypeScript" },
-              { logoSrc: "/images/technologies/nodejs.png", name: "NodeJS" },
+              { logoSrc: "/images/technologies/nodejs.svg", name: "NodeJS" },
               { logoSrc: "/images/technologies/nest.svg", name: "NestJS" },
               { logoSrc: "/images/technologies/postgresql.png", name: "PostgreSQL" },
             ]}

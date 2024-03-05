@@ -35,7 +35,7 @@ export default function SaaSManagementSystem() {
           <TechnologiesList
             technologies={[
               { logoSrc: "/images/technologies/react.svg", name: "React" },
-              { logoSrc: "/images/technologies/nodejs.png", name: "NodeJS" },
+              { logoSrc: "/images/technologies/nodejs.svg", name: "NodeJS" },
               { logoSrc: "/images/technologies/postgresql.png", name: "PostgreSQL" },
               { logoSrc: "/images/technologies/aws.png", name: "AWS" },
             ]}

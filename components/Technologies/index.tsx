@@ -17,7 +17,7 @@ const Technologies = () => {
                   },
                   {
                     logoSrc: "/images/technologies/visionos.svg",
-                    name: "VisionOS",
+                    name: "visionOS",
                   },
                   {
                     logoSrc: "/images/technologies/mrtk.png",
@@ -64,7 +64,7 @@ const Technologies = () => {
               <TechnologiesList
                 technologies={[
                   {
-                    logoSrc: "/images/technologies/nodejs.png",
+                    logoSrc: "/images/technologies/nodejs.svg",
                     name: "NodeJS",
                   },
                   {
@@ -74,6 +74,10 @@ const Technologies = () => {
                   {
                     logoSrc: "/images/technologies/postgresql.png",
                     name: "PostgreSQL",
+                  },
+                  {
+                    logoSrc: "/images/technologies/mongodb.svg",
+                    name: "MongoDB",
                   },
                   {
                     logoSrc: "/images/technologies/firebase.png",
@@ -95,10 +99,6 @@ const Technologies = () => {
                     logoSrc: "/images/technologies/python.png",
                     name: "Python",
                   },
-                  {
-                    logoSrc: "/images/technologies/opencv.png",
-                    name: "OpenCV",
-                  },
                 ]}
               />
             </div>
@@ -117,11 +117,11 @@ const Technologies = () => {
                   },
                   {
                     logoSrc: "/images/technologies/ios.svg",
-                    name: "Native iOS (Swift)",
+                    name: "iOS (Swift)",
                   },
                   {
                     logoSrc: "/images/technologies/android.svg",
-                    name: "Native Android (Kotlin)",
+                    name: "Android (Kotlin)",
                   },
                 ]}
               />
@@ -145,12 +145,12 @@ const Technologies = () => {
                     name: "AWS",
                   },
                   {
-                    logoSrc: "/images/technologies/linux.png",
-                    name: "Linux",
+                    logoSrc: "/images/technologies/googlecloud.svg",
+                    name: "Google Cloud",
                   },
                   {
-                    logoSrc: "/images/technologies/scrum.png",
-                    name: "Scrum",
+                    logoSrc: "/images/technologies/linux.png",
+                    name: "Linux",
                   },
                 ]}
               />

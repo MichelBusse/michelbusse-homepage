@@ -44,7 +44,7 @@ export default function SocialNetworkAppClubz() {
               { logoSrc: "/images/technologies/nextjs.svg", name: "NextJS" },
               { logoSrc: "/images/technologies/react.svg", name: "React" },
               { logoSrc: "/images/technologies/typescript.svg", name: "TypeScript" },
-              { logoSrc: "/images/technologies/seo.png", name: "Search Engine Optimization" },
+              { logoSrc: "/images/technologies/nodejs.svg", name: "NodeJS" },
             ]}
           />
         </ProjectCell>
