@@ -8,31 +8,6 @@ const Technologies = () => {
         <div className={styles.gridColumn}>
           <div className={styles.boxWrapper}>
             <div className={styles.box}>
-              <h3>VR / AR</h3>
-              <TechnologiesList
-                technologies={[
-                  {
-                    logoSrc: "/images/technologies/unity.svg",
-                    name: "Unity",
-                  },
-                  {
-                    logoSrc: "/images/technologies/visionos.svg",
-                    name: "visionOS",
-                  },
-                  {
-                    logoSrc: "/images/technologies/mrtk.png",
-                    name: "MRTK",
-                  },
-                  {
-                    logoSrc: "/images/technologies/realitykit.png",
-                    name: "RealityKit",
-                  },
-                ]}
-              />
-            </div>
-          </div>
-          <div className={styles.boxWrapper}>
-            <div className={styles.box}>
               <h3>Web</h3>
               <TechnologiesList
                 technologies={[
@@ -51,6 +26,31 @@ const Technologies = () => {
                   {
                     logoSrc: "/images/technologies/threejs.png",
                     name: "ThreeJS",
+                  },
+                ]}
+              />
+            </div>
+          </div>
+          <div className={styles.boxWrapper}>
+            <div className={styles.box}>
+              <h3>VR / AR</h3>
+              <TechnologiesList
+                technologies={[
+                  {
+                    logoSrc: "/images/technologies/unity.svg",
+                    name: "Unity",
+                  },
+                  {
+                    logoSrc: "/images/technologies/visionos.svg",
+                    name: "visionOS",
+                  },
+                  {
+                    logoSrc: "/images/technologies/mrtk.png",
+                    name: "MRTK",
+                  },
+                  {
+                    logoSrc: "/images/technologies/realitykit.png",
+                    name: "RealityKit",
                   },
                 ]}
               />
@@ -78,6 +78,10 @@ const Technologies = () => {
                   {
                     logoSrc: "/images/technologies/mongodb.svg",
                     name: "MongoDB",
+                  },
+                  {
+                    logoSrc: "/images/technologies/redis.svg",
+                    name: "Redis",
                   },
                   {
                     logoSrc: "/images/technologies/firebase.png",
