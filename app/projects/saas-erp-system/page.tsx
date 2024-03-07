@@ -3,6 +3,8 @@ import TypeWriter from "@/components/TypeWriter";
 import ProjectImagesCell from "@/components/ProjectImagesCell";
 import ProjectCell from "@/components/ProjectCell";
 import TechnologiesList from "@/components/TechnologiesList";
+import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
 
 export default function SocialNetworkAppClubz() {
   return (
@@ -36,15 +38,19 @@ export default function SocialNetworkAppClubz() {
           <TechnologiesList
             technologies={[
               { logoSrc: "/images/technologies/react.svg", name: "React" },
-              { logoSrc: "/images/technologies/typescript.svg", name: "TypeScript" },
+              {
+                logoSrc: "/images/technologies/typescript.svg",
+                name: "TypeScript",
+              },
               { logoSrc: "/images/technologies/nodejs.svg", name: "NodeJS" },
               { logoSrc: "/images/technologies/nest.svg", name: "NestJS" },
-              { logoSrc: "/images/technologies/postgresql.png", name: "PostgreSQL" },
+              {
+                logoSrc: "/images/technologies/postgresql.png",
+                name: "PostgreSQL",
+              },
             ]}
           />
         </ProjectCell>
-      </div>
-      <div className={styles.row}>
         <ProjectCell>
           <h2>Challenges</h2>
           <p>
@@ -64,6 +70,8 @@ export default function SocialNetworkAppClubz() {
             clear to the users.
           </p>
         </ProjectCell>
+      </div>
+      <div className={styles.row}>
         <ProjectCell>
           <h2>Results</h2>
           <p>
@@ -90,6 +98,22 @@ export default function SocialNetworkAppClubz() {
             provide information for each lesson. They also can maintain their
             personal data and call themselves in sick when needed.
           </p>
+        </ProjectCell>
+        <ProjectCell>
+          <h2>Links</h2>
+          <ul className={styles.linksList}>
+            <Link
+              href={"https://github.com/MichelBusse/erp-system-schuelertreff"}
+              target={"_blank"}
+            >
+              <li>
+                <div className={styles.linkLogo}>
+                  <FaGithub />
+                </div>
+              </li>
+            </Link>
+          </ul>
+          <p>Check out the source code on GitHub.</p>
         </ProjectCell>
       </div>
       <div className={styles.row}>
