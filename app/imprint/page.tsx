@@ -4,8 +4,6 @@ export default function Imprint() {
   return (
     <TextPage>
       <h1>Impressum</h1>
-
-      <h3>Angaben gem&auml;&szlig; &sect; 5 TMG</h3>
       <p>
         Michel Busse
         <br />

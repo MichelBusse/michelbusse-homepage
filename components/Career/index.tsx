@@ -15,6 +15,22 @@ const Career = () => {
             className={styles.timestamp}
             visibleClassName={styles.visible}
           >
+            <div className={styles.time}>since 2024</div>
+            <div className={styles.description}>
+              <h3>Mobile App Engineer</h3>
+              <p>@ MCI Solutions GmbH</p>
+              <ul>
+                <li>
+                  Development of a cross-platform app for a fitness and health start-up
+                </li>
+                <li>Project management of multiple modules</li>
+              </ul>
+            </div>
+          </RevealOnScroll>
+          <RevealOnScroll
+            className={styles.timestamp}
+            visibleClassName={styles.visible}
+          >
             <div className={styles.time}>2024</div>
             <div className={styles.description}>
               <h3>

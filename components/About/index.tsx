@@ -15,14 +15,16 @@ const About = () => {
           Germany.
         </p>
         <p>
-          I got into coding when I was 14, and I&apos;ve been on an exhilarating
-          journey ever since. Alongside the start of my bachelor&apos;s degree
-          in 2020, I founded my own software agency. Working alongside an
-          incredible team, we&apos;ve tackled all sorts of projects, from
-          intricate client demands to cutting-edge innovations. The thrill of
-          presenting and refining those systems at places like UPMC Pittsburgh
-          and Apple Park Cupertino has only fueled my excitement for more
-          challenges and projects to sink into.
+          My coding journey began when I was 14, and it&apos;s been an
+          exhilarating ride ever since. In 2020, alongside starting my
+          bachelor&apos;s degree, I founded my own software agency. Presenting
+          and refining our systems at prestigious venues like UPMC Pittsburgh
+          and Apple Park Cupertino only deepened my passion for technology.
+        </p>
+        <p>
+          Currently, I&apos;m working as a Mobile App Engineer at a dynamic
+          fitness and health app startup. Every day presents new challenges, and
+          I thrive on finding creative solutions that make a real impact.
         </p>
         <p>
           I hope you enjoy browsing through my portfolio, and I look forward to
