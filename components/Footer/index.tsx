@@ -1,17 +1,26 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "./styles.module.scss";
 import { FaLinkedin, FaGithub, FaStackOverflow } from "react-icons/fa";
+import { getLocaleFromPathname } from "@/lib/i18n";
+import { siteContent } from "@/lib/site-content";
 
 const Footer = () => {
+  const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname);
+  const content = siteContent[locale].footer;
+
   return (
     <footer className={styles.footer}>
       <ul>
         <div className={styles.row}>
-          <Link href={"/imprint"}>
-            <li>Imprint</li>
+          <Link href={`/${locale}/imprint`}>
+            <li>{content.imprint}</li>
           </Link>
-          <Link href={"/privacy-policy"}>
-            <li>Privacy Policy</li>
+          <Link href={`/${locale}/privacy-policy`}>
+            <li>{content.privacyPolicy}</li>
           </Link>
         </div>
         <div className={styles.row}>

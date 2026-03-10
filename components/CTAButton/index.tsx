@@ -1,6 +1,10 @@
 "use client";
 
-const CTAButton = () => {
+type Props = {
+  label: string;
+};
+
+const CTAButton = ({ label }: Props) => {
     return <button
     onClick={(_) => {
       document.getElementById('about')?.scrollIntoView({
@@ -8,7 +12,7 @@ const CTAButton = () => {
       });
     }}
   >
-    Discover More
+    {label}
   </button>;
 }
 

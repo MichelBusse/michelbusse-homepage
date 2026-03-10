@@ -1,13 +1,27 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "./styles.module.scss";
-import typewriterStyles from "@/components/TypeWriter/styles.module.scss"
+import typewriterStyles from "@/components/TypeWriter/styles.module.scss";
 import { useEffect, useState } from "react";
+import {
+  getLocaleFromPathname,
+  localizePath,
+  type Locale,
+} from "@/lib/i18n";
+import { siteContent } from "@/lib/site-content";
 
 const Navbar = () => {
   const [currentSection, setCurrentSection] = useState("");
   const [mobileVisible, setMobileVisible] = useState(false);
+  const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname);
+  const content = siteContent[locale].navbar;
+
+  const buildSectionHref = (section: string) => `/${locale}/#${section}`;
+  const switchToLocale = (targetLocale: Locale) =>
+    localizePath(pathname, targetLocale);
 
   useEffect(() => {
     const updateMenu = () => {
@@ -73,35 +87,57 @@ const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    setMobileVisible(false);
+  }, [pathname]);
+
   return (
     <nav className={styles.navbar}>
-      <Link href={"/"}>
+      <Link href={`/${locale}`}>
         <div className={styles.logoWrapper}>
-          <span>Michel Busse<span className={typewriterStyles.cursor}>|</span></span>
+          <span>
+            Michel Busse<span className={typewriterStyles.cursor}>|</span>
+          </span>
         </div>
       </Link>
       <ul className={styles.mainMenu}>
-        <Link href={"/#about"}>
+        <Link href={buildSectionHref("about")}>
           <li className={currentSection == "about" ? styles.active : ""}>
-            About
+            {content.about}
           </li>
         </Link>
-        <Link href={"/#portfolio"}>
+        <Link href={buildSectionHref("portfolio")}>
           <li className={currentSection == "portfolio" ? styles.active : ""}>
-            Portfolio
+            {content.portfolio}
           </li>
         </Link>
-        <Link href={"/#career"}>
+        <Link href={buildSectionHref("career")}>
           <li className={currentSection == "career" ? styles.active : ""}>
-            Career
+            {content.career}
           </li>
         </Link>
-        <Link href={"/#contact"}>
+        <Link href={buildSectionHref("contact")}>
           <li className={currentSection == "contact" ? styles.active : ""}>
-            Contact
+            {content.contact}
           </li>
         </Link>
       </ul>
+      <div className={styles.actions}>
+        <div className={styles.languageSwitch} aria-label={content.languageLabel}>
+          <Link
+            className={locale === "en" ? styles.languageActive : ""}
+            href={switchToLocale("en")}
+          >
+            EN
+          </Link>
+          <Link
+            className={locale === "de" ? styles.languageActive : ""}
+            href={switchToLocale("de")}
+          >
+            DE
+          </Link>
+        </div>
+      </div>
       <button
         className={`${styles.mobileMenuButton} ${
           mobileVisible ? styles.active : ""
@@ -118,27 +154,41 @@ const Navbar = () => {
         }`}
       >
         <ul>
-          <Link href={"/#about"}>
+          <Link href={buildSectionHref("about")}>
             <li className={currentSection == "about" ? styles.active : ""}>
-              About
+              {content.about}
             </li>
           </Link>
-          <Link href={"/#portfolio"}>
+          <Link href={buildSectionHref("portfolio")}>
             <li className={currentSection == "portfolio" ? styles.active : ""}>
-              Portfolio
+              {content.portfolio}
             </li>
           </Link>
-          <Link href={"/#career"}>
+          <Link href={buildSectionHref("career")}>
             <li className={currentSection == "career" ? styles.active : ""}>
-              Career
+              {content.career}
             </li>
           </Link>
-          <Link href={"/#contact"}>
+          <Link href={buildSectionHref("contact")}>
             <li className={currentSection == "contact" ? styles.active : ""}>
-              Contact
+              {content.contact}
             </li>
           </Link>
         </ul>
+        <div className={styles.mobileLanguageSwitch}>
+          <Link
+            className={locale === "en" ? styles.languageActive : ""}
+            href={switchToLocale("en")}
+          >
+            EN
+          </Link>
+          <Link
+            className={locale === "de" ? styles.languageActive : ""}
+            href={switchToLocale("de")}
+          >
+            DE
+          </Link>
+        </div>
       </div>
     </nav>
   );
