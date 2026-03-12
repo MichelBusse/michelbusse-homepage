@@ -41,6 +41,17 @@
   font-size: 1.2rem;
 }
 
+.actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 1rem;
+
+  @media (max-width: 750px) {
+    display: none;
+  }
+}
+
 .navbar a {
   color: inherit;
   text-decoration: none;
@@ -61,6 +72,35 @@
   @media (max-width: 750px) {
     display: none;
   }
+}
+
+.languageSwitch,
+.mobileLanguageSwitch {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.languageSwitch a,
+.mobileLanguageSwitch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+  height: 2.1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.languageSwitch a {
+  height: 2rem;
+}
+
+.languageActive {
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .mainMenu li {
@@ -108,7 +148,7 @@
   transition: translate 0.5s ease-in-out;
   padding: 2rem 0;
   padding-left: 5rem;
-  clip-path: polygon(0 0, 100% 0,100% 100%, 5rem 100%);  
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 5rem 100%);
   overflow: hidden;
   transform: translateZ(0);
 }
@@ -117,13 +157,17 @@
   translate: 0;
 }
 
-.mobileMenu ul{
+.mobileMenu ul {
   padding: 0;
   list-style: none;
   transform: translateZ(0);
 }
 
-.mobileMenu li{
+.mobileLanguageSwitch {
+  margin-top: 2rem;
+}
+
+.mobileMenu li {
   position: relative;
   font-size: 1.2rem;
   margin: 2rem 0;
@@ -148,19 +192,17 @@
   border-top: 0.8rem solid $white-color;
 }
 
-
 .mobileMenu li.active::before,
 .mobileMenu li:hover::before {
   translate: 0 -50%;
 }
-
 
 .mobileMenuButton {
   display: none;
   position: relative;
   width: 1.5rem;
   height: 1.2rem;
-  margin: 0 2rem;
+  margin: 0 2rem 0 1rem;
   border: none;
   padding: 0;
 
@@ -210,7 +252,6 @@
 .mobileMenuButton.active:hover .bar2 {
   width: 70%;
 }
-
 
 .mobileMenuButton.active .bar1 {
   transform: rotate(45deg);

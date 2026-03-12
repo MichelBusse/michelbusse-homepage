@@ -5,20 +5,35 @@ import { FaLinkedin, FaGithub, FaStackOverflow } from "react-icons/fa";
 import CTAButton from "@/components/CTAButton";
 import TypeWriter from "@/components/TypeWriter";
 
-const Header = () => {
+type Props = {
+  content: {
+    preHeadline: string;
+    slogan: string;
+    cta: string;
+    portraitAlt: string;
+  };
+};
+
+const Header = ({ content }: Props) => {
   return (
     <header id={"header"} className={styles.header}>
       <div className={styles.textWrapper}>
         <div className={styles.text}>
-          <p className={styles.preHeadline}>Hey, my name is</p>
+          <p className={styles.preHeadline}>{content.preHeadline}</p>
           <h1>
-            <TypeWriter typewriterKey="headline" autoStart={true}>Michel Busse</TypeWriter>
+            <TypeWriter typewriterKey="headline" autoStart={true}>
+              Michel Busse
+            </TypeWriter>
           </h1>
           <p className={styles.slogan}>
-            and I am a passionate
-            <br /> software engineer.
+            {content.slogan.split("\n").map((line, index) => (
+              <span key={line}>
+                {index > 0 ? <br /> : null}
+                {line}
+              </span>
+            ))}
           </p>
-          <CTAButton />
+          <CTAButton label={content.cta} />
           <div className={styles.icons}>
             <Link
               target="_blank"
@@ -43,7 +58,7 @@ const Header = () => {
       <div className={styles.imageWrapper}>
         <Image
           src={"/images/header.png"}
-          alt="Header Portrait Photo"
+          alt={content.portraitAlt}
           width={1000}
           height={1000}
           priority

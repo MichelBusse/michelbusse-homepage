@@ -8,7 +8,20 @@ import { toast } from "react-toastify";
 import TypeWriter from "@/components/TypeWriter";
 import CircleSection from "@/components/CircleSection";
 
-const Contact = () => {
+type Props = {
+  content: {
+    title: string;
+    emailPlaceholder: string;
+    messagePlaceholder: string;
+    privacyLabel: string;
+    submitLabel: string;
+    invalidToast: string;
+    successToast: string;
+    errorToast: string;
+  };
+};
+
+const Contact = ({ content }: Props) => {
   const [formState, setFormState] = useState({
     email: "",
     text: "",
@@ -23,7 +36,7 @@ const Contact = () => {
       formState.text.trim() === "" ||
       !formState.privacy
     ) {
-      toast.error("Error! Please check your inputs.");
+      toast.error(content.invalidToast);
       return;
     }
 
@@ -36,14 +49,14 @@ const Contact = () => {
       body: JSON.stringify(formState),
     }).then((res) => {
       if (res.status === 200) {
-        toast.success("Sent successfully!");
+        toast.success(content.successToast);
         setFormState({
           email: "",
           text: "",
           privacy: false,
         });
       } else {
-        toast.error("Error! Please send an email instead.");
+        toast.error(content.errorToast);
       }
     });
   };
@@ -52,7 +65,7 @@ const Contact = () => {
     <CircleSection id="contact">
       <div className={styles.text}>
         <h2>
-          <TypeWriter typewriterKey="contact">Contact</TypeWriter>
+          <TypeWriter typewriterKey="contact">{content.title}</TypeWriter>
         </h2>
         <hr />
         <div className={styles.info}>
@@ -89,7 +102,7 @@ const Contact = () => {
         </div>
         <input
           type={"email"}
-          placeholder="Your Email"
+          placeholder={content.emailPlaceholder}
           required
           value={formState.email}
           onChange={(event) =>
@@ -100,7 +113,7 @@ const Contact = () => {
           }
         />
         <textarea
-          placeholder="Your Message"
+          placeholder={content.messagePlaceholder}
           required
           value={formState.text}
           onChange={(event) =>
@@ -122,9 +135,9 @@ const Contact = () => {
               }))
             }
           />
-          I accept the privacy policy
+          {content.privacyLabel}
         </div>
-        <button onClick={submit}>Submit</button>
+        <button onClick={submit}>{content.submitLabel}</button>
       </div>
     </CircleSection>
   );
