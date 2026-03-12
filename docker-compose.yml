@@ -2,6 +2,7 @@ version: "3"
 services:
   michelbusse-homepage:
     container_name: michelbusse-homepage
+    build: .
     image: m-to-b/michelbusse-homepage
     restart: unless-stopped
     networks:
